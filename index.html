@@ -1064,9 +1064,10 @@
 
     @media (max-width: 900px) {
 
+      .roi-grid,
       .testimonials-grid,
       .pricing-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
       }
 
       .price-card.featured {
@@ -1256,11 +1257,24 @@
               <div class="dot dot-y"></div>
               <div class="dot dot-g"></div>
             </div>
-            <div class="screen-bad__body">
-              <div class="spinner"></div>
-              <p>Aguardando o<br>anfitrião iniciar<br>a reunião...</p>
+            <div class="screen-bad__body" style="padding: 0; min-height: 180px; position: relative; background: #202124; display: flex; flex-direction: column;">
+              <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; position: relative;">
+                <div style="width: 48px; height: 48px; border-radius: 50%; background: #6366F1; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 500;">M</div>
+                <div style="position: absolute; bottom: 5px; left: 10px; font-size: 0.65rem; color: white;">Você</div>
+              </div>
+              <div style="height: 36px; background: #3C4043; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <div style="width: 20px; height: 20px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="mic-off" style="width: 10px; height: 10px; color: white;"></i>
+                </div>
+                <div style="width: 20px; height: 20px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="video-off" style="width: 10px; height: 10px; color: white;"></i>
+                </div>
+                <div style="width: 30px; height: 20px; border-radius: 10px; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="phone-missed" style="width: 10px; height: 10px; color: white;"></i>
+                </div>
+              </div>
+              <div style="position:absolute; top: 10px; width: 100%; text-align: center; font-size: 10px; color: #ef4444; font-weight: bold; letter-spacing: 1px;">INTERFACE GENÉRICA</div>
             </div>
-            <div style="position:absolute; bottom: 10px; width: 100%; text-align: center; font-size: 10px; color: #ef4444; font-weight: bold;">INTERFACE GENÉRICA</div>
           </div>
 
           <!-- DEPOISTER: Consultor.io -->
@@ -1443,6 +1457,45 @@
           <p style="color: var(--text-muted); font-size: 0.95rem;">A porta se abre. O foco é total na Lousa Estratégica. A objeção de preço e a insegurança já foram desconstruídas nos últimos 15 minutos.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ACELERADORES DE CONSULTÓRIO (ROI) -->
+  <section class="roi-features" id="roi" style="padding: 100px 0; background: var(--surface2);">
+    <div class="howto-header">
+      <span class="section-label">Aceleradores de Lucro</span>
+      <h2 class="section-headline">Recursos que pagam a<br>própria assinatura</h2>
+    </div>
+
+    <div class="roi-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+      
+      <!-- Feature 1 -->
+      <div class="roi-card" style="background: var(--charcoal); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); transition: transform 0.3s, border-color 0.3s;">
+        <div style="width: 48px; height: 48px; background: rgba(13, 148, 136, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--teal); border: 1px solid rgba(13, 148, 136, 0.2);">
+          <i data-lucide="bot"></i>
+        </div>
+        <h3 style="color: var(--text); margin-bottom: 1rem; font-size: 1.15rem;">O fim do bloco de notas</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">A Inteligência Artificial transcreve a consulta, remove vícios de linguagem ("né", "tipo") e te entrega um <strong>resumo clínico organizado por tópicos</strong>. Você economiza 20 minutos por atendimento.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="roi-card" style="background: var(--charcoal); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); transition: transform 0.3s, border-color 0.3s;">
+        <div style="width: 48px; height: 48px; background: rgba(13, 148, 136, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--teal); border: 1px solid rgba(13, 148, 136, 0.2);">
+          <i data-lucide="globe"></i>
+        </div>
+        <h3 style="color: var(--text); margin-bottom: 1rem; font-size: 1.15rem;">White Label</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">O paciente não entra no <em>Consultor.io</em>. Ele entra no <strong>seu domínio</strong> (ex: consulta.drgustavo.com). O aplicativo não leva a nossa marca, ele veste a sua autoridade. Você é dono do próprio palco.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="roi-card" style="background: var(--charcoal); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); transition: transform 0.3s, border-color 0.3s;">
+        <div style="width: 48px; height: 48px; background: rgba(13, 148, 136, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--teal); border: 1px solid rgba(13, 148, 136, 0.2);">
+          <i data-lucide="presentation"></i>
+        </div>
+        <h3 style="color: var(--text); margin-bottom: 1rem; font-size: 1.15rem;">A Lousa Colaborativa</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Em vez de apenas falar, desenhe. Salve templates visuais (como o mapa metabólico) e puxe para a tela na Hora H. O paciente <strong>constrói o raciocínio clínico com você</strong>, em tempo real.</p>
+      </div>
+
     </div>
   </section>
 
