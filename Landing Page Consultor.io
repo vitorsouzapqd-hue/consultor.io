@@ -1396,41 +1396,51 @@
         de que está diante do melhor profissional que já encontrou.</p>
     </div>
 
-    <div class="steps-vertical" id="ritual-timeline" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; position: relative;">
+    <div class="steps-vertical" id="ritual-timeline" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 0;">
       
-      <!-- Linha de Progresso Animada -->
-      <div id="timeline-progress" style="position: absolute; left: 119px; top: 12px; bottom: 12px; width: 2px; background: var(--teal); height: 0%; z-index: 1; transition: height 0.1s linear;"></div>
+      <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
+        <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">15 MIN ANTES</div>
+        <div class="step-content" style="flex-grow: 1; padding-bottom: 3.5rem; border-left: 2px solid var(--surface2); padding-left: 3rem; position: relative;">
+          <!-- Linha Animada Individual -->
+          <div class="step-line" style="position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: var(--teal); transform: scaleY(0); transform-origin: top; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);"></div>
+          <!-- Ponto -->
+          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--surface2); transition: all 0.5s ease; z-index: 2;"></div>
+          
+          <h3 style="margin-bottom: 0.5rem; color: var(--text);">O Gatilho via WhatsApp</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente recebe automaticamente um link no WhatsApp: "Seu consultório está aberto". Ele entra antes do horário agendado para se preparar para o encontro.</p>
+        </div>
+      </div>
 
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">15 MIN ANTES</div>
-        <div class="step-content" style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
-          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: all 0.4s ease;"></div>
-          <h3 style="margin-bottom: 0.5rem; color: var(--text);">O Gatilho</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente recebe o aviso: "Seu consultório está aberto". Ele entra antes para se preparar para o encontro.</p>
-        </div>
-      </div>
-      <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
         <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">13 MIN ANTES</div>
-        <div class="step-content" style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
-          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: all 0.4s ease;"></div>
+        <div class="step-content" style="flex-grow: 1; padding-bottom: 3.5rem; border-left: 2px solid var(--surface2); padding-left: 3rem; position: relative;">
+          <div class="step-line" style="position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: var(--teal); transform: scaleY(0); transform-origin: top; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);"></div>
+          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--surface2); transition: all 0.5s ease; z-index: 2;"></div>
+          
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">Criação do Avatar</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Ele escolhe como quer ser visto. O paciente deixa de ser um espectador passivo e vira habitante do seu consultório.</p>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Ele escolhe como quer ser visto. O paciente deixa de ser um espectador passivo atrás de uma tela e vira habitante legítimo do seu consultório.</p>
         </div>
       </div>
-        <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-          <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">10 MIN ANTES</div>
-          <div class="step-content" style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
-            <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: all 0.4s ease;"></div>
-            <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Experiência na Ante-Sala</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente não espera no vazio. Ele navega por seus diplomas, lê depoimentos de casos de sucesso, conhece os livros que formaram sua base técnica e acessa materiais exclusivos preparados para a consulta dele.</p>
-          </div>
+
+      <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
+        <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">10 MIN ANTES</div>
+        <div class="step-content" style="flex-grow: 1; padding-bottom: 3.5rem; border-left: 2px solid var(--surface2); padding-left: 3rem; position: relative;">
+          <div class="step-line" style="position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: var(--teal); transform: scaleY(0); transform-origin: top; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);"></div>
+          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--surface2); transition: all 0.5s ease; z-index: 2;"></div>
+          
+          <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Experiência na Ante-Sala</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente não espera olhando pro teto. Ele interage com o ambiente, vê seus diplomas, lê depoimentos de sucesso de outros clientes e acessa um material de boas-vindas que você deixou na mesa.</p>
         </div>
+      </div>
+
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
         <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">HORA H</div>
         <div class="step-content" style="flex-grow: 1; border-left: 2px solid transparent; padding-left: 3rem; position: relative;">
-          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: all 0.4s ease;"></div>
+          <!-- O último passo não precisa da linha descendo até o final -->
+          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--surface2); transition: all 0.5s ease; z-index: 2;"></div>
+          
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Consulta</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">A porta se abre. O foco é total na Lousa Estratégica. A autoridade já foi estabelecida nos últimos 15 minutos.</p>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">A porta se abre. O foco é total na Lousa Estratégica. A objeção de preço e a insegurança já foram desconstruídas nos últimos 15 minutos.</p>
         </div>
       </div>
     </div>
@@ -1445,39 +1455,64 @@
 
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-content">"Aumentei o valor da minha consulta em R$ 200 no mesmo mês que comecei a usar.
-          Quando os pacientes entram no meu consultório virtual, eles entendem porque meu trabalho custa o que custa."
-        </p>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+          <div class="testimonial-stars" style="color: var(--teal-light); display: flex; gap: 2px;">
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+          </div>
+          <span style="font-size: 0.7rem; color: var(--teal-light); font-weight: 600; padding: 2px 8px; background: var(--teal-glow); border-radius: 12px; border: 1px solid var(--border);">Aumento de Ticket</span>
+        </div>
+        <p class="testimonial-content">"Fechei dois contratos de mentoria high-ticket na primeira semana. Quando os clientes entram no meu escritório virtual e veem minha estante de livros e meus prêmios, <strong>a objeção de preço simplesmente desaparece.</strong>"</p>
         <div class="testimonial-author">
           <div class="author-avatar">AC</div>
           <div class="author-info">
             <h4>Dra. Ana Costa</h4>
-            <p>Nutricionista Clínica</p>
+            <p>Mentora de Nutricionistas</p>
           </div>
         </div>
       </div>
+      
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-content">"Meus pacientes pararam de faltar. Eles ficam ansiosos para entrar no consultório
-          antes da sessão. A experiêcia virou um ritual que eles esperam."</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+          <div class="testimonial-stars" style="color: var(--teal-light); display: flex; gap: 2px;">
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+          </div>
+          <span style="font-size: 0.7rem; color: var(--teal-light); font-weight: 600; padding: 2px 8px; background: var(--teal-glow); border-radius: 12px; border: 1px solid var(--border);">Fidelização</span>
+        </div>
+        <p class="testimonial-content">"Meus pacientes pararam de faltar ou atrasar. Eles <strong>fazem questão de entrar 10 minutos antes</strong> só para interagir com o ambiente e ler os novos materiais que deixo na mesa de centro."</p>
         <div class="testimonial-author">
           <div class="author-avatar">RP</div>
           <div class="author-info">
             <h4>Dr. Ricardo Pena</h4>
-            <p>Psicólogo</p>
+            <p>Psicólogo Clínico</p>
           </div>
         </div>
       </div>
+
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-content">"Sou a única nutricionista da minha cidade que atende assim. Não compito mais por
-          preço. O Consultor.io virou meu maior diferencial."</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+          <div class="testimonial-stars" style="color: var(--teal-light); display: flex; gap: 2px;">
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
+          </div>
+          <span style="font-size: 0.7rem; color: var(--teal-light); font-weight: 600; padding: 2px 8px; background: var(--teal-glow); border-radius: 12px; border: 1px solid var(--border);">Posicionamento Único</span>
+        </div>
+        <p class="testimonial-content">"Sou a única profissional da minha cidade que atende assim. Não compito mais por preço, porque <strong>o meu serviço se tornou visualmente incomparável</strong>. O Consultor.io é minha barreira de entrada."</p>
         <div class="testimonial-author">
           <div class="author-avatar">MS</div>
           <div class="author-info">
             <h4>Mariana Silva</h4>
-            <p>Nutricionista Esportiva</p>
+            <p>Nutricionista Funcional</p>
           </div>
         </div>
       </div>
@@ -1578,32 +1613,33 @@
   <script>
     lucide.createIcons();
 
-    // Animação da Timeline do Ritual
-    window.addEventListener('scroll', () => {
-      const timeline = document.getElementById('ritual-timeline');
-      const progressLine = document.getElementById('timeline-progress');
-      const dots = document.querySelectorAll('.step-dot');
-      
-      const rect = timeline.getBoundingClientRect();
-      const viewHeight = window.innerHeight;
-      
-      if (rect.top < viewHeight && rect.bottom > 0) {
-        const totalHeight = rect.height;
-        const progress = Math.min(Math.max((viewHeight * 0.7 - rect.top) / totalHeight * 100, 0), 100);
-        progressLine.style.height = `${progress}%`;
-        
-        dots.forEach((dot, index) => {
-          const dotRect = dot.getBoundingClientRect();
-          if (dotRect.top < viewHeight * 0.7) {
-            dot.style.background = 'var(--teal)';
-            dot.style.boxShadow = '0 0 10px var(--teal)';
-          } else {
-            dot.style.background = 'var(--border)';
-            dot.style.boxShadow = 'none';
+    // Animação Fluida da Timeline via IntersectionObserver
+    const steps = document.querySelectorAll('.step-v');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const line = entry.target.querySelector('.step-line');
+          const dot = entry.target.querySelector('.step-dot');
+          
+          if(line) {
+            line.style.transform = 'scaleY(1)';
           }
-        });
-      }
+          if(dot) {
+            // Pequeno delay para o dot acender junto com a linha
+            setTimeout(() => {
+              dot.style.background = 'var(--teal)';
+              dot.style.borderColor = 'var(--teal)';
+              dot.style.boxShadow = '0 0 12px rgba(13, 148, 136, 0.6)';
+            }, 300);
+          }
+        }
+      });
+    }, { 
+      threshold: 0.6, // Aciona quando 60% do card estiver visível
+      rootMargin: "0px 0px -10% 0px"
     });
+
+    steps.forEach(step => observer.observe(step));
   </script>
 </body>
 
