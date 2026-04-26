@@ -3,219 +3,294 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design System — Consultor.io</title>
+  <title>Design System Mestre — Consultor.io</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS (CORE VARIABLES)
+       ========================================================================== */
     :root {
-      /* Core Colors */
-      --teal: #0D9488;
-      --teal-light: #14B8A8;
-      --teal-glow: rgba(13, 148, 136, 0.18);
+      /* Brand Colors */
+      --teal-50: #F0FDFA;
+      --teal-100: #CCFBF1;
+      --teal-200: #99F6E4;
+      --teal-300: #5EEAD4;
+      --teal-400: #2DD4BF;
+      --teal-500: #14B8A8;
+      --teal-600: #0D9488;
+      --teal-700: #0F766E;
+      --teal-800: #115E59;
+      --teal-900: #134E4A;
       
-      /* Dark Theme (Default) */
-      --charcoal: #111714;
-      --surface: #161C1A;
-      --surface2: #1C2422;
-      --text: #E8EDE9;
-      --text-muted: #7A9188;
-      --border: rgba(13, 148, 136, 0.15);
-      --nav-bg: rgba(17, 23, 20, 0.75);
+      /* Dark Theme (Default SaaS) */
+      --bg-base: #080C0A; /* Deepest background for app frame */
+      --bg-surface: #111714; /* Default panels/cards */
+      --bg-surface-raised: #161C1A; /* Hover states, nested cards */
+      --bg-surface-overlay: #1C2422; /* Modals, popovers */
       
-      /* Brand Accent */
-      --brand-accent: var(--teal);
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-tertiary: #475569;
+      --text-inverse: #0B0F0D;
       
+      --border-subtle: rgba(255, 255, 255, 0.05);
+      --border-default: rgba(13, 148, 136, 0.15);
+      --border-strong: rgba(13, 148, 136, 0.3);
+      --border-focus: var(--teal-500);
+
+      --brand-accent: var(--teal-600);
+      
+      /* Semantic Colors (Status, Alerts) */
+      --status-success-bg: rgba(16, 185, 129, 0.1);
+      --status-success-text: #34D399;
+      --status-success-border: rgba(16, 185, 129, 0.2);
+      
+      --status-warning-bg: rgba(245, 158, 11, 0.1);
+      --status-warning-text: #FBBF24;
+      --status-warning-border: rgba(245, 158, 11, 0.2);
+      
+      --status-error-bg: rgba(239, 68, 68, 0.1);
+      --status-error-text: #F87171;
+      --status-error-border: rgba(239, 68, 68, 0.2);
+      
+      --status-info-bg: rgba(59, 130, 246, 0.1);
+      --status-info-text: #60A5FA;
+      --status-info-border: rgba(59, 130, 246, 0.2);
+
       /* Typography */
-      --font-display: 'Fraunces', serif;
-      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Fraunces', serif; /* Authority, Headers */
+      --font-body: 'DM Sans', sans-serif; /* UI, Reading */
+      --font-mono: 'JetBrains Mono', monospace; /* Clinical Data, Numbers */
       
-      /* Spacing */
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 2rem;
-      --space-lg: 4rem;
-      --space-xl: 8rem;
+      /* Spacing Scale */
+      --space-1: 0.25rem;  /* 4px */
+      --space-2: 0.5rem;   /* 8px */
+      --space-3: 0.75rem;  /* 12px */
+      --space-4: 1rem;     /* 16px */
+      --space-6: 1.5rem;   /* 24px */
+      --space-8: 2rem;     /* 32px */
+      --space-12: 3rem;    /* 48px */
+      --space-16: 4rem;    /* 64px */
+      --space-24: 6rem;    /* 96px */
+      
+      /* Radii */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --radius-2xl: 24px;
+      --radius-full: 9999px;
+
+      /* Shadows & Elevations */
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.5), 0 2px 4px -1px rgba(0,0,0,0.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5), 0 4px 6px -2px rgba(0,0,0,0.3);
+      --shadow-glow: 0 0 24px rgba(13, 148, 136, 0.15);
+      
+      /* Transitions */
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* Light Mode Overrides */
     body.light-mode {
-      --charcoal: #F5F7F6;
-      --surface: #FFFFFF;
-      --surface2: #EEF2F0;
-      --text: #161C1A;
-      --text-muted: #5C7067;
-      --border: rgba(13, 148, 136, 0.25);
-      --teal-glow: rgba(13, 148, 136, 0.08);
-      --nav-bg: rgba(245, 247, 246, 0.85);
+      --bg-base: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-surface-raised: #F1F5F9;
+      --bg-surface-overlay: #E2E8F0;
+      
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-tertiary: #94A3B8;
+      --text-inverse: #FFFFFF;
+      
+      --border-subtle: rgba(0, 0, 0, 0.05);
+      --border-default: rgba(13, 148, 136, 0.2);
+      --border-strong: rgba(13, 148, 136, 0.4);
+      
+      --status-success-bg: #D1FAE5;
+      --status-success-text: #059669;
+      --status-success-border: #34D399;
+      
+      --status-warning-bg: #FEF3C7;
+      --status-warning-text: #D97706;
+      --status-warning-border: #FBBF24;
+      
+      --status-error-bg: #FEE2E2;
+      --status-error-text: #DC2626;
+      --status-error-border: #F87171;
+      
+      --status-info-bg: #DBEAFE;
+      --status-info-text: #2563EB;
+      --status-info-border: #60A5FA;
+      
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+      --shadow-glow: 0 0 24px rgba(13, 148, 136, 0.08);
     }
 
-    * {
+    /* ==========================================================================
+       2. RESETS & BASE
+       ========================================================================== */
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     body {
-      background: var(--charcoal);
-      color: var(--text);
+      background-color: var(--bg-base);
+      color: var(--text-primary);
       font-family: var(--font-body);
       line-height: 1.6;
-      transition: background 0.4s ease, color 0.4s ease;
-      padding-bottom: 5rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+      display: flex;
+      min-height: 100vh;
     }
 
-    .ds-container {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      background: none;
+    }
+
+    /* ==========================================================================
+       3. DOCUMENTATION LAYOUT (Specific to this page)
+       ========================================================================== */
+    .ds-sidebar {
+      width: 280px;
+      height: 100vh;
+      position: fixed;
+      top: 0; left: 0;
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border-default);
+      padding: var(--space-6) var(--space-4);
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    .ds-main {
+      flex: 1;
+      margin-left: 280px;
+      padding: var(--space-12) var(--space-16);
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 5%;
     }
 
-    /* Header */
+    .ds-sidebar-logo {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .ds-nav-group {
+      margin-bottom: var(--space-6);
+    }
+
+    .ds-nav-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-3);
+      font-weight: 700;
+    }
+
+    .ds-nav-link {
+      display: block;
+      padding: var(--space-2) var(--space-3);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+      margin-bottom: 2px;
+    }
+
+    .ds-nav-link:hover {
+      background: var(--bg-surface-raised);
+      color: var(--text-primary);
+    }
+
     .ds-header {
-      padding: 6rem 0 4rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 4rem;
+      margin-bottom: var(--space-16);
     }
 
     .ds-header h1 {
       font-family: var(--font-display);
-      font-size: 4rem;
-      line-height: 1;
-      margin-bottom: 1rem;
-      letter-spacing: -0.04em;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: var(--space-4);
+      letter-spacing: -0.03em;
     }
 
     .ds-header p {
       font-size: 1.25rem;
-      color: var(--text-muted);
-      max-width: 600px;
+      color: var(--text-secondary);
+      max-width: 700px;
     }
 
-    /* Sections */
     .ds-section {
-      margin-bottom: 8rem;
+      margin-bottom: var(--space-24);
     }
 
-    .ds-section-title {
+    .ds-section-header {
+      border-bottom: 1px solid var(--border-default);
+      padding-bottom: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .ds-section-header h2 {
       font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .ds-section-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .ds-component-block {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      margin-bottom: var(--space-8);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ds-component-title {
       font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--teal);
-      margin-bottom: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .ds-section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-6);
+      font-weight: 700;
     }
 
     /* Grid Helpers */
-    .ds-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+    .flex-row { display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; }
+    .flex-col { display: flex; flex-direction: column; gap: var(--space-4); }
 
-    /* Color Swatches */
-    .swatch-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .swatch-color {
-      height: 120px;
-      width: 100%;
-    }
-
-    .swatch-info {
-      padding: 1.5rem;
-    }
-
-    .swatch-info h4 {
-      font-family: var(--font-display);
-      margin-bottom: 0.25rem;
-    }
-
-    .swatch-info p {
-      font-family: monospace;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* Typography Display */
-    .type-display {
-      margin-bottom: 3rem;
-    }
-
-    .type-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .type-example-h1 { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
-    .type-example-h2 { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; line-height: 1.1; }
-    .type-example-h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; }
-    .type-example-body { font-family: var(--font-body); font-size: 1.1rem; max-width: 800px; }
-    .type-example-small { font-family: var(--font-body); font-size: 0.85rem; color: var(--text-muted); }
-
-    /* Buttons Section */
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    /* Component: Buttons (Same as index.html) */
-    .btn-primary {
-      background: var(--teal);
-      color: white;
-      padding: 0.85rem 2rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s;
-      box-shadow: 0 4px 24px rgba(13, 148, 136, 0.3);
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      background: var(--teal-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(13, 148, 136, 0.4);
-    }
-
-    .btn-ghost {
-      color: var(--text-muted);
-      padding: 0.85rem 2rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      transition: all 0.2s;
-      display: inline-block;
-    }
-
-    .btn-ghost:hover {
-      background: var(--surface2);
-      color: var(--text);
-      border-color: var(--teal);
-    }
-
-    /* Brand Style Class */
+    /* ==========================================================================
+       4. BRANDING TOKENS
+       ========================================================================== */
     .brand-style {
       font-family: var(--font-display);
       font-weight: 700;
@@ -224,213 +299,891 @@
       text-transform: lowercase;
       display: inline-block;
     }
-
     .brand-style span {
       color: var(--brand-accent);
-      transition: color 0.3s ease;
+      transition: color var(--transition-normal);
     }
 
-    /* UI Cards */
-    .ds-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 2.5rem;
-      border-radius: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ds-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, var(--teal-glow) 0%, transparent 40%);
-      pointer-events: none;
-    }
-
-    /* Theme Toggle */
-    .theme-toggle-ds {
-      position: fixed;
-      top: 2rem;
-      right: 2rem;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1.5rem;
-      border-radius: 100px;
-      color: var(--teal);
+    /* ==========================================================================
+       5. COMPONENT: BUTTONS
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      font-family: var(--font-body);
       font-weight: 700;
-      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* Sizes */
+    .btn-sm { padding: 0.5rem 1rem; font-size: 0.85rem; }
+    .btn-md { padding: 0.75rem 1.5rem; font-size: 0.95rem; }
+    .btn-lg { padding: 1rem 2rem; font-size: 1.1rem; border-radius: var(--radius-lg); }
+    .btn-icon { padding: 0.5rem; border-radius: var(--radius-md); }
+
+    /* Variants */
+    .btn-primary {
+      background: var(--teal-600);
+      color: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: var(--teal-500);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-secondary {
+      background: var(--bg-surface-raised);
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
+    }
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--bg-surface-overlay);
+      border-color: var(--teal-600);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-secondary);
+    }
+    .btn-ghost:hover:not(:disabled) {
+      background: var(--bg-surface-raised);
+      color: var(--text-primary);
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--status-error-text);
+      border: 1px solid var(--status-error-border);
+    }
+    .btn-danger:hover:not(:disabled) {
+      background: var(--status-error-text);
+      color: #FFF;
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Loading Spinner inside Button */
+    .spinner {
+      width: 1em;
+      height: 1em;
+      border: 2px solid currentColor;
+      border-right-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    /* ==========================================================================
+       6. COMPONENT: FORMS & INPUTS (SaaS Grade)
+       ========================================================================== */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      width: 100%;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .form-control {
+      width: 100%;
+      background: var(--bg-base);
+      border: 1px solid var(--border-default);
+      color: var(--text-primary);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+
+    .form-control::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .form-control:hover:not(:disabled) {
+      border-color: var(--border-strong);
+    }
+
+    .form-control:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+      background: var(--bg-surface);
+    }
+
+    .form-control:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background: var(--bg-surface-raised);
+    }
+
+    .form-control.has-error {
+      border-color: var(--status-error-text);
+    }
+    .form-control.has-error:focus {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+    }
+
+    .form-hint {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+    }
+    .form-error-text {
+      font-size: 0.8rem;
+      color: var(--status-error-text);
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      z-index: 1000;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      gap: 0.25rem;
     }
 
-    /* Navbar Sim */
-    .nav-sim {
-      background: var(--nav-bg);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border);
-      padding: 1rem 2rem;
-      border-radius: 12px;
+    /* Input with Icon */
+    .input-icon-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-icon-wrapper i {
+      position: absolute;
+      left: 1rem;
+      color: var(--text-tertiary);
+      pointer-events: none;
+    }
+    .input-icon-wrapper .form-control {
+      padding-left: 2.75rem;
+    }
+
+    /* Checkbox & Radio Custom */
+    .custom-check {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      cursor: pointer;
+      user-select: none;
+    }
+    .custom-check input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    .checkmark {
+      height: 20px;
+      width: 20px;
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+    .custom-check:hover input ~ .checkmark {
+      border-color: var(--teal-500);
+    }
+    .custom-check input:checked ~ .checkmark {
+      background-color: var(--teal-600);
+      border-color: var(--teal-600);
+    }
+    .checkmark:after {
+      content: "";
+      display: none;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      margin-bottom: 2px;
+    }
+    .custom-check input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Toggle Switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--bg-surface-raised);
+      border: 1px solid var(--border-strong);
+      transition: .3s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 3px;
+      bottom: 3px;
+      background-color: var(--text-secondary);
+      transition: .3s;
+      border-radius: 50%;
+    }
+    .switch input:checked + .slider {
+      background-color: var(--teal-600);
+      border-color: var(--teal-600);
+    }
+    .switch input:checked + .slider:before {
+      transform: translateX(20px);
+      background-color: white;
+    }
+
+    /* ==========================================================================
+       7. COMPONENT: BADGES & TAGS
+       ========================================================================== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .badge-primary { background: var(--teal-glow); color: var(--teal-400); border: 1px solid var(--border-default); }
+    .badge-secondary { background: var(--bg-surface-raised); color: var(--text-secondary); border: 1px solid var(--border-default); }
+    .badge-success { background: var(--status-success-bg); color: var(--status-success-text); border: 1px solid var(--status-success-border); }
+    .badge-warning { background: var(--status-warning-bg); color: var(--status-warning-text); border: 1px solid var(--status-warning-border); }
+    .badge-error { background: var(--status-error-bg); color: var(--status-error-text); border: 1px solid var(--status-error-border); }
+    
+    /* Light mode specific badge color adjustments due to glowing variables */
+    body.light-mode .badge-primary { color: var(--teal-700); }
+
+    /* ==========================================================================
+       8. COMPONENT: SAAS DATA DISPLAY (Tables, Avatars, Stats)
+       ========================================================================== */
+    /* Avatar */
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-surface-raised);
+      border: 1px solid var(--border-default);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--teal-500);
+      font-size: 0.9rem;
+      position: relative;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .avatar-indicator {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 10px; height: 10px;
+      background: var(--status-success-text);
+      border: 2px solid var(--bg-surface);
+      border-radius: 50%;
+    }
+
+    /* Stats Card (KPI) */
+    .kpi-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .kpi-title {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
+    }
+    .kpi-value {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .kpi-trend {
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .kpi-trend.positive { color: var(--status-success-text); }
+    .kpi-trend.negative { color: var(--status-error-text); }
+
+    /* Data Table */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-xl);
+    }
+    .ds-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .ds-table th {
+      padding: var(--space-4) var(--space-6);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+      border-bottom: 1px solid var(--border-strong);
+      background: var(--bg-surface-raised);
+    }
+    .ds-table td {
+      padding: var(--space-4) var(--space-6);
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--border-default);
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+    .ds-table tr:last-child td { border-bottom: none; }
+    .ds-table tr:hover td { background: var(--bg-base); color: var(--text-primary); }
+    .ds-table .primary-cell { color: var(--text-primary); font-weight: 500; }
+    .ds-table .mono-cell { font-family: var(--font-mono); font-size: 0.85rem; }
+
+    /* ==========================================================================
+       9. COMPONENT: ALERTS & FEEDBACK
+       ========================================================================== */
+    .alert {
+      display: flex;
+      gap: var(--space-4);
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      align-items: flex-start;
+    }
+    .alert-icon { flex-shrink: 0; margin-top: 2px; }
+    .alert-content h4 { font-size: 0.95rem; margin-bottom: 0.25rem; color: inherit; }
+    .alert-content p { font-size: 0.85rem; opacity: 0.9; }
+
+    .alert-info { background: var(--status-info-bg); border-color: var(--status-info-border); color: var(--status-info-text); }
+    .alert-success { background: var(--status-success-bg); border-color: var(--status-success-border); color: var(--status-success-text); }
+    .alert-warning { background: var(--status-warning-bg); border-color: var(--status-warning-border); color: var(--status-warning-text); }
+    .alert-error { background: var(--status-error-bg); border-color: var(--status-error-border); color: var(--status-error-text); }
+
+    /* ==========================================================================
+       10. UTILITIES & THEME TOGGLE
+       ========================================================================== */
+    .color-swatch {
+      height: 100px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      width: 100%;
+    }
+    .swatch-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .swatch-details {
+      padding: var(--space-4);
+    }
+    .swatch-details h4 { font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .swatch-details p { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-tertiary); }
+
+    .theme-toggle-ds {
+      position: fixed;
+      bottom: var(--space-6);
+      right: var(--space-6);
+      background: var(--bg-surface-overlay);
+      border: 1px solid var(--border-strong);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-full);
+      color: var(--teal-500);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      z-index: 1000;
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition-fast);
+    }
+    .theme-toggle-ds:hover {
+      transform: translateY(-2px);
+      border-color: var(--teal-500);
     }
 
-    @media (max-width: 768px) {
-      .ds-header h1 { font-size: 2.5rem; }
-      .ds-grid { grid-template-columns: 1fr; }
+    /* Skeleton Loader */
+    .skeleton {
+      background: linear-gradient(90deg, var(--bg-surface-raised) 25%, var(--bg-surface-overlay) 50%, var(--bg-surface-raised) 75%);
+      background-size: 200% 100%;
+      animation: skeletonLoading 1.5s infinite;
+      border-radius: var(--radius-sm);
     }
+    @keyframes skeletonLoading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
   </style>
 </head>
 <body>
 
+  <!-- Theme Toggle -->
   <button class="theme-toggle-ds" id="themeToggle">
-    <i data-lucide="sun" id="themeIcon"></i>
-    <span id="themeText">Alternar Tema</span>
+    <i data-lucide="sun" id="themeIcon" style="width: 18px; height: 18px;"></i>
+    <span id="themeText">Modo Claro</span>
   </button>
 
-  <div class="ds-header">
-    <div class="ds-container">
-      <h1>Design System</h1>
-      <p>A identidade visual do <span class="brand-style">consultor<span>.io</span></span>. Um guia de estilo focado em autoridade, precisão clínica e percepção de alto valor.</p>
+  <!-- Sidebar Navigation -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar-logo">
+      <span class="brand-style">consultor<span>.io</span></span>
     </div>
-  </div>
-
-  <div class="ds-container">
     
-    <!-- BRANDING -->
-    <section class="ds-section">
-      <h2 class="ds-section-title">Branding & Logo</h2>
-      <div class="ds-card" style="display: flex; flex-direction: column; gap: 2rem; align-items: center;">
-        <div style="font-size: 3rem;">
-          <span class="brand-style">consultor<span>.io</span></span>
-        </div>
-        <div style="background: var(--teal); padding: 3rem; border-radius: 16px; width: 100%; text-align: center; --brand-accent: white;">
-          <p style="color: white; margin-bottom: 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">Variação em Fundo Colorido</p>
-          <div style="font-size: 3rem; color: white;">
-            <span class="brand-style">consultor<span>.io</span></span>
-          </div>
-        </div>
+    <div class="ds-nav-group">
+      <div class="ds-nav-title">Foundation</div>
+      <a href="#brand" class="ds-nav-link">Brand Philosophy</a>
+      <a href="#colors" class="ds-nav-link">Color System</a>
+      <a href="#typography" class="ds-nav-link">Typography</a>
+    </div>
+
+    <div class="ds-nav-group">
+      <div class="ds-nav-title">UI Components</div>
+      <a href="#buttons" class="ds-nav-link">Buttons & Actions</a>
+      <a href="#forms" class="ds-nav-link">Forms & Inputs</a>
+      <a href="#badges" class="ds-nav-link">Badges & Feedback</a>
+    </div>
+
+    <div class="ds-nav-group">
+      <div class="ds-nav-title">SaaS Patterns</div>
+      <a href="#data" class="ds-nav-link">Data Display (Tables)</a>
+      <a href="#kpi" class="ds-nav-link">Dashboards & KPIs</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="ds-main">
+    
+    <!-- HEADER -->
+    <header class="ds-header">
+      <h1>Design System Master</h1>
+      <p>A "Bíblia Visual" oficial do ecossistema <span class="brand-style">consultor<span>.io</span></span>. Da Landing Page de alta conversão ao ambiente imersivo do SaaS clínico.</p>
+    </header>
+
+    <!-- 1. BRAND PHILOSOPHY -->
+    <section id="brand" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Brand Philosophy & Context</h2>
+        <p>Por que tomamos essas decisões de design.</p>
+      </div>
+      <div class="ds-component-block" style="border-left: 4px solid var(--teal-600);">
+        <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1rem;">Architectural Editorial</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 800px;">
+          O <span class="brand-style">consultor<span>.io</span></span> não é apenas uma ferramenta de vídeo, é um <strong>Mecanismo de Percepção de Valor</strong>. Nosso design recusa o padrão genérico dos apps SaaS convencionais.
+        </p>
+        <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <li><strong>Clínico, não Estéril:</strong> O uso do tom Charcoal profundo com o Teal traz sofisticação e calma. Evitamos o branco hospitalar excessivo na versão principal.</li>
+          <li><strong>A Comoditização Termina na Interface:</strong> Sombras ricas, bordas translúcidas (Glassmorphism) e tipografia serifada (Fraunces) comunicam instantaneamente que o profissional que usa esta plataforma cobra alto.</li>
+          <li><strong>Atenção Focada:</strong> O paciente e os dados do paciente devem ser o centro. A UI existe para ancorar a autoridade, não para roubar a cena.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- COLORS -->
-    <section class="ds-section">
-      <h2 class="ds-section-title">Color Palette</h2>
-      <div class="ds-grid">
-        <div class="swatch-card">
-          <div class="swatch-color" style="background: #0D9488;"></div>
-          <div class="swatch-info">
-            <h4>Teal (Primary)</h4>
-            <p>#0D9488 / var(--teal)</p>
-          </div>
-        </div>
-        <div class="swatch-card">
-          <div class="swatch-color" style="background: var(--charcoal);"></div>
-          <div class="swatch-info">
-            <h4>Charcoal (Background)</h4>
-            <p>var(--charcoal)</p>
-          </div>
-        </div>
-        <div class="swatch-card">
-          <div class="swatch-color" style="background: var(--surface);"></div>
-          <div class="swatch-info">
-            <h4>Surface (Cards)</h4>
-            <p>var(--surface)</p>
-          </div>
-        </div>
-        <div class="swatch-card">
-          <div class="swatch-color" style="background: var(--text);"></div>
-          <div class="swatch-info">
-            <h4>Text Primary</h4>
-            <p>var(--text)</p>
-          </div>
-        </div>
+    <!-- 2. COLOR SYSTEM -->
+    <section id="colors" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Color System</h2>
+        <p>Tokens semânticos que se adaptam automaticamente ao tema.</p>
       </div>
-    </section>
-
-    <!-- TYPOGRAPHY -->
-    <section class="ds-section">
-      <h2 class="ds-section-title">Typography</h2>
-      <div class="ds-card">
-        <div class="type-display">
-          <span class="type-label">H1 - Display Hero</span>
-          <h1 class="type-example-h1">A autoridade que você merece.</h1>
-        </div>
-        <div class="type-display">
-          <span class="type-label">H2 - Section Headline</span>
-          <h2 class="type-example-h2">O ritual da sua consulta.</h2>
-        </div>
-        <div class="type-display">
-          <span class="type-label">H3 - Card Title</span>
-          <h3 class="type-example-h3">Lousa Estratégica</h3>
-        </div>
-        <div class="type-display">
-          <span class="type-label">Body Text</span>
-          <p class="type-example-body">O Consultor.io não é apenas um software de vídeo. É uma extensão da sua marca pessoal, desenhada para profissionais que cobram caro porque entregam excelência.</p>
-        </div>
-        <div class="type-display">
-          <span class="type-label">Small / Caption</span>
-          <p class="type-example-small">Disponível para Mentores, Nutricionistas e Especialistas.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPONENTS -->
-    <section class="ds-section">
-      <h2 class="ds-section-title">Component Library</h2>
       
-      <div style="margin-bottom: 4rem;">
-        <h4 style="margin-bottom: 1.5rem; color: var(--text-muted);">Botões & Ações</h4>
-        <div class="btn-group">
-          <a href="#" class="btn-primary">Botão Primário</a>
-          <a href="#" class="btn-ghost">Botão Ghost</a>
-          <div style="background: var(--teal); padding: 1rem; border-radius: 8px;">
-            <a href="#" class="btn-primary" style="background: white; color: var(--teal); --brand-accent: var(--charcoal);">Botão CTA Invertido</a>
-          </div>
+      <h3 class="ds-component-title">Primary Accent (Teal)</h3>
+      <div class="grid-4" style="margin-bottom: 3rem;">
+        <div class="swatch-box">
+          <div class="color-swatch" style="background: var(--teal-400);"></div>
+          <div class="swatch-details"><h4>Teal 400</h4><p>Hover States</p></div>
+        </div>
+        <div class="swatch-box">
+          <div class="color-swatch" style="background: var(--teal-500);"></div>
+          <div class="swatch-details"><h4>Teal 500</h4><p>Focus Rings</p></div>
+        </div>
+        <div class="swatch-box">
+          <div class="color-swatch" style="background: var(--teal-600);"></div>
+          <div class="swatch-details"><h4>Teal 600 (Core)</h4><p>Primary Actions</p></div>
+        </div>
+        <div class="swatch-box">
+          <div class="color-swatch" style="background: var(--teal-800);"></div>
+          <div class="swatch-details"><h4>Teal 800</h4><p>Deep Accents</p></div>
         </div>
       </div>
 
-      <div style="margin-bottom: 4rem;">
-        <h4 style="margin-bottom: 1.5rem; color: var(--text-muted);">Simulação de Navegação</h4>
-        <div class="nav-sim">
-          <div class="brand-style" style="font-size: 1.2rem;">consultor<span>.io</span></div>
-          <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; font-weight: 500;">
-            <span>Início</span>
-            <span>Planos</span>
-            <span>Sobre</span>
-          </div>
-          <div style="background: var(--teal); width: 32px; height: 32px; border-radius: 50%;"></div>
+      <h3 class="ds-component-title">Surfaces & Backgrounds (Contextual)</h3>
+      <div class="grid-4" style="margin-bottom: 3rem;">
+        <div class="swatch-box">
+          <div class="color-swatch" style="background: var(--bg-base); border-bottom: 1px solid var(--border-default);"></div>
+          <div class="swatch-details"><h4>Base</h4><p>App Frame Canvas</p></div>
         </div>
-      </div>
-
-      <div>
-        <h4 style="margin-bottom: 1.5rem; color: var(--text-muted);">Inputs & Formulários (Preview)</h4>
-        <div class="ds-card" style="max-width: 400px;">
-          <label style="display: block; font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--teal-light);">NOME DO CONSULTÓRIO</label>
-          <input type="text" placeholder="ex: drgustavo.consultor.io" style="width: 100%; background: var(--surface2); border: 1px solid var(--border); padding: 0.8rem; border-radius: 8px; color: white; outline: none; margin-bottom: 1.5rem;">
-          <button class="btn-primary" style="width: 100%;">Reservar meu Domínio</button>
+        <div class="swatch-box">
+          <div class="color-swatch" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-default);"></div>
+          <div class="swatch-details"><h4>Surface</h4><p>Cards & Panels</p></div>
+        </div>
+        <div class="swatch-box">
+          <div class="color-swatch" style="background: var(--bg-surface-raised); border-bottom: 1px solid var(--border-default);"></div>
+          <div class="swatch-details"><h4>Raised Surface</h4><p>Hover / Nested</p></div>
+        </div>
+        <div class="swatch-box">
+          <div class="color-swatch" style="background: var(--border-default); border-bottom: 1px solid var(--border-default);"></div>
+          <div class="swatch-details"><h4>Borders</h4><p>Dividers</p></div>
         </div>
       </div>
     </section>
 
-  </div>
+    <!-- 3. TYPOGRAPHY -->
+    <section id="typography" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Typography</h2>
+        <p>A combinação de Fraunces (Autoridade), DM Sans (Leitura) e JetBrains Mono (Precisão Clínica).</p>
+      </div>
+      <div class="ds-component-block">
+        <div style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 2rem;">
+          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Display (Fraunces)</div>
+          <h1 style="font-family: var(--font-display); font-size: 3rem; line-height: 1.1; margin-bottom: 1rem;">O Peso da Autoridade Clínica.</h1>
+          <h2 style="font-family: var(--font-display); font-size: 2rem; line-height: 1.2;">Seções Principais e Argumentos de Venda.</h2>
+        </div>
+        
+        <div style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 2rem;">
+          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Body (DM Sans)</div>
+          <p style="font-size: 1.1rem; margin-bottom: 1rem; max-width: 800px;">Textos descritivos, parágrafos longos e componentes de interface padrão. A legibilidade é prioridade absoluta para não cansar a vista do profissional durante horas de atendimento.</p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">Small text para legendas, hints de formulário e metadados.</p>
+        </div>
+
+        <div>
+          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Monospace (JetBrains Mono)</div>
+          <p style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--teal-400);">KCAL: 2.450 | PROT: 180g | CARBO: 220g</p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">Usado exclusivamente para dados clínicos numéricos, painéis de metabolismo e IDs de paciente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BUTTONS & ACTIONS -->
+    <section id="buttons" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Buttons & Actions</h2>
+        <p>Elementos interativos principais.</p>
+      </div>
+      <div class="ds-component-block">
+        
+        <h3 class="ds-component-title">Primary & Secondary</h3>
+        <div class="flex-row" style="margin-bottom: 3rem;">
+          <button class="btn btn-md btn-primary">Salvar Prontuário</button>
+          <button class="btn btn-md btn-secondary">Cancelar</button>
+          <button class="btn btn-md btn-ghost">Editar Dados</button>
+          <button class="btn btn-md btn-danger">Excluir Paciente</button>
+        </div>
+
+        <h3 class="ds-component-title">Sizes & States</h3>
+        <div class="flex-row" style="margin-bottom: 3rem;">
+          <button class="btn btn-sm btn-primary">Small Action</button>
+          <button class="btn btn-md btn-primary">Medium Action</button>
+          <button class="btn btn-lg btn-primary">Large Action (CTA)</button>
+        </div>
+        <div class="flex-row">
+          <button class="btn btn-md btn-primary" disabled>Estado Disabled</button>
+          <button class="btn btn-md btn-primary">
+            <div class="spinner"></div> Processando...
+          </button>
+          <button class="btn btn-icon btn-secondary">
+            <i data-lucide="settings" style="width: 18px; height: 18px;"></i>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. FORMS & INPUTS -->
+    <section id="forms" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Forms & Inputs</h2>
+        <p>Formulários desenhados para alta densidade de dados SaaS.</p>
+      </div>
+      <div class="ds-component-block">
+        
+        <div class="grid-2">
+          <!-- Standard Input -->
+          <div class="form-group">
+            <label class="form-label">Nome do Paciente</label>
+            <input type="text" class="form-control" placeholder="Ex: João da Silva">
+          </div>
+
+          <!-- Icon Input -->
+          <div class="form-group">
+            <label class="form-label">Buscar Paciente</label>
+            <div class="input-icon-wrapper">
+              <i data-lucide="search" style="width: 18px; height: 18px;"></i>
+              <input type="text" class="form-control" placeholder="CPF ou Nome">
+            </div>
+          </div>
+
+          <!-- Disabled Input -->
+          <div class="form-group">
+            <label class="form-label">ID do Sistema (Somente Leitura)</label>
+            <input type="text" class="form-control" value="PAC-84729-BR" disabled>
+          </div>
+
+          <!-- Error Input -->
+          <div class="form-group">
+            <label class="form-label">Email de Contato</label>
+            <input type="email" class="form-control has-error" value="email_invalido.com">
+            <span class="form-error-text"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Formato de email inválido</span>
+          </div>
+
+          <!-- Textarea -->
+          <div class="form-group" style="grid-column: span 2;">
+            <label class="form-label">Anotações Clínicas (Lousa)</label>
+            <textarea class="form-control" rows="4" placeholder="Paciente relatou fadiga após o treino..."></textarea>
+            <span class="form-hint">Estas notas são privadas e não aparecem na tela do paciente.</span>
+          </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-default); margin: 3rem 0;">
+
+        <h3 class="ds-component-title">Switches & Toggles</h3>
+        <div class="flex-row" style="gap: 3rem;">
+          
+          <label class="custom-check">
+            <input type="checkbox" checked>
+            <span class="checkmark"></span>
+            <span class="form-label" style="margin: 0; color: var(--text-primary);">Enviar Resumo Automático</span>
+          </label>
+
+          <label class="custom-check">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="form-label" style="margin: 0; color: var(--text-primary);">Permitir Agendamento</span>
+          </label>
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <span class="form-label" style="margin: 0;">Gravar Consulta em Nuvem</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. BADGES & FEEDBACK -->
+    <section id="badges" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Badges & Feedback (Alerts)</h2>
+        <p>Comunicação visual de status no dashboard.</p>
+      </div>
+      <div class="ds-component-block">
+        
+        <h3 class="ds-component-title">Tags Semânticas</h3>
+        <div class="flex-row" style="margin-bottom: 3rem;">
+          <span class="badge badge-primary">Plano Pro</span>
+          <span class="badge badge-secondary">Rascunho</span>
+          <span class="badge badge-success"><i data-lucide="check-circle" style="width: 12px; height: 12px;"></i> Concluído</span>
+          <span class="badge badge-warning">Atrasado</span>
+          <span class="badge badge-error">Falta Pagamento</span>
+        </div>
+
+        <h3 class="ds-component-title">Alertas do Sistema</h3>
+        <div class="flex-col">
+          <div class="alert alert-info">
+            <i data-lucide="info" class="alert-icon" style="width: 20px; height: 20px;"></i>
+            <div class="alert-content">
+              <h4>Atualização Disponível</h4>
+              <p>A nova versão da lousa colaborativa já está ativa na sua conta.</p>
+            </div>
+          </div>
+          
+          <div class="alert alert-warning">
+            <i data-lucide="alert-triangle" class="alert-icon" style="width: 20px; height: 20px;"></i>
+            <div class="alert-content">
+              <h4>Limite de Gravação Próximo</h4>
+              <p>Você atingiu 90% do seu limite de armazenamento em nuvem neste mês.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. SAAS PATTERNS (DATA) -->
+    <section id="data" class="ds-section">
+      <div class="ds-section-header">
+        <h2>SaaS Patterns: Data Display</h2>
+        <p>Tabelas clínicas e avatares de pacientes.</p>
+      </div>
+      <div class="ds-component-block">
+        
+        <h3 class="ds-component-title">Tabela de Pacientes (Lista)</h3>
+        <div class="table-container">
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th>Paciente</th>
+                <th>ID Clínico</th>
+                <th>Última Consulta</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div class="avatar">
+                      <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Profile">
+                      <div class="avatar-indicator"></div>
+                    </div>
+                    <div>
+                      <div class="primary-cell">Mariana Costa</div>
+                      <div style="font-size: 0.8rem;">Hipertrofia</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="mono-cell">#PT-4421</td>
+                <td>Hoje, 14:30</td>
+                <td><span class="badge badge-success">Ativo</span></td>
+                <td><button class="btn btn-sm btn-secondary">Abrir Sala</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div class="avatar">RS</div>
+                    <div>
+                      <div class="primary-cell">Roberto Silva</div>
+                      <div style="font-size: 0.8rem;">Emagrecimento</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="mono-cell">#PT-3910</td>
+                <td>12 Ago 2026</td>
+                <td><span class="badge badge-warning">Retorno Pend.</span></td>
+                <td><button class="btn btn-sm btn-ghost">Ver Prontuário</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. DASHBOARD KPIs -->
+    <section id="kpi" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Dashboards & KPIs</h2>
+        <p>Painéis de métricas financeiras e de volume para a home do SaaS.</p>
+      </div>
+      <div class="ds-component-block">
+        
+        <div class="grid-3">
+          <!-- KPI 1 -->
+          <div class="kpi-card">
+            <div class="kpi-title">
+              Faturamento (Mensal)
+              <i data-lucide="dollar-sign" style="color: var(--teal-500); width: 18px; height: 18px;"></i>
+            </div>
+            <div class="kpi-value">R$ 14.500</div>
+            <div class="kpi-trend positive">
+              <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+              <span>+12.5% vs mês passado</span>
+            </div>
+          </div>
+
+          <!-- KPI 2 -->
+          <div class="kpi-card">
+            <div class="kpi-title">
+              Consultas Realizadas
+              <i data-lucide="video" style="color: var(--teal-500); width: 18px; height: 18px;"></i>
+            </div>
+            <div class="kpi-value">42</div>
+            <div class="kpi-trend positive">
+              <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+              <span>+4 vs mês passado</span>
+            </div>
+          </div>
+
+          <!-- KPI 3 -->
+          <div class="kpi-card">
+            <div class="kpi-title">
+              Taxa de No-Show
+              <i data-lucide="user-x" style="color: var(--text-tertiary); width: 18px; height: 18px;"></i>
+            </div>
+            <div class="kpi-value">2.4%</div>
+            <div class="kpi-trend negative">
+              <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+              <span>+0.5% vs mês passado</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 3rem;">
+          <h3 class="ds-component-title">Skeleton Loading State</h3>
+          <div class="grid-3">
+            <div class="kpi-card">
+              <div class="skeleton" style="height: 16px; width: 60%; margin-bottom: 1rem;"></div>
+              <div class="skeleton" style="height: 36px; width: 80%; margin-bottom: 0.5rem;"></div>
+              <div class="skeleton" style="height: 14px; width: 40%;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 
   <script>
+    // Initialize Icons
     lucide.createIcons();
 
+    // Theme Toggle Logic
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const themeText = document.getElementById('themeText');
+    
+    // Check system preference or default to dark
     let isLight = false;
 
     themeToggle.addEventListener('click', () => {
       isLight = !isLight;
-      document.body.classList.toggle('light-mode');
+      document.body.classList.toggle('light-mode', isLight);
       
       if (isLight) {
         themeIcon.setAttribute('data-lucide', 'moon');
@@ -440,6 +1193,22 @@
         themeText.innerText = 'Modo Claro';
       }
       lucide.createIcons();
+    });
+
+    // Smooth scrolling for sidebar links
+    document.querySelectorAll('.ds-nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if(targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 40,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
   </script>
 </body>
