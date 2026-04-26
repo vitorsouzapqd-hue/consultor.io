@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design System Mestre — Consultor.io</title>
+  <title>Brandbook & Master Design System — Consultor.io</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     /* ==========================================================================
-       1. DESIGN TOKENS (CORE VARIABLES)
+       0. CSS RESET & VARIABLES
        ========================================================================== */
     :root {
       /* Brand Colors */
@@ -24,11 +24,11 @@
       --teal-800: #115E59;
       --teal-900: #134E4A;
       
-      /* Dark Theme (Default SaaS) */
-      --bg-base: #080C0A; /* Deepest background for app frame */
-      --bg-surface: #111714; /* Default panels/cards */
-      --bg-surface-raised: #161C1A; /* Hover states, nested cards */
-      --bg-surface-overlay: #1C2422; /* Modals, popovers */
+      /* Dark Theme (Default) */
+      --bg-base: #080C0A; 
+      --bg-surface: #111714; 
+      --bg-surface-raised: #161C1A; 
+      --bg-surface-overlay: #1C2422; 
       
       --text-primary: #F8FAFC;
       --text-secondary: #94A3B8;
@@ -42,7 +42,7 @@
 
       --brand-accent: var(--teal-600);
       
-      /* Semantic Colors (Status, Alerts) */
+      /* Semantic Colors */
       --status-success-bg: rgba(16, 185, 129, 0.1);
       --status-success-text: #34D399;
       --status-success-border: rgba(16, 185, 129, 0.2);
@@ -60,11 +60,11 @@
       --status-info-border: rgba(59, 130, 246, 0.2);
 
       /* Typography */
-      --font-display: 'Fraunces', serif; /* Authority, Headers */
-      --font-body: 'DM Sans', sans-serif; /* UI, Reading */
-      --font-mono: 'JetBrains Mono', monospace; /* Clinical Data, Numbers */
+      --font-display: 'Fraunces', serif; 
+      --font-body: 'DM Sans', sans-serif; 
+      --font-mono: 'JetBrains Mono', monospace; 
       
-      /* Spacing Scale */
+      /* Spacing Scale (8pt System) */
       --space-1: 0.25rem;  /* 4px */
       --space-2: 0.5rem;   /* 8px */
       --space-3: 0.75rem;  /* 12px */
@@ -80,22 +80,20 @@
       --radius-md: 8px;
       --radius-lg: 12px;
       --radius-xl: 16px;
-      --radius-2xl: 24px;
       --radius-full: 9999px;
 
-      /* Shadows & Elevations */
+      /* Shadows */
       --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
       --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.5), 0 2px 4px -1px rgba(0,0,0,0.3);
       --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5), 0 4px 6px -2px rgba(0,0,0,0.3);
       --shadow-glow: 0 0 24px rgba(13, 148, 136, 0.15);
       
-      /* Transitions */
+      /* Transitions (Motion Principles) */
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Light Mode Overrides */
     body.light-mode {
       --bg-base: #F8FAFC;
       --bg-surface: #FFFFFF;
@@ -114,15 +112,12 @@
       --status-success-bg: #D1FAE5;
       --status-success-text: #059669;
       --status-success-border: #34D399;
-      
       --status-warning-bg: #FEF3C7;
       --status-warning-text: #D97706;
       --status-warning-border: #FBBF24;
-      
       --status-error-bg: #FEE2E2;
       --status-error-text: #DC2626;
       --status-error-border: #F87171;
-      
       --status-info-bg: #DBEAFE;
       --status-info-text: #2563EB;
       --status-info-border: #60A5FA;
@@ -133,96 +128,37 @@
       --shadow-glow: 0 0 24px rgba(13, 148, 136, 0.08);
     }
 
-    /* ==========================================================================
-       2. RESETS & BASE
-       ========================================================================== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-base);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      transition: background-color var(--transition-slow), color var(--transition-slow);
-      display: flex;
-      min-height: 100vh;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; transition: background-color var(--transition-slow), color var(--transition-slow); display: flex; min-height: 100vh; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; border: none; cursor: pointer; background: none; }
 
     /* ==========================================================================
-       3. DOCUMENTATION LAYOUT (Specific to this page)
+       1. SIDEBAR & LAYOUT
        ========================================================================== */
-    .ds-sidebar {
-      width: 280px;
-      height: 100vh;
-      position: fixed;
-      top: 0; left: 0;
-      background: var(--bg-surface);
-      border-right: 1px solid var(--border-default);
-      padding: var(--space-6) var(--space-4);
-      overflow-y: auto;
-      z-index: 100;
-    }
-
-    .ds-main {
-      flex: 1;
-      margin-left: 280px;
-      padding: var(--space-12) var(--space-16);
-      max-width: 1200px;
-    }
-
-    .ds-sidebar-logo {
-      font-size: 1.5rem;
-      margin-bottom: var(--space-8);
-      padding-bottom: var(--space-4);
-      border-bottom: 1px solid var(--border-subtle);
-    }
+    .ds-sidebar { width: 300px; height: 100vh; position: fixed; top: 0; left: 0; background: var(--bg-surface); border-right: 1px solid var(--border-default); padding: var(--space-6) var(--space-4); overflow-y: auto; z-index: 100; }
+    .ds-main { flex: 1; margin-left: 300px; padding: var(--space-12) var(--space-16); max-width: 1400px; }
+    
+    .ds-sidebar-logo { font-size: 1.5rem; margin-bottom: var(--space-8); padding-bottom: var(--space-4); border-bottom: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 0.5rem; }
+    .ds-version { font-size: 0.7rem; font-family: var(--font-mono); color: var(--text-tertiary); letter-spacing: 0.1em; }
 
     .ds-nav-group { margin-bottom: var(--space-6); }
-    .ds-nav-title {
-      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--text-tertiary); margin-bottom: var(--space-3); font-weight: 700;
-    }
-    .ds-nav-link {
-      display: block; padding: var(--space-2) var(--space-3); color: var(--text-secondary);
-      font-size: 0.95rem; border-radius: var(--radius-md); transition: all var(--transition-fast); margin-bottom: 2px;
-    }
+    .ds-nav-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--teal-600); margin-bottom: var(--space-3); font-weight: 700; }
+    .ds-nav-link { display: block; padding: var(--space-2) var(--space-3); color: var(--text-secondary); font-size: 0.9rem; border-radius: var(--radius-md); transition: all var(--transition-fast); margin-bottom: 2px; }
     .ds-nav-link:hover { background: var(--bg-surface-raised); color: var(--text-primary); }
 
     .ds-header { margin-bottom: var(--space-16); }
-    .ds-header h1 {
-      font-family: var(--font-display); font-size: 3.5rem; line-height: 1.1;
-      margin-bottom: var(--space-4); letter-spacing: -0.03em;
-    }
+    .ds-header h1 { font-family: var(--font-display); font-size: 4rem; line-height: 1.1; margin-bottom: var(--space-4); letter-spacing: -0.04em; }
     .ds-header p { font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; }
 
-    .ds-section { margin-bottom: var(--space-24); }
-    .ds-section-header {
-      border-bottom: 1px solid var(--border-default); padding-bottom: var(--space-4); margin-bottom: var(--space-8);
-    }
-    .ds-section-header h2 {
-      font-family: var(--font-display); font-size: 2rem; color: var(--text-primary); margin-bottom: var(--space-2);
-    }
+    .ds-section { margin-bottom: var(--space-24); scroll-margin-top: 4rem; }
+    .ds-section-header { border-bottom: 1px solid var(--border-default); padding-bottom: var(--space-4); margin-bottom: var(--space-8); }
+    .ds-section-header h2 { font-family: var(--font-display); font-size: 2.5rem; color: var(--text-primary); margin-bottom: var(--space-2); }
     .ds-section-header p { color: var(--text-secondary); font-size: 1.1rem; }
 
-    .ds-component-block {
-      background: var(--bg-surface); border: 1px solid var(--border-default);
-      border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-8); box-shadow: var(--shadow-sm);
-    }
-    .ds-component-title {
-      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;
-      color: var(--text-tertiary); margin-bottom: var(--space-6); font-weight: 700;
-    }
+    .ds-component-block { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-8); box-shadow: var(--shadow-sm); }
+    .ds-component-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); margin-bottom: var(--space-6); font-weight: 700; }
 
-    /* Grid Helpers */
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
@@ -230,105 +166,94 @@
     .flex-col { display: flex; flex-direction: column; gap: var(--space-4); }
 
     /* ==========================================================================
-       4. BRANDING TOKENS
+       2. BRAND BOOK (Manifesto, Voice, Misuse)
        ========================================================================== */
-    .brand-style {
-      font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em;
-      color: inherit; text-transform: lowercase; display: inline-block;
-    }
+    .manifesto-block { text-align: center; padding: var(--space-12) 0; }
+    .manifesto-text { font-family: var(--font-display); font-size: 2.5rem; line-height: 1.3; color: var(--text-primary); max-width: 900px; margin: 0 auto var(--space-6); }
+    .manifesto-highlight { color: var(--teal-500); font-style: italic; }
+
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+    .voice-card { background: var(--bg-surface-raised); padding: var(--space-6); border-radius: var(--radius-lg); border-left: 4px solid var(--teal-600); }
+    .voice-title { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: var(--space-2); }
+    .voice-desc { color: var(--text-secondary); font-size: 0.95rem; }
+
+    .dos-donts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+    .do-card { background: var(--status-success-bg); border: 1px solid var(--status-success-border); padding: var(--space-4); border-radius: var(--radius-lg); }
+    .dont-card { background: var(--status-error-bg); border: 1px solid var(--status-error-border); padding: var(--space-4); border-radius: var(--radius-lg); }
+    .do-title { color: var(--status-success-text); display: flex; align-items: center; gap: 0.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .dont-title { color: var(--status-error-text); display: flex; align-items: center; gap: 0.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+
+    .logo-clear-space { position: relative; display: inline-block; padding: 3rem; border: 1px dashed var(--teal-600); background: var(--bg-base); }
+    .logo-clear-space::before { content: 'X'; position: absolute; top: 1rem; left: 1rem; color: var(--teal-600); font-family: var(--font-mono); }
+    .logo-clear-space::after { content: 'X'; position: absolute; bottom: 1rem; right: 1rem; color: var(--teal-600); font-family: var(--font-mono); }
+
+    .logo-misuse { border: 1px solid var(--border-default); background: var(--bg-surface-raised); height: 150px; display: flex; align-items: center; justify-content: center; position: relative; border-radius: var(--radius-md); overflow: hidden; }
+    .logo-misuse::after { content: ''; position: absolute; inset: 0; background: rgba(239, 68, 68, 0.1); border: 2px solid var(--status-error-text); pointer-events: none; }
+    .logo-misuse-icon { position: absolute; top: 0.5rem; right: 0.5rem; color: var(--status-error-text); }
+
+    .brand-style { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; color: inherit; text-transform: lowercase; display: inline-block; }
     .brand-style span { color: var(--brand-accent); transition: color var(--transition-normal); }
 
     /* ==========================================================================
-       5. COMPONENT: BUTTONS
+       3. FOUNDATIONS (Grid, Iconography, Photography)
        ========================================================================== */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
-      font-family: var(--font-body); font-weight: 700; border-radius: var(--radius-md);
-      transition: all var(--transition-fast); text-decoration: none; white-space: nowrap;
-    }
+    .grid-demo { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; height: 100px; margin-bottom: 1rem; }
+    .grid-col { background: var(--teal-glow); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); }
+    
+    .icon-grid { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    .icon-box { width: 64px; height: 64px; background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--teal-500); transition: all 0.2s; }
+    .icon-box:hover { color: var(--text-primary); border-color: var(--teal-500); transform: scale(1.05); }
+
+    .photo-guideline { width: 100%; height: 200px; border-radius: var(--radius-lg); background-size: cover; background-position: center; border: 1px solid var(--border-default); position: relative; display: flex; align-items: flex-end; padding: var(--space-4); }
+    .photo-guideline.good { background-image: linear-gradient(to top, var(--bg-base), transparent), url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop'); border-color: var(--status-success-border); }
+    .photo-guideline.bad { background-image: linear-gradient(to top, var(--bg-base), transparent), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop'); filter: saturate(200%); border-color: var(--status-error-border); }
+
+    /* ==========================================================================
+       4. UI COMPONENTS (Buttons, Inputs, etc.)
+       ========================================================================== */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); font-family: var(--font-body); font-weight: 700; border-radius: var(--radius-md); transition: all var(--transition-fast); text-decoration: none; white-space: nowrap; padding: 0.75rem 1.5rem; font-size: 0.95rem; }
     .btn-sm { padding: 0.5rem 1rem; font-size: 0.85rem; }
     .btn-md { padding: 0.75rem 1.5rem; font-size: 0.95rem; }
-    .btn-lg { padding: 1rem 2rem; font-size: 1.1rem; border-radius: var(--radius-lg); }
-    .btn-icon { padding: 0.5rem; border-radius: var(--radius-md); }
+    .btn-lg { padding: 1rem 2.5rem; font-size: 1.125rem; border-radius: var(--radius-lg); }
+    .btn-icon { padding: 0.5rem; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; }
 
     .btn-primary { background: var(--teal-600); color: #FFFFFF; box-shadow: var(--shadow-sm); }
     .btn-primary:hover:not(:disabled) { background: var(--teal-500); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    
     .btn-secondary { background: var(--bg-surface-raised); color: var(--text-primary); border: 1px solid var(--border-default); }
     .btn-secondary:hover:not(:disabled) { background: var(--bg-surface-overlay); border-color: var(--teal-600); }
-
     .btn-ghost { background: transparent; color: var(--text-secondary); }
     .btn-ghost:hover:not(:disabled) { background: var(--bg-surface-raised); color: var(--text-primary); }
-
     .btn-danger { background: rgba(239, 68, 68, 0.1); color: var(--status-error-text); border: 1px solid var(--status-error-border); }
     .btn-danger:hover:not(:disabled) { background: var(--status-error-text); color: #FFF; }
-
     .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
 
-    .spinner {
-      width: 1em; height: 1em; border: 2px solid currentColor;
-      border-right-color: transparent; border-radius: 50%; animation: spin 0.75s linear infinite;
-    }
+    .spinner { width: 1em; height: 1em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 0.75s linear infinite; }
     @keyframes spin { 100% { transform: rotate(360deg); } }
 
-    /* ==========================================================================
-       6. COMPONENT: FORMS & INPUTS (SaaS Grade)
-       ========================================================================== */
+    /* Forms */
     .form-group { display: flex; flex-direction: column; gap: var(--space-2); width: 100%; }
     .form-label { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); }
-    .form-control {
-      width: 100%; background: var(--bg-base); border: 1px solid var(--border-default);
-      color: var(--text-primary); padding: 0.75rem 1rem; border-radius: var(--radius-md);
-      font-family: var(--font-body); font-size: 0.95rem; transition: all var(--transition-fast); outline: none;
-    }
+    .form-control { width: 100%; background: var(--bg-base); border: 1px solid var(--border-default); color: var(--text-primary); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-family: var(--font-body); font-size: 0.95rem; transition: all var(--transition-fast); outline: none; }
     .form-control::placeholder { color: var(--text-tertiary); }
     .form-control:hover:not(:disabled) { border-color: var(--border-strong); }
     .form-control:focus { border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15); background: var(--bg-surface); }
     .form-control:disabled { opacity: 0.6; cursor: not-allowed; background: var(--bg-surface-raised); }
     .form-control.has-error { border-color: var(--status-error-text); }
     .form-control.has-error:focus { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15); }
-
-    .form-hint { font-size: 0.8rem; color: var(--text-tertiary); }
-    .form-error-text { font-size: 0.8rem; color: var(--status-error-text); display: flex; align-items: center; gap: 0.25rem; }
-
-    /* Input Icon */
     .input-icon-wrapper { position: relative; display: flex; align-items: center; }
     .input-icon-wrapper i { position: absolute; left: 1rem; color: var(--text-tertiary); pointer-events: none; }
     .input-icon-wrapper .form-control { padding-left: 2.75rem; }
 
-    /* Checkbox & Radio */
-    .custom-check { display: flex; align-items: center; gap: var(--space-3); cursor: pointer; user-select: none; }
-    .custom-check input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
-    .checkmark {
-      height: 20px; width: 20px; background-color: var(--bg-base); border: 1px solid var(--border-default);
-      border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast);
-    }
-    .custom-check:hover input ~ .checkmark { border-color: var(--teal-500); }
-    .custom-check input:checked ~ .checkmark { background-color: var(--teal-600); border-color: var(--teal-600); }
-    .checkmark:after { content: ""; display: none; width: 5px; height: 10px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); margin-bottom: 2px; }
-    .custom-check input:checked ~ .checkmark:after { display: block; }
-
-    /* Toggle Switch */
+    /* Switches */
     .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
     .switch input { opacity: 0; width: 0; height: 0; }
-    .slider {
-      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
-      background-color: var(--bg-surface-raised); border: 1px solid var(--border-strong); transition: .3s; border-radius: 34px;
-    }
-    .slider:before {
-      position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px;
-      background-color: var(--text-secondary); transition: .3s; border-radius: 50%;
-    }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--bg-surface-raised); border: 1px solid var(--border-strong); transition: .3s; border-radius: 34px; }
+    .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px; background-color: var(--text-secondary); transition: .3s; border-radius: 50%; }
     .switch input:checked + .slider { background-color: var(--teal-600); border-color: var(--teal-600); }
     .switch input:checked + .slider:before { transform: translateX(20px); background-color: white; }
 
-    /* ==========================================================================
-       7. COMPONENT: BADGES & TAGS
-       ========================================================================== */
-    .badge {
-      display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;
-    }
+    /* Badges & Alerts */
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
     .badge-primary { background: var(--teal-glow); color: var(--teal-400); border: 1px solid var(--border-default); }
     .badge-secondary { background: var(--bg-surface-raised); color: var(--text-secondary); border: 1px solid var(--border-default); }
     .badge-success { background: var(--status-success-bg); color: var(--status-success-text); border: 1px solid var(--status-success-border); }
@@ -336,72 +261,42 @@
     .badge-error { background: var(--status-error-bg); color: var(--status-error-text); border: 1px solid var(--status-error-border); }
     body.light-mode .badge-primary { color: var(--teal-700); }
 
-    /* ==========================================================================
-       8. COMPONENT: ALERTS & FEEDBACK
-       ========================================================================== */
     .alert { display: flex; gap: var(--space-4); padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid transparent; align-items: flex-start; }
     .alert-icon { flex-shrink: 0; margin-top: 2px; }
     .alert-content h4 { font-size: 0.95rem; margin-bottom: 0.25rem; color: inherit; }
     .alert-content p { font-size: 0.85rem; opacity: 0.9; }
-
     .alert-info { background: var(--status-info-bg); border-color: var(--status-info-border); color: var(--status-info-text); }
     .alert-success { background: var(--status-success-bg); border-color: var(--status-success-border); color: var(--status-success-text); }
     .alert-warning { background: var(--status-warning-bg); border-color: var(--status-warning-border); color: var(--status-warning-text); }
     .alert-error { background: var(--status-error-bg); border-color: var(--status-error-border); color: var(--status-error-text); }
 
     /* ==========================================================================
-       9. SAAS PATTERNS: NAVIGATION & TABS
+       5. SAAS PATTERNS (Navigation, Overlays, Interactive)
        ========================================================================== */
-    /* Tabs */
     .ds-tabs { display: flex; border-bottom: 1px solid var(--border-default); gap: var(--space-6); margin-bottom: var(--space-6); }
     .ds-tab { padding: var(--space-3) 0; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; font-weight: 500; transition: all 0.2s; position: relative; top: 1px; }
     .ds-tab.active { color: var(--teal-500); border-bottom-color: var(--teal-500); }
     .ds-tab:hover:not(.active) { color: var(--text-primary); border-bottom-color: var(--border-strong); }
 
-    /* Breadcrumbs */
     .ds-breadcrumb { display: flex; align-items: center; gap: var(--space-2); color: var(--text-tertiary); font-size: 0.85rem; margin-bottom: var(--space-4); }
     .ds-breadcrumb a { color: var(--text-secondary); transition: color 0.2s; }
     .ds-breadcrumb a:hover { color: var(--text-primary); }
 
-    /* Pagination */
     .ds-pagination { display: flex; align-items: center; gap: var(--space-2); }
     .ds-page-item { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); border: 1px solid var(--border-default); color: var(--text-secondary); font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
     .ds-page-item:hover { background: var(--bg-surface-raised); color: var(--text-primary); }
     .ds-page-item.active { background: var(--teal-600); border-color: var(--teal-600); color: white; }
 
-    /* ==========================================================================
-       10. SAAS PATTERNS: DATA DISPLAY & KPI
-       ========================================================================== */
-    .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-surface-raised); border: 1px solid var(--border-default); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--teal-500); font-size: 0.9rem; position: relative; }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-    .avatar-indicator { position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background: var(--status-success-text); border: 2px solid var(--bg-surface); border-radius: 50%; }
+    .mock-overlay-container { position: relative; width: 100%; height: 500px; background: var(--bg-base); border-radius: var(--radius-xl); overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-default); background-image: radial-gradient(var(--border-strong) 1px, transparent 1px); background-size: 20px 20px; }
+    .mock-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+    .mock-modal { position: relative; width: 450px; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); z-index: 10; display: flex; flex-direction: column; overflow: hidden; }
+    .mock-modal-header { padding: var(--space-4) var(--space-6); border-bottom: 1px solid var(--border-default); display: flex; justify-content: space-between; align-items: center; }
+    .mock-modal-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-primary); }
+    .mock-modal-body { padding: var(--space-6); }
+    .mock-modal-footer { padding: var(--space-4) var(--space-6); border-top: 1px solid var(--border-default); background: var(--bg-surface-raised); display: flex; justify-content: flex-end; gap: var(--space-3); }
+    
+    .mock-slideover { position: absolute; top: 0; right: 0; bottom: 0; width: 380px; background: var(--bg-surface); border-left: 1px solid var(--border-strong); box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 10; display: flex; flex-direction: column; }
 
-    .kpi-card { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); box-shadow: var(--shadow-sm); transition: transform 0.2s; }
-    .kpi-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
-    .kpi-title { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
-    .kpi-value { font-family: var(--font-mono); font-size: 2rem; font-weight: 500; color: var(--text-primary); }
-    .kpi-trend { font-size: 0.85rem; display: flex; align-items: center; gap: 0.25rem; }
-    .kpi-trend.positive { color: var(--status-success-text); }
-    .kpi-trend.negative { color: var(--status-error-text); }
-
-    .table-container { width: 100%; overflow-x: auto; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); }
-    .ds-table { width: 100%; border-collapse: collapse; text-align: left; }
-    .ds-table th { padding: var(--space-4) var(--space-6); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); border-bottom: 1px solid var(--border-strong); background: var(--bg-surface-raised); }
-    .ds-table td { padding: var(--space-4) var(--space-6); font-size: 0.95rem; border-bottom: 1px solid var(--border-default); color: var(--text-secondary); vertical-align: middle; }
-    .ds-table tr:last-child td { border-bottom: none; }
-    .ds-table tr:hover td { background: var(--bg-base); color: var(--text-primary); }
-    .ds-table .primary-cell { color: var(--text-primary); font-weight: 500; }
-    .ds-table .mono-cell { font-family: var(--font-mono); font-size: 0.85rem; }
-
-    /* ==========================================================================
-       11. SAAS PATTERNS: INTERACTIVE & OVERLAYS
-       ========================================================================== */
-    /* Upload Zone */
-    .upload-zone { border: 2px dashed var(--border-strong); border-radius: var(--radius-lg); padding: var(--space-8); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-4); background: var(--bg-surface-raised); transition: all 0.2s; cursor: pointer; text-align: center; }
-    .upload-zone:hover { border-color: var(--teal-500); background: var(--status-info-bg); }
-    .upload-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-surface); display: flex; align-items: center; justify-content: center; color: var(--teal-500); box-shadow: var(--shadow-sm); }
-
-    /* Progress Stepper */
     .stepper { display: flex; align-items: center; justify-content: space-between; position: relative; margin: var(--space-8) 0; }
     .stepper::before { content: ''; position: absolute; top: 16px; left: 0; right: 0; height: 2px; background: var(--border-default); z-index: 1; }
     .stepper-progress { content: ''; position: absolute; top: 16px; left: 0; width: 50%; height: 2px; background: var(--teal-500); z-index: 1; transition: width 0.3s; }
@@ -412,24 +307,15 @@
     .step-label { font-size: 0.75rem; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
     .step.active .step-label { color: var(--teal-500); }
 
-    /* Empty State */
+    .upload-zone { border: 2px dashed var(--border-strong); border-radius: var(--radius-lg); padding: var(--space-8); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-4); background: var(--bg-surface-raised); transition: all 0.2s; cursor: pointer; text-align: center; }
+    .upload-zone:hover { border-color: var(--teal-500); background: var(--status-info-bg); }
+    .upload-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-surface); display: flex; align-items: center; justify-content: center; color: var(--teal-500); box-shadow: var(--shadow-sm); }
+
     .empty-state { display: flex; flex-direction: column; align-items: center; text-align: center; padding: var(--space-12) var(--space-6); background: var(--bg-surface-raised); border-radius: var(--radius-xl); border: 1px dashed var(--border-strong); }
     .empty-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--bg-surface); display: flex; align-items: center; justify-content: center; color: var(--text-tertiary); margin-bottom: var(--space-4); box-shadow: var(--shadow-sm); }
 
-    /* Mock Modal Container (Static for display) */
-    .mock-overlay-container { position: relative; width: 100%; height: 500px; background: var(--bg-base); border-radius: var(--radius-xl); overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-default); background-image: radial-gradient(var(--border-strong) 1px, transparent 1px); background-size: 20px 20px; }
-    .mock-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
-    .mock-modal { position: relative; width: 450px; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); z-index: 10; display: flex; flex-direction: column; overflow: hidden; }
-    .mock-modal-header { padding: var(--space-4) var(--space-6); border-bottom: 1px solid var(--border-default); display: flex; justify-content: space-between; align-items: center; }
-    .mock-modal-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-primary); }
-    .mock-modal-body { padding: var(--space-6); }
-    .mock-modal-footer { padding: var(--space-4) var(--space-6); border-top: 1px solid var(--border-default); background: var(--bg-surface-raised); display: flex; justify-content: flex-end; gap: var(--space-3); }
-
-    /* Mock Slideover */
-    .mock-slideover { position: absolute; top: 0; right: 0; bottom: 0; width: 380px; background: var(--bg-surface); border-left: 1px solid var(--border-strong); box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 10; display: flex; flex-direction: column; }
-
     /* ==========================================================================
-       12. THE CONSULTOR.IO EXPERIENCE (Video UI Preview)
+       6. EXPERIENCES (Video, Data Viz, Emails)
        ========================================================================== */
     .video-ui-frame { width: 100%; height: 600px; background: #000; border-radius: var(--radius-xl); overflow: hidden; position: relative; display: flex; border: 1px solid var(--border-strong); box-shadow: var(--shadow-lg); }
     .video-main-area { flex: 1; position: relative; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, #1a2421 0%, #080C0A 100%); }
@@ -439,7 +325,6 @@
     .control-btn:hover { background: var(--bg-surface-overlay); transform: scale(1.05); }
     .control-btn.active { background: var(--teal-600); border-color: var(--teal-500); }
     .control-btn.danger { background: var(--status-error-text); color: white; border: none; }
-    .control-btn.danger:hover { background: #b91c1c; }
     
     .video-sidebar { width: 340px; background: var(--bg-surface); border-left: 1px solid var(--border-default); display: flex; flex-direction: column; z-index: 5; }
     .video-sidebar-header { padding: var(--space-4); border-bottom: 1px solid var(--border-default); display: flex; align-items: center; justify-content: space-between; }
@@ -447,22 +332,27 @@
     .video-sidebar-body { flex: 1; padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); overflow-y: auto; }
     .video-sidebar-footer { padding: var(--space-4); border-top: 1px solid var(--border-default); background: var(--bg-surface-raised); }
 
-    /* ==========================================================================
-       13. UTILITIES
-       ========================================================================== */
+    /* Data Viz Mock */
+    .chart-container { height: 250px; display: flex; align-items: flex-end; gap: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid var(--border-default); }
+    .chart-bar { flex: 1; background: var(--teal-glow); border: 1px solid var(--border-strong); border-radius: var(--radius-sm) var(--radius-sm) 0 0; transition: height 1s ease-out; position: relative; }
+    .chart-bar:hover { background: var(--teal-600); border-color: var(--teal-400); }
+    .chart-label { position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-tertiary); }
+
+    /* Email Template Mock */
+    .email-mock { background: var(--bg-base); padding: var(--space-12); display: flex; justify-content: center; border-radius: var(--radius-xl); border: 1px solid var(--border-default); }
+    .email-body { background: #FFFFFF; width: 100%; max-width: 500px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .email-header { background: var(--charcoal); padding: var(--space-6); text-align: center; color: white; border-bottom: 4px solid var(--teal-600); }
+    .email-content { padding: var(--space-8); color: #111714; }
+
+    /* Utilities */
     .color-swatch { height: 100px; border-radius: var(--radius-lg) var(--radius-lg) 0 0; width: 100%; }
     .swatch-box { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
     .swatch-details { padding: var(--space-4); }
     .swatch-details h4 { font-size: 0.9rem; margin-bottom: 0.25rem; }
     .swatch-details p { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-tertiary); }
 
-    .theme-toggle-ds {
-      position: fixed; bottom: var(--space-6); right: var(--space-6); background: var(--bg-surface-overlay); border: 1px solid var(--border-strong); padding: var(--space-3) var(--space-4); border-radius: var(--radius-full); color: var(--teal-500); font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: var(--space-2); z-index: 1000; box-shadow: var(--shadow-lg); transition: all var(--transition-fast);
-    }
+    .theme-toggle-ds { position: fixed; bottom: var(--space-6); right: var(--space-6); background: var(--bg-surface-overlay); border: 1px solid var(--border-strong); padding: var(--space-3) var(--space-4); border-radius: var(--radius-full); color: var(--teal-500); font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: var(--space-2); z-index: 1000; box-shadow: var(--shadow-lg); transition: all var(--transition-fast); }
     .theme-toggle-ds:hover { transform: translateY(-2px); border-color: var(--teal-500); }
-
-    .skeleton { background: linear-gradient(90deg, var(--bg-surface-raised) 25%, var(--bg-surface-overlay) 50%, var(--bg-surface-raised) 75%); background-size: 200% 100%; animation: skeletonLoading 1.5s infinite; border-radius: var(--radius-sm); }
-    @keyframes skeletonLoading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
   </style>
 </head>
 <body>
@@ -477,590 +367,398 @@
   <aside class="ds-sidebar">
     <div class="ds-sidebar-logo">
       <span class="brand-style">consultor<span>.io</span></span>
+      <span class="ds-version">BRANDBOOK v2.0</span>
     </div>
     
     <div class="ds-nav-group">
-      <div class="ds-nav-title">Foundation</div>
-      <a href="#brand" class="ds-nav-link">Brand Philosophy</a>
-      <a href="#colors" class="ds-nav-link">Color System</a>
-      <a href="#typography" class="ds-nav-link">Typography</a>
+      <div class="ds-nav-title">01. A Marca</div>
+      <a href="#manifesto" class="ds-nav-link">Manifesto & Essência</a>
+      <a href="#voice" class="ds-nav-link">Voz & Tom</a>
+      <a href="#logo" class="ds-nav-link">Uso da Logo</a>
     </div>
 
     <div class="ds-nav-group">
-      <div class="ds-nav-title">UI Components</div>
+      <div class="ds-nav-title">02. Identidade Visual</div>
+      <a href="#colors" class="ds-nav-link">Paleta de Cores</a>
+      <a href="#typography" class="ds-nav-link">Tipografia</a>
+      <a href="#iconography" class="ds-nav-link">Iconografia</a>
+      <a href="#photography" class="ds-nav-link">Direção de Fotografia</a>
+    </div>
+
+    <div class="ds-nav-group">
+      <div class="ds-nav-title">03. Fundações</div>
+      <a href="#grid" class="ds-nav-link">Grid & Espaçamento</a>
+      <a href="#motion" class="ds-nav-link">Princípios de Motion</a>
+    </div>
+
+    <div class="ds-nav-group">
+      <div class="ds-nav-title">04. UI Components</div>
       <a href="#buttons" class="ds-nav-link">Buttons & Actions</a>
       <a href="#forms" class="ds-nav-link">Forms & Inputs</a>
-      <a href="#badges" class="ds-nav-link">Badges & Feedback</a>
+      <a href="#badges" class="ds-nav-link">Badges & Alerts</a>
     </div>
 
     <div class="ds-nav-group">
-      <div class="ds-nav-title">SaaS Patterns</div>
-      <a href="#navigation" class="ds-nav-link">Navigation (Tabs)</a>
-      <a href="#data" class="ds-nav-link">Data Display (Tables)</a>
-      <a href="#kpi" class="ds-nav-link">Dashboards & KPIs</a>
+      <div class="ds-nav-title">05. Padrões SaaS</div>
+      <a href="#navigation" class="ds-nav-link">Navigation</a>
       <a href="#overlays" class="ds-nav-link">Modals & Overlays</a>
-      <a href="#interactive" class="ds-nav-link">Advanced Interactive</a>
+      <a href="#interactive" class="ds-nav-link">Interactive States</a>
     </div>
 
     <div class="ds-nav-group">
-      <div class="ds-nav-title">Experience</div>
-      <a href="#video-ui" class="ds-nav-link">Video Room UI (Mesa)</a>
+      <div class="ds-nav-title">06. Experiências</div>
+      <a href="#video-ui" class="ds-nav-link">Mesa de Controle (Vídeo)</a>
+      <a href="#data-viz" class="ds-nav-link">Data Visualization</a>
+      <a href="#email" class="ds-nav-link">E-mail Transacional</a>
     </div>
   </aside>
 
   <!-- Main Content -->
   <main class="ds-main">
     
-    <!-- HEADER -->
     <header class="ds-header">
-      <h1>Design System Master</h1>
-      <p>A "Bíblia Visual" oficial do ecossistema <span class="brand-style">consultor<span>.io</span></span>. Da Landing Page de alta conversão ao ambiente imersivo do SaaS clínico.</p>
+      <h1>The Brandbook.</h1>
+      <p>O manual de identidade definitivo do <span class="brand-style">consultor<span>.io</span></span>. Da filosofia de mercado à implementação do último pixel do sistema SaaS.</p>
     </header>
 
-    <!-- 1. BRAND PHILOSOPHY -->
-    <section id="brand" class="ds-section">
+    <!-- ==========================================================================
+         01. A MARCA
+         ========================================================================== -->
+    <section id="manifesto" class="ds-section">
       <div class="ds-section-header">
-        <h2>Brand Philosophy & Context</h2>
-        <p>Por que tomamos essas decisões de design.</p>
-      </div>
-      <div class="ds-component-block" style="border-left: 4px solid var(--teal-600);">
-        <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1rem;">Architectural Editorial</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 800px;">
-          O <span class="brand-style">consultor<span>.io</span></span> não é apenas uma ferramenta de vídeo, é um <strong>Mecanismo de Percepção de Valor</strong>. Nosso design recusa o padrão genérico dos apps SaaS convencionais.
-        </p>
-        <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
-          <li><strong>Clínico, não Estéril:</strong> O uso do tom Charcoal profundo com o Teal traz sofisticação e calma. Evitamos o branco hospitalar excessivo na versão principal.</li>
-          <li><strong>A Comoditização Termina na Interface:</strong> Sombras ricas, bordas translúcidas (Glassmorphism) e tipografia serifada (Fraunces) comunicam instantaneamente que o profissional que usa esta plataforma cobra alto.</li>
-          <li><strong>Atenção Focada:</strong> O paciente e os dados do paciente devem ser o centro. A UI existe para ancorar a autoridade, não para roubar a cena.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 2. COLOR SYSTEM -->
-    <section id="colors" class="ds-section">
-      <div class="ds-section-header">
-        <h2>Color System</h2>
-        <p>Tokens semânticos que se adaptam automaticamente ao tema.</p>
+        <h2>01. Manifesto & Essência</h2>
       </div>
       
+      <div class="manifesto-block">
+        <p class="manifesto-text">
+          O mercado treinou os pacientes a pagarem pouco porque a maioria dos profissionais atende em <span class="manifesto-highlight">ferramentas genéricas</span>.
+        </p>
+        <p class="manifesto-text" style="font-size: 1.5rem; color: var(--text-secondary);">
+          O Consultor.io existe para destruir a comoditização. Nós somos a arquitetura digital para profissionais que exigem ser percebidos como Elite. Não somos uma sala de vídeo; somos uma <strong style="color: var(--teal-500);">Mesa de Controle Clínica</strong>.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-top: 4rem;">
+        <div class="ds-component-block">
+          <i data-lucide="shield" style="color: var(--teal-500); width: 32px; height: 32px; margin-bottom: 1rem;"></i>
+          <h3 style="font-family: var(--font-display); margin-bottom: 0.5rem;">Autoridade</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Design com peso. Tipografia serifada. Sombras profundas. O ambiente comanda respeito instantâneo.</p>
+        </div>
+        <div class="ds-component-block">
+          <i data-lucide="microscope" style="color: var(--teal-500); width: 32px; height: 32px; margin-bottom: 1rem;"></i>
+          <h3 style="font-family: var(--font-display); margin-bottom: 0.5rem;">Precisão Clínica</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Dados não mentem. Usamos fontes monoespaçadas e layouts limpos para que a informação brilhe.</p>
+        </div>
+        <div class="ds-component-block">
+          <i data-lucide="gem" style="color: var(--teal-500); width: 32px; height: 32px; margin-bottom: 1rem;"></i>
+          <h3 style="font-family: var(--font-display); margin-bottom: 0.5rem;">Elegância Silenciosa</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Não gritamos com cores primárias. O luxo está no espaço em branco, no contraste e nos detalhes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Voz & Tom (Copywriting)</h2>
+        <p>Como a plataforma "fala" com o profissional e com o paciente.</p>
+      </div>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-title">Assertivo, não arrogante.</div>
+          <p class="voice-desc">Nós guiamos. O texto deve ser direto e confiante. Em vez de "Por favor, clique aqui se quiser entrar", use "Acessar Consultório".</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-title">Clínico, mas Humano.</div>
+          <p class="voice-desc">Tratamos dados com seriedade, mas não somos robôs. Em mensagens de erro, evite "Erro 500". Use "Sua lousa não pôde ser salva. Tentando novamente..."</p>
+        </div>
+      </div>
+      
+      <div class="dos-donts-grid" style="margin-top: 2rem;">
+        <div class="do-card">
+          <div class="do-title"><i data-lucide="check"></i> FAÇA</div>
+          <p style="color: var(--status-success-text); font-size: 0.9rem;">"Paciente aguardando na Ante-Sala."</p>
+          <p style="color: var(--status-success-text); font-size: 0.9rem;">"Prontuário salvo com sucesso."</p>
+        </div>
+        <div class="dont-card">
+          <div class="dont-title"><i data-lucide="x"></i> NÃO FAÇA</div>
+          <p style="color: var(--status-error-text); font-size: 0.9rem;">"Ei doc, seu cliente chegou na call!" (Muito informal)</p>
+          <p style="color: var(--status-error-text); font-size: 0.9rem;">"Ocorreu um erro inesperado no fetch do payload." (Técnico demais)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="logo" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Uso da Marca</h2>
+        <p>A proteção da nossa identidade visual principal.</p>
+      </div>
+      <div class="ds-component-block">
+        <div class="grid-2">
+          <div>
+            <h3 class="ds-component-title">Clear Space (Área de Respiro)</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">O logo deve sempre ser protegido por uma área de respiro equivalente à altura da letra "c".</p>
+            <div class="logo-clear-space">
+              <span class="brand-style" style="font-size: 2rem;">consultor<span>.io</span></span>
+            </div>
+          </div>
+          <div>
+            <h3 class="ds-component-title">Misuse (O que nunca fazer)</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="logo-misuse">
+                <i data-lucide="x-circle" class="logo-misuse-icon"></i>
+                <span class="brand-style" style="font-size: 2rem; color: #DC2626;">consultor<span style="color: inherit;">.io</span></span>
+              </div>
+              <div class="logo-misuse">
+                <i data-lucide="x-circle" class="logo-misuse-icon"></i>
+                <span class="brand-style" style="font-size: 2rem; transform: scaleY(1.5);">consultor<span>.io</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         02. IDENTIDADE VISUAL
+         ========================================================================== -->
+    <section id="colors" class="ds-section">
+      <div class="ds-section-header">
+        <h2>02. Sistema de Cores</h2>
+        <p>Tokens semânticos mapeados para Light/Dark mode.</p>
+      </div>
       <h3 class="ds-component-title">Primary Accent (Teal)</h3>
       <div class="grid-4" style="margin-bottom: 3rem;">
-        <div class="swatch-box">
-          <div class="color-swatch" style="background: var(--teal-400);"></div>
-          <div class="swatch-details"><h4>Teal 400</h4><p>Hover States</p></div>
-        </div>
-        <div class="swatch-box">
-          <div class="color-swatch" style="background: var(--teal-500);"></div>
-          <div class="swatch-details"><h4>Teal 500</h4><p>Focus Rings</p></div>
-        </div>
-        <div class="swatch-box">
-          <div class="color-swatch" style="background: var(--teal-600);"></div>
-          <div class="swatch-details"><h4>Teal 600 (Core)</h4><p>Primary Actions</p></div>
-        </div>
-        <div class="swatch-box">
-          <div class="color-swatch" style="background: var(--teal-800);"></div>
-          <div class="swatch-details"><h4>Teal 800</h4><p>Deep Accents</p></div>
-        </div>
+        <div class="swatch-box"><div class="color-swatch" style="background: var(--teal-400);"></div><div class="swatch-details"><h4>Teal 400</h4><p>Hover States</p></div></div>
+        <div class="swatch-box"><div class="color-swatch" style="background: var(--teal-500);"></div><div class="swatch-details"><h4>Teal 500</h4><p>Focus Rings</p></div></div>
+        <div class="swatch-box"><div class="color-swatch" style="background: var(--teal-600);"></div><div class="swatch-details"><h4>Teal 600 (Core)</h4><p>Primary Actions</p></div></div>
+        <div class="swatch-box"><div class="color-swatch" style="background: var(--teal-800);"></div><div class="swatch-details"><h4>Teal 800</h4><p>Deep Accents</p></div></div>
       </div>
-
       <h3 class="ds-component-title">Surfaces & Backgrounds (Contextual)</h3>
       <div class="grid-4" style="margin-bottom: 3rem;">
-        <div class="swatch-box">
-          <div class="color-swatch" style="background: var(--bg-base); border-bottom: 1px solid var(--border-default);"></div>
-          <div class="swatch-details"><h4>Base</h4><p>App Frame Canvas</p></div>
-        </div>
-        <div class="swatch-box">
-          <div class="color-swatch" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-default);"></div>
-          <div class="swatch-details"><h4>Surface</h4><p>Cards & Panels</p></div>
-        </div>
-        <div class="swatch-box">
-          <div class="color-swatch" style="background: var(--bg-surface-raised); border-bottom: 1px solid var(--border-default);"></div>
-          <div class="swatch-details"><h4>Raised Surface</h4><p>Hover / Nested</p></div>
-        </div>
-        <div class="swatch-box">
-          <div class="color-swatch" style="background: var(--border-default); border-bottom: 1px solid var(--border-default);"></div>
-          <div class="swatch-details"><h4>Borders</h4><p>Dividers</p></div>
-        </div>
+        <div class="swatch-box"><div class="color-swatch" style="background: var(--bg-base); border-bottom: 1px solid var(--border-default);"></div><div class="swatch-details"><h4>Base</h4><p>App Frame Canvas</p></div></div>
+        <div class="swatch-box"><div class="color-swatch" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-default);"></div><div class="swatch-details"><h4>Surface</h4><p>Cards & Panels</p></div></div>
+        <div class="swatch-box"><div class="color-swatch" style="background: var(--bg-surface-raised); border-bottom: 1px solid var(--border-default);"></div><div class="swatch-details"><h4>Raised Surface</h4><p>Hover / Nested</p></div></div>
+        <div class="swatch-box"><div class="color-swatch" style="background: var(--border-default); border-bottom: 1px solid var(--border-default);"></div><div class="swatch-details"><h4>Borders</h4><p>Dividers</p></div></div>
       </div>
     </section>
 
-    <!-- 3. TYPOGRAPHY -->
     <section id="typography" class="ds-section">
       <div class="ds-section-header">
-        <h2>Typography</h2>
-        <p>A combinação de Fraunces (Autoridade), DM Sans (Leitura) e JetBrains Mono (Precisão Clínica).</p>
+        <h2>Tipografia Mista</h2>
+        <p>A tríade tipográfica: Fraunces, DM Sans e JetBrains Mono.</p>
       </div>
       <div class="ds-component-block">
         <div style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 2rem;">
-          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Display (Fraunces)</div>
+          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Display (Fraunces) - Autoridade</div>
           <h1 style="font-family: var(--font-display); font-size: 3rem; line-height: 1.1; margin-bottom: 1rem;">O Peso da Autoridade Clínica.</h1>
-          <h2 style="font-family: var(--font-display); font-size: 2rem; line-height: 1.2;">Seções Principais e Argumentos de Venda.</h2>
         </div>
-        
         <div style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 2rem;">
-          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Body (DM Sans)</div>
-          <p style="font-size: 1.1rem; margin-bottom: 1rem; max-width: 800px;">Textos descritivos, parágrafos longos e componentes de interface padrão. A legibilidade é prioridade absoluta para não cansar a vista do profissional durante horas de atendimento.</p>
-          <p style="font-size: 0.85rem; color: var(--text-secondary);">Small text para legendas, hints de formulário e metadados.</p>
+          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Body (DM Sans) - Fluidez</div>
+          <p style="font-size: 1.1rem; max-width: 800px;">Textos descritivos, parágrafos longos e componentes de interface padrão. A legibilidade é prioridade absoluta.</p>
         </div>
-
         <div>
-          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Monospace (JetBrains Mono)</div>
-          <p style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--teal-400);">KCAL: 2.450 | PROT: 180g | CARBO: 220g</p>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">Usado exclusivamente para dados clínicos numéricos, painéis de metabolismo e IDs de paciente.</p>
+          <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 0.5rem; text-transform: uppercase;">Monospace (JetBrains Mono) - Precisão</div>
+          <p style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--teal-400);">KCAL: 2.450 | PROT: 180g | ID: PAC-4421</p>
         </div>
       </div>
     </section>
 
-    <!-- 4. BUTTONS & ACTIONS -->
-    <section id="buttons" class="ds-section">
+    <section id="iconography" class="ds-section">
       <div class="ds-section-header">
-        <h2>Buttons & Actions</h2>
-        <p>Elementos interativos principais.</p>
+        <h2>Iconografia</h2>
+        <p>Diretrizes para uso da biblioteca Lucide.</p>
       </div>
       <div class="ds-component-block">
-        
-        <h3 class="ds-component-title">Primary & Secondary</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Usamos ícones em outline (stroke-width: 2px) para manter a leveza. Os cantos são levemente arredondados, harmonizando com a fonte DM Sans.</p>
+        <div class="icon-grid">
+          <div class="icon-box"><i data-lucide="video"></i></div>
+          <div class="icon-box"><i data-lucide="mic"></i></div>
+          <div class="icon-box"><i data-lucide="monitor-up"></i></div>
+          <div class="icon-box"><i data-lucide="user"></i></div>
+          <div class="icon-box"><i data-lucide="file-text"></i></div>
+          <div class="icon-box"><i data-lucide="activity"></i></div>
+          <div class="icon-box"><i data-lucide="settings"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photography" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Direção de Fotografia</h2>
+        <p>A estética visual das imagens usadas no site e marketing.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="photo-guideline good">
+            <h4 style="color: white; font-family: var(--font-display);">CORRETO</h4>
+          </div>
+          <p style="color: var(--status-success-text); font-size: 0.85rem; margin-top: 0.5rem;"><i data-lucide="check" style="width: 14px; height: 14px;"></i> Contraste alto, luz direcional, tom sóbrio.</p>
+        </div>
+        <div>
+          <div class="photo-guideline bad">
+            <h4 style="color: white; font-family: var(--font-display);">INCORRETO</h4>
+          </div>
+          <p style="color: var(--status-error-text); font-size: 0.85rem; margin-top: 0.5rem;"><i data-lucide="x" style="width: 14px; height: 14px;"></i> Saturação extrema, luz estourada, stock genérico.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03. FUNDAÇÕES
+         ========================================================================== -->
+    <section id="grid" class="ds-section">
+      <div class="ds-section-header">
+        <h2>03. Grid & Espaçamento</h2>
+        <p>O sistema matemático por trás da interface.</p>
+      </div>
+      <div class="ds-component-block">
+        <h3 class="ds-component-title">Sistema de 8pt</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Todo espaçamento e dimensão (paddings, margins, alturas) deve ser múltiplo de 8px (0.5rem).</p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-tertiary);">
+          <div style="display: flex; align-items: center; gap: 1rem;"><div style="width: 8px; height: 8px; background: var(--teal-500);"></div> space-2 (8px) - Gap interno de botão</div>
+          <div style="display: flex; align-items: center; gap: 1rem;"><div style="width: 16px; height: 16px; background: var(--teal-500);"></div> space-4 (16px) - Padding de Input</div>
+          <div style="display: flex; align-items: center; gap: 1rem;"><div style="width: 24px; height: 24px; background: var(--teal-500);"></div> space-6 (24px) - Gap entre Cards</div>
+          <div style="display: flex; align-items: center; gap: 1rem;"><div style="width: 32px; height: 32px; background: var(--teal-500);"></div> space-8 (32px) - Padding interno de Card</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motion" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Princípios de Motion</h2>
+      </div>
+      <div class="ds-component-block" style="display: flex; gap: 2rem; align-items: center;">
+        <div style="width: 100px; height: 100px; background: var(--teal-600); border-radius: var(--radius-lg); transition: transform var(--transition-slow); cursor: pointer;" onmouseover="this.style.transform='translateX(50px)'" onmouseout="this.style.transform='translateX(0)'"></div>
+        <div>
+          <h3 style="font-family: var(--font-display); margin-bottom: 0.5rem;">Movimento Focado</h3>
+          <p style="color: var(--text-secondary);">Hover no quadrado ao lado. A transição é suave e previsível `cubic-bezier(0.4, 0, 0.2, 1)`. Evitamos "bounces" excessivos. O sistema é ágil, não brincalhão.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04. UI COMPONENTS (Condensed from previous)
+         ========================================================================== -->
+    <section id="buttons" class="ds-section">
+      <div class="ds-section-header">
+        <h2>04. UI Components</h2>
+      </div>
+      <div class="ds-component-block">
+        <h3 class="ds-component-title">Variants</h3>
         <div class="flex-row" style="margin-bottom: 3rem;">
           <button class="btn btn-md btn-primary">Salvar Prontuário</button>
           <button class="btn btn-md btn-secondary">Cancelar</button>
           <button class="btn btn-md btn-ghost">Editar Dados</button>
-          <button class="btn btn-md btn-danger">Excluir Paciente</button>
+          <button class="btn btn-md btn-danger">Excluir</button>
         </div>
 
-        <h3 class="ds-component-title">Sizes & States</h3>
-        <div class="flex-row" style="margin-bottom: 3rem;">
-          <button class="btn btn-sm btn-primary">Small Action</button>
-          <button class="btn btn-md btn-primary">Medium Action</button>
-          <button class="btn btn-lg btn-primary">Large Action (CTA)</button>
-        </div>
+        <h3 class="ds-component-title">Sizes</h3>
         <div class="flex-row">
-          <button class="btn btn-md btn-primary" disabled>Estado Disabled</button>
-          <button class="btn btn-md btn-primary">
-            <div class="spinner"></div> Processando...
-          </button>
-          <button class="btn btn-icon btn-secondary">
-            <i data-lucide="settings" style="width: 18px; height: 18px;"></i>
-          </button>
+          <button class="btn btn-sm btn-primary">Botão Small</button>
+          <button class="btn btn-md btn-primary">Botão Medium</button>
+          <button class="btn btn-lg btn-primary">Botão Large (CTA)</button>
         </div>
-
       </div>
     </section>
 
-    <!-- 5. FORMS & INPUTS -->
     <section id="forms" class="ds-section">
-      <div class="ds-section-header">
-        <h2>Forms & Inputs</h2>
-        <p>Formulários desenhados para alta densidade de dados SaaS.</p>
-      </div>
       <div class="ds-component-block">
-        
+        <h3 class="ds-component-title">Forms & Inputs</h3>
         <div class="grid-2">
-          <!-- Standard Input -->
-          <div class="form-group">
-            <label class="form-label">Nome do Paciente</label>
-            <input type="text" class="form-control" placeholder="Ex: João da Silva">
-          </div>
-
-          <!-- Icon Input -->
-          <div class="form-group">
-            <label class="form-label">Buscar Paciente</label>
-            <div class="input-icon-wrapper">
-              <i data-lucide="search" style="width: 18px; height: 18px;"></i>
-              <input type="text" class="form-control" placeholder="CPF ou Nome">
-            </div>
-          </div>
-
-          <!-- Disabled Input -->
-          <div class="form-group">
-            <label class="form-label">ID do Sistema (Somente Leitura)</label>
-            <input type="text" class="form-control" value="PAC-84729-BR" disabled>
-          </div>
-
-          <!-- Error Input -->
-          <div class="form-group">
-            <label class="form-label">Email de Contato</label>
-            <input type="email" class="form-control has-error" value="email_invalido.com">
-            <span class="form-error-text"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Formato de email inválido</span>
-          </div>
-
-          <!-- Textarea -->
-          <div class="form-group" style="grid-column: span 2;">
-            <label class="form-label">Anotações Clínicas (Lousa)</label>
-            <textarea class="form-control" rows="4" placeholder="Paciente relatou fadiga após o treino..."></textarea>
-            <span class="form-hint">Estas notas são privadas e não aparecem na tela do paciente.</span>
-          </div>
+          <div class="form-group"><label class="form-label">Default Input</label><input type="text" class="form-control" placeholder="Texto"></div>
+          <div class="form-group"><label class="form-label">Error State</label><input type="text" class="form-control has-error" value="Invalido"><span class="form-error-text">Erro encontrado</span></div>
         </div>
-
-        <hr style="border: 0; border-top: 1px solid var(--border-default); margin: 3rem 0;">
-
-        <h3 class="ds-component-title">Switches & Toggles</h3>
-        <div class="flex-row" style="gap: 3rem;">
-          
-          <label class="custom-check">
-            <input type="checkbox" checked>
-            <span class="checkmark"></span>
-            <span class="form-label" style="margin: 0; color: var(--text-primary);">Enviar Resumo Automático</span>
-          </label>
-
-          <label class="custom-check">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-            <span class="form-label" style="margin: 0; color: var(--text-primary);">Permitir Agendamento</span>
-          </label>
-
-          <div style="display: flex; align-items: center; gap: 1rem;">
-            <span class="form-label" style="margin: 0;">Gravar Consulta em Nuvem</span>
-            <label class="switch">
-              <input type="checkbox" checked>
-              <span class="slider"></span>
-            </label>
-          </div>
-
+        <div class="flex-row" style="margin-top: 2rem; gap: 3rem;">
+          <label class="custom-check"><input type="checkbox" checked><span class="checkmark"></span><span class="form-label" style="margin:0;">Checkbox Ativo</span></label>
+          <div style="display: flex; align-items: center; gap: 1rem;"><span class="form-label" style="margin:0;">Toggle Ativo</span><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
         </div>
-
       </div>
     </section>
 
-    <!-- 6. BADGES & FEEDBACK -->
     <section id="badges" class="ds-section">
-      <div class="ds-section-header">
-        <h2>Badges & Feedback (Alerts)</h2>
-        <p>Comunicação visual de status no dashboard.</p>
-      </div>
       <div class="ds-component-block">
-        
-        <h3 class="ds-component-title">Tags Semânticas</h3>
-        <div class="flex-row" style="margin-bottom: 3rem;">
-          <span class="badge badge-primary">Plano Pro</span>
-          <span class="badge badge-secondary">Rascunho</span>
-          <span class="badge badge-success"><i data-lucide="check-circle" style="width: 12px; height: 12px;"></i> Concluído</span>
-          <span class="badge badge-warning">Atrasado</span>
-          <span class="badge badge-error">Falta Pagamento</span>
+        <h3 class="ds-component-title">Badges & Alerts</h3>
+        <div class="flex-row" style="margin-bottom: 2rem;">
+          <span class="badge badge-primary">Primary</span>
+          <span class="badge badge-success">Success</span>
+          <span class="badge badge-warning">Warning</span>
+          <span class="badge badge-error">Error</span>
         </div>
-
-        <h3 class="ds-component-title">Alertas do Sistema</h3>
-        <div class="flex-col">
-          <div class="alert alert-info">
-            <i data-lucide="info" class="alert-icon" style="width: 20px; height: 20px;"></i>
-            <div class="alert-content">
-              <h4>Atualização Disponível</h4>
-              <p>A nova versão da lousa colaborativa já está ativa na sua conta.</p>
-            </div>
-          </div>
-          
-          <div class="alert alert-warning">
-            <i data-lucide="alert-triangle" class="alert-icon" style="width: 20px; height: 20px;"></i>
-            <div class="alert-content">
-              <h4>Limite de Gravação Próximo</h4>
-              <p>Você atingiu 90% do seu limite de armazenamento em nuvem neste mês.</p>
-            </div>
-          </div>
+        <div class="alert alert-info">
+          <i data-lucide="info" class="alert-icon" style="width: 20px; height: 20px;"></i>
+          <div class="alert-content"><h4>Alerta Informativo</h4><p>Este é o padrão de notificação dentro do sistema.</p></div>
         </div>
-
       </div>
     </section>
 
-    <!-- 7. NAVIGATION -->
+    <!-- ==========================================================================
+         05. SAAS PATTERNS
+         ========================================================================== -->
     <section id="navigation" class="ds-section">
       <div class="ds-section-header">
-        <h2>Navigation & Tabs</h2>
-        <p>Sistemas de navegação interna do SaaS.</p>
+        <h2>05. Padrões SaaS</h2>
       </div>
       <div class="ds-component-block">
-        
-        <h3 class="ds-component-title">Tabs (Navegação de Perfil)</h3>
-        <div class="ds-tabs">
-          <div class="ds-tab active">Visão Geral</div>
-          <div class="ds-tab">Prontuário Clínico</div>
-          <div class="ds-tab">Arquivos & Exames</div>
-          <div class="ds-tab">Configurações</div>
+        <h3 class="ds-component-title">Tabs & Breadcrumbs</h3>
+        <div class="ds-breadcrumb"><a href="#">Pacientes</a><span class="breadcrumb-separator">/</span><a href="#">Mariana</a><span class="breadcrumb-separator">/</span><span style="color: var(--text-primary);">Prontuário</span></div>
+        <div class="ds-tabs" style="margin-top: 2rem;">
+          <div class="ds-tab active">Visão Geral</div><div class="ds-tab">Prontuário Clínico</div><div class="ds-tab">Arquivos</div>
         </div>
-
-        <h3 class="ds-component-title" style="margin-top: 3rem;">Breadcrumbs</h3>
-        <div class="ds-breadcrumb">
-          <a href="#">Pacientes</a>
-          <span class="breadcrumb-separator">/</span>
-          <a href="#">Mariana Costa</a>
-          <span class="breadcrumb-separator">/</span>
-          <span style="color: var(--text-primary);">Prontuário</span>
-        </div>
-
-        <h3 class="ds-component-title" style="margin-top: 3rem;">Pagination</h3>
-        <div class="ds-pagination">
-          <div class="ds-page-item"><i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i></div>
-          <div class="ds-page-item">1</div>
-          <div class="ds-page-item active">2</div>
-          <div class="ds-page-item">3</div>
-          <span style="color: var(--text-tertiary); margin: 0 0.5rem;">...</span>
-          <div class="ds-page-item">12</div>
-          <div class="ds-page-item"><i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i></div>
-        </div>
-
       </div>
     </section>
 
-    <!-- 8. SAAS PATTERNS (DATA) -->
-    <section id="data" class="ds-section">
-      <div class="ds-section-header">
-        <h2>Data Display (Tables)</h2>
-        <p>Tabelas clínicas e avatares de pacientes.</p>
-      </div>
-      <div class="ds-component-block">
-        
-        <h3 class="ds-component-title">Tabela de Pacientes (Lista)</h3>
-        <div class="table-container">
-          <table class="ds-table">
-            <thead>
-              <tr>
-                <th>Paciente</th>
-                <th>ID Clínico</th>
-                <th>Última Consulta</th>
-                <th>Status</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div style="display: flex; align-items: center; gap: 0.75rem;">
-                    <div class="avatar">
-                      <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Profile">
-                      <div class="avatar-indicator"></div>
-                    </div>
-                    <div>
-                      <div class="primary-cell">Mariana Costa</div>
-                      <div style="font-size: 0.8rem;">Hipertrofia</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="mono-cell">#PT-4421</td>
-                <td>Hoje, 14:30</td>
-                <td><span class="badge badge-success">Ativo</span></td>
-                <td><button class="btn btn-sm btn-secondary">Abrir Sala</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: flex; align-items: center; gap: 0.75rem;">
-                    <div class="avatar">RS</div>
-                    <div>
-                      <div class="primary-cell">Roberto Silva</div>
-                      <div style="font-size: 0.8rem;">Emagrecimento</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="mono-cell">#PT-3910</td>
-                <td>12 Ago 2026</td>
-                <td><span class="badge badge-warning">Retorno Pend.</span></td>
-                <td><button class="btn btn-sm btn-ghost">Ver Prontuário</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 9. DASHBOARD KPIs -->
-    <section id="kpi" class="ds-section">
-      <div class="ds-section-header">
-        <h2>Dashboards & KPIs</h2>
-        <p>Painéis de métricas financeiras e de volume para a home do SaaS.</p>
-      </div>
-      <div class="ds-component-block">
-        
-        <div class="grid-3">
-          <!-- KPI 1 -->
-          <div class="kpi-card">
-            <div class="kpi-title">
-              Faturamento (Mensal)
-              <i data-lucide="dollar-sign" style="color: var(--teal-500); width: 18px; height: 18px;"></i>
-            </div>
-            <div class="kpi-value">R$ 14.500</div>
-            <div class="kpi-trend positive">
-              <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
-              <span>+12.5% vs mês passado</span>
-            </div>
-          </div>
-
-          <!-- KPI 2 -->
-          <div class="kpi-card">
-            <div class="kpi-title">
-              Consultas Realizadas
-              <i data-lucide="video" style="color: var(--teal-500); width: 18px; height: 18px;"></i>
-            </div>
-            <div class="kpi-value">42</div>
-            <div class="kpi-trend positive">
-              <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
-              <span>+4 vs mês passado</span>
-            </div>
-          </div>
-
-          <!-- KPI 3 -->
-          <div class="kpi-card">
-            <div class="kpi-title">
-              Taxa de No-Show
-              <i data-lucide="user-x" style="color: var(--text-tertiary); width: 18px; height: 18px;"></i>
-            </div>
-            <div class="kpi-value">2.4%</div>
-            <div class="kpi-trend negative">
-              <i data-lucide="trending-down" style="width: 14px; height: 14px;"></i>
-              <span>+0.5% vs mês passado</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top: 3rem;">
-          <h3 class="ds-component-title">Skeleton Loading State</h3>
-          <div class="grid-3">
-            <div class="kpi-card">
-              <div class="skeleton" style="height: 16px; width: 60%; margin-bottom: 1rem;"></div>
-              <div class="skeleton" style="height: 36px; width: 80%; margin-bottom: 0.5rem;"></div>
-              <div class="skeleton" style="height: 14px; width: 40%;"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 10. MODALS & OVERLAYS -->
     <section id="overlays" class="ds-section">
-      <div class="ds-section-header">
-        <h2>Modals & Overlays</h2>
-        <p>Interfaces sobrepostas para ações focadas e detalhes de paciente.</p>
-      </div>
-      
-      <h3 class="ds-component-title">Standard Modal (Dialog)</h3>
-      <div class="mock-overlay-container" style="margin-bottom: 3rem;">
-        <div class="mock-backdrop"></div>
-        <div class="mock-modal">
-          <div class="mock-modal-header">
-            <span class="mock-modal-title">Novo Agendamento</span>
-            <button class="btn-icon"><i data-lucide="x" style="width: 20px; height: 20px; color: var(--text-secondary);"></i></button>
-          </div>
-          <div class="mock-modal-body">
-            <div class="form-group" style="margin-bottom: 1rem;">
-              <label class="form-label">Paciente</label>
-              <input type="text" class="form-control" placeholder="Buscar paciente...">
-            </div>
-            <div class="grid-2">
-              <div class="form-group">
-                <label class="form-label">Data</label>
-                <input type="date" class="form-control">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Horário</label>
-                <input type="time" class="form-control">
-              </div>
-            </div>
-          </div>
-          <div class="mock-modal-footer">
-            <button class="btn btn-secondary">Cancelar</button>
-            <button class="btn btn-primary">Confirmar Horário</button>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="ds-component-title">Slide-over (Painel Lateral)</h3>
-      <div class="mock-overlay-container">
-        <div class="mock-backdrop"></div>
-        <div class="mock-slideover">
-          <div class="mock-modal-header">
-            <span class="mock-modal-title">Ficha Rápida</span>
-            <button class="btn-icon"><i data-lucide="x" style="width: 20px; height: 20px; color: var(--text-secondary);"></i></button>
-          </div>
-          <div class="mock-modal-body" style="flex: 1; overflow-y: auto;">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-              <div class="avatar" style="width: 64px; height: 64px; font-size: 1.5rem;">RS</div>
-              <div>
-                <div style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">Roberto Silva</div>
-                <div style="color: var(--text-secondary); font-size: 0.9rem;">Plano Semestral</div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Notas Fixadas</label>
-              <textarea class="form-control" rows="6" disabled>Meta: Reduzir BF para 12%.
-Alergia: Amendoim.
-Dificuldade principal: Jantar fora nos finais de semana.</textarea>
-            </div>
+      <div class="ds-component-block">
+        <h3 class="ds-component-title">Modals & Overlays</h3>
+        <div class="mock-overlay-container">
+          <div class="mock-backdrop"></div>
+          <div class="mock-modal">
+            <div class="mock-modal-header"><span class="mock-modal-title">Novo Agendamento</span></div>
+            <div class="mock-modal-body"><div class="form-group"><input type="text" class="form-control" placeholder="Buscar paciente..."></div></div>
+            <div class="mock-modal-footer"><button class="btn btn-secondary">Cancelar</button><button class="btn btn-primary">Confirmar</button></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 11. ADVANCED INTERACTIVE -->
     <section id="interactive" class="ds-section">
-      <div class="ds-section-header">
-        <h2>Advanced Interactive</h2>
-        <p>Componentes complexos de interação SaaS.</p>
-      </div>
       <div class="ds-component-block">
-        
-        <h3 class="ds-component-title">Progress Stepper (Multi-step forms)</h3>
-        <div class="stepper">
+        <h3 class="ds-component-title">Advanced Interactive</h3>
+        <div class="stepper" style="margin-bottom: 4rem;">
           <div class="stepper-progress"></div>
-          <div class="step completed">
-            <div class="step-circle"><i data-lucide="check" style="width: 16px; height: 16px;"></i></div>
-            <span class="step-label">Dados Iniciais</span>
-          </div>
-          <div class="step active">
-            <div class="step-circle">2</div>
-            <span class="step-label">Metabolismo</span>
-          </div>
-          <div class="step">
-            <div class="step-circle">3</div>
-            <span class="step-label">Plano Alimentar</span>
-          </div>
-          <div class="step">
-            <div class="step-circle">4</div>
-            <span class="step-label">Revisão</span>
-          </div>
+          <div class="step completed"><div class="step-circle"><i data-lucide="check"></i></div><span class="step-label">Dados Iniciais</span></div>
+          <div class="step active"><div class="step-circle">2</div><span class="step-label">Metabolismo</span></div>
+          <div class="step"><div class="step-circle">3</div><span class="step-label">Plano Alimentar</span></div>
         </div>
-
-        <h3 class="ds-component-title" style="margin-top: 4rem;">File Upload Zone</h3>
-        <div class="upload-zone">
-          <div class="upload-icon">
-            <i data-lucide="upload-cloud"></i>
-          </div>
-          <div>
-            <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">Envie exames ou documentos</h4>
-            <p style="color: var(--text-secondary); font-size: 0.85rem;">Arraste arquivos aqui ou <span style="color: var(--teal-500); font-weight: 500;">clique para procurar</span></p>
-          </div>
-          <p style="font-size: 0.75rem; color: var(--text-tertiary); font-family: var(--font-mono);">PDF, JPG ou PNG (Max. 10MB)</p>
-        </div>
-
-        <h3 class="ds-component-title" style="margin-top: 4rem;">Empty States</h3>
+        <h3 class="ds-component-title" style="margin-top: 4rem;">Empty State</h3>
         <div class="empty-state">
           <div class="empty-icon"><i data-lucide="folder-open" style="width: 32px; height: 32px;"></i></div>
           <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Nenhum Prontuário Encontrado</h3>
           <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 300px;">Este paciente ainda não possui registros clínicos ou anotações.</p>
-          <button class="btn btn-primary"><i data-lucide="plus" style="width: 18px; height: 18px;"></i> Criar Primeiro Registro</button>
+          <button class="btn btn-md btn-primary"><i data-lucide="plus" style="width: 18px; height: 18px;"></i> Criar Primeiro Registro</button>
         </div>
 
+        <h3 class="ds-component-title" style="margin-top: 4rem;">File Upload Zone</h3>
+        <div class="upload-zone">
+          <div class="upload-icon"><i data-lucide="upload-cloud"></i></div>
+          <div><h4 style="color: var(--text-primary);">Envie exames ou documentos</h4><p style="color: var(--text-secondary); font-size: 0.85rem;">Arraste arquivos aqui ou <span style="color: var(--teal-500); font-weight: 500;">clique para procurar</span></p></div>
+          <p style="font-size: 0.75rem; color: var(--text-tertiary); font-family: var(--font-mono);">PDF, JPG ou PNG (Max. 10MB)</p>
+        </div>
       </div>
     </section>
 
-    <!-- 12. THE CONSULTOR.IO EXPERIENCE (Video UI) -->
+    <!-- ==========================================================================
+         06. EXPERIÊNCIAS (Video, Gráficos, E-mail)
+         ========================================================================== -->
     <section id="video-ui" class="ds-section">
       <div class="ds-section-header">
-        <h2>The Experience: Video Room UI (Mesa de Controle)</h2>
-        <p>A visão máxima da plataforma: a interface da sala de atendimento.</p>
+        <h2>06. Experiências Oficiais</h2>
+        <p>A consolidação dos componentes em telas finais.</p>
       </div>
-      
-      <div class="video-ui-frame">
-        <!-- Main Video Area -->
+      <div class="video-ui-frame" style="margin-bottom: 4rem;">
         <div class="video-main-area">
-          <div style="display: flex; flex-direction: column; align-items: center; color: var(--text-secondary); gap: 1rem;">
-            <i data-lucide="video-off" style="width: 48px; height: 48px; opacity: 0.2;"></i>
-            <span style="font-family: var(--font-mono); letter-spacing: 0.1em; opacity: 0.5;">Aguardando Paciente...</span>
-          </div>
-          
-          <!-- Picture in Picture (Self) -->
-          <div class="video-pip">
-            <i data-lucide="user" style="width: 32px; height: 32px; opacity: 0.5;"></i>
-          </div>
-
-          <!-- Floating Controls -->
+          <div style="display: flex; flex-direction: column; align-items: center; color: var(--text-secondary); gap: 1rem;"><i data-lucide="video-off" style="width: 48px; height: 48px; opacity: 0.2;"></i><span style="font-family: var(--font-mono); letter-spacing: 0.1em; opacity: 0.5;">Aguardando Paciente...</span></div>
+          <div class="video-pip"><i data-lucide="user" style="width: 32px; height: 32px; opacity: 0.5;"></i></div>
           <div class="video-controls">
             <button class="control-btn"><i data-lucide="mic"></i></button>
             <button class="control-btn"><i data-lucide="video"></i></button>
@@ -1069,51 +767,67 @@ Dificuldade principal: Jantar fora nos finais de semana.</textarea>
             <button class="control-btn danger"><i data-lucide="phone-off"></i></button>
           </div>
         </div>
-
-        <!-- Right Sidebar (Lousa) -->
         <div class="video-sidebar">
-          <div class="video-sidebar-header">
-            <div class="video-sidebar-title">
-              <i data-lucide="pen-tool" style="width: 18px; height: 18px;"></i>
-              Lousa Estratégica
-            </div>
-            <button class="btn-icon"><i data-lucide="more-vertical" style="width: 18px; height: 18px; color: var(--text-secondary);"></i></button>
-          </div>
-          
-          <div class="ds-tabs" style="margin: 0; padding: 0 var(--space-4); border-bottom: 1px solid var(--border-default);">
-            <div class="ds-tab active" style="font-size: 0.85rem; padding: 0.75rem 0;">Notas Reais</div>
-            <div class="ds-tab" style="font-size: 0.85rem; padding: 0.75rem 0;">Histórico</div>
-          </div>
+          <div class="video-sidebar-header"><div class="video-sidebar-title"><i data-lucide="pen-tool" style="width: 18px; height: 18px;"></i> Lousa Estratégica</div></div>
+          <div class="ds-tabs" style="margin: 0; padding: 0 var(--space-4); border-bottom: 1px solid var(--border-default);"><div class="ds-tab active" style="font-size: 0.85rem; padding: 0.75rem 0;">Notas Reais</div><div class="ds-tab" style="font-size: 0.85rem; padding: 0.75rem 0;">Histórico</div></div>
+          <div class="video-sidebar-body"><textarea class="form-control" placeholder="Anotações não ficam visíveis para o paciente..." style="flex: 1; resize: none; background: transparent; border: none; padding: 0; color: var(--text-primary);"></textarea></div>
+          <div class="video-sidebar-footer"><button class="btn btn-md btn-primary" style="width: 100%;">Salvar Lousa</button></div>
+        </div>
+      </div>
+    </section>
 
-          <div class="video-sidebar-body">
-            <textarea class="form-control" placeholder="Anotações não ficam visíveis para o paciente. Digite livremente..." style="flex: 1; resize: none; background: transparent; border: none; padding: 0; color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;"></textarea>
-          </div>
-          
-          <div class="video-sidebar-footer">
-            <button class="btn btn-primary" style="width: 100%;">Salvar Lousa</button>
+    <section id="data-viz" class="ds-section">
+      <h3 class="ds-component-title">Data Visualization (Gráficos)</h3>
+      <div class="ds-component-block">
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Gráficos no sistema devem seguir a paleta Teal, focando em clareza absoluta sem gradientes distrativos.</p>
+        <div class="chart-container">
+          <div class="chart-bar" style="height: 40%;"><span class="chart-label">Jan</span></div>
+          <div class="chart-bar" style="height: 60%;"><span class="chart-label">Fev</span></div>
+          <div class="chart-bar" style="height: 35%;"><span class="chart-label">Mar</span></div>
+          <div class="chart-bar" style="height: 80%; background: var(--teal-600);"><span class="chart-label" style="color: var(--teal-500); font-weight: 700;">Abr</span></div>
+          <div class="chart-bar" style="height: 50%;"><span class="chart-label">Mai</span></div>
+          <div class="chart-bar" style="height: 90%;"><span class="chart-label">Jun</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="email" class="ds-section">
+      <h3 class="ds-component-title">E-mail Transacional</h3>
+      <div class="ds-component-block" style="background: var(--bg-surface-raised);">
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Todo e-mail enviado pelo sistema carrega a sobriedade da marca. Fundo claro no conteúdo para legibilidade em qualquer cliente de e-mail.</p>
+        
+        <div class="email-mock">
+          <div class="email-body">
+            <div class="email-header">
+              <span class="brand-style" style="font-size: 1.5rem;">consultor<span>.io</span></span>
+            </div>
+            <div class="email-content">
+              <h2 style="font-family: var(--font-display); margin-bottom: 1rem; font-size: 1.5rem;">Lembrete de Consulta</h2>
+              <p style="margin-bottom: 1rem; color: #475569;">Olá Mariana,</p>
+              <p style="margin-bottom: 2rem; color: #475569;">Sua consulta com <strong>Dr. Gustavo</strong> está confirmada para amanhã às 14:30. A sala já está preparada para recebê-la.</p>
+              <div style="text-align: center;">
+                <button class="btn btn-lg btn-primary" style="width: 100%;">Acessar Ante-Sala</button>
+              </div>
+              <p style="margin-top: 2rem; font-size: 0.8rem; color: #94A3B8; text-align: center;">Este é um link único e seguro gerado pelo consultor.io.</p>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
   </main>
 
   <script>
-    // Initialize Icons
     lucide.createIcons();
-
-    // Theme Toggle Logic
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const themeText = document.getElementById('themeText');
-    
-    // Check system preference or default to dark
     let isLight = false;
 
     themeToggle.addEventListener('click', () => {
       isLight = !isLight;
       document.body.classList.toggle('light-mode', isLight);
-      
       if (isLight) {
         themeIcon.setAttribute('data-lucide', 'moon');
         themeText.innerText = 'Modo Escuro';
@@ -1124,18 +838,13 @@ Dificuldade principal: Jantar fora nos finais de semana.</textarea>
       lucide.createIcons();
     });
 
-    // Smooth scrolling for sidebar links
     document.querySelectorAll('.ds-nav-link').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-        
         if(targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 40,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: targetElement.offsetTop - 40, behavior: 'smooth' });
         }
       });
     });
