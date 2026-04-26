@@ -291,37 +291,19 @@
       align-items: stretch;
     }
 
+    .dot-g {
+      background: #28C840;
+    }
+
     .screen-card {
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border);
       position: relative;
-    }
-
-    .screen-card__header {
-      padding: 0.5rem 0.75rem;
+      background: var(--surface2);
       display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .dot-r {
-      background: #FF5F57;
-    }
-
-    .dot-y {
-      background: #FFBD2E;
-    }
-
-    .dot-g {
-      background: #28C840;
+      flex-direction: column;
+      aspect-ratio: 4/3;
     }
 
     .screen-bad {
@@ -330,16 +312,17 @@
 
     .screen-bad .screen-card__header {
       background: #1A1A1A;
+      border-bottom: 1px solid #222;
     }
 
     .screen-bad__body {
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      min-height: 180px;
+      justify-content: space-between;
+      background: #202124;
     }
 
     .spinner {
@@ -1267,30 +1250,32 @@
       <div style="position:relative;">
         <div class="split-screens">
 
-          <!-- ANTES: tela preta do Google Meet -->
+          <!-- ANTES: Google Meet -->
           <div class="screen-card screen-bad">
             <div class="screen-card__header">
               <div class="dot dot-r"></div>
               <div class="dot dot-y"></div>
               <div class="dot dot-g"></div>
             </div>
-            <div class="screen-bad__body" style="padding: 1.5rem 1rem; flex-grow: 1; position: relative; background: #202124; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 4/3;">
-              <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; gap: 10px;">
-                <div style="width: 56px; height: 56px; border-radius: 50%; background: #6366F1; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 500; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">M</div>
+            <div class="screen-bad__body">
+              <div style="font-size: 0.6rem; color: #ef4444; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">Interface Genérica</div>
+              
+              <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+                <div style="width: 56px; height: 56px; border-radius: 50%; background: #6366F1; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 500; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">M</div>
                 <div style="font-size: 0.75rem; color: #9aa0a6;">Você</div>
               </div>
-              <div style="height: 48px; background: #3C4043; border-radius: 24px; margin: 0 10px 5px; display: flex; align-items: center; justify-content: center; gap: 12px;">
-                <div style="width: 28px; height: 28px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
-                  <i data-lucide="mic-off" style="width: 14px; height: 14px; color: white;"></i>
+
+              <div style="height: 44px; background: #3C4043; border-radius: 22px; width: 100%; max-width: 160px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <div style="width: 26px; height: 26px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="mic-off" style="width: 13px; height: 13px; color: white;"></i>
                 </div>
-                <div style="width: 28px; height: 28px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
-                  <i data-lucide="video-off" style="width: 14px; height: 14px; color: white;"></i>
+                <div style="width: 26px; height: 26px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="video-off" style="width: 13px; height: 13px; color: white;"></i>
                 </div>
-                <div style="width: 40px; height: 28px; border-radius: 14px; background: #EA4335; display: flex; align-items: center; justify-content: center;">
-                  <i data-lucide="phone-missed" style="width: 14px; height: 14px; color: white;"></i>
+                <div style="width: 38px; height: 26px; border-radius: 13px; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="phone-missed" style="width: 13px; height: 13px; color: white;"></i>
                 </div>
               </div>
-              <div style="position:absolute; top: 12px; width: 100%; text-align: center; font-size: 0.65rem; color: #ef4444; font-weight: bold; letter-spacing: 1px; opacity: 0.8;">INTERFACE GENÉRICA</div>
             </div>
           </div>
 
@@ -1301,11 +1286,9 @@
               <div class="dot dot-y"></div>
               <div class="dot dot-g"></div>
             </div>
-            <div class="screen-good__body" style="padding: 0; flex-grow: 1; overflow: hidden; position: relative; aspect-ratio: 4/3;">
-              <img
-                src="assets/lobby.jpg"
-                alt="Preview App" style="width: 100%; height: 100%; object-fit: cover;">
-              <div style="position:absolute; bottom: 0; width: 100%; background: rgba(13, 148, 136, 0.95); color: white; padding: 8px; text-align: center; font-size: 11px; font-weight: bold; letter-spacing: 0.5px;">SEU CONSULTÓRIO IMERSIVO</div>
+            <div style="flex-grow: 1; position: relative; overflow: hidden;">
+              <img src="assets/lobby.jpg" alt="Preview App" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position:absolute; bottom: 0; width: 100%; background: rgba(13, 148, 136, 0.95); color: white; padding: 10px; text-align: center; font-size: 11px; font-weight: bold; letter-spacing: 0.5px; text-transform: uppercase;">Seu Consultório Imersivo</div>
             </div>
           </div>
         </div>
