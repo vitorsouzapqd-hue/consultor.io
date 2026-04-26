@@ -177,7 +177,7 @@
       padding: 0.55rem 1.25rem;
       border-radius: 6px;
       font-size: 0.88rem;
-      font-weight: 500;
+      font-weight: 700;
       text-decoration: none;
       letter-spacing: 0.01em;
       transition: background 0.2s, box-shadow 0.2s;
@@ -299,7 +299,7 @@
       padding: 0.85rem 2rem;
       border-radius: 8px;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 700;
       text-decoration: none;
       transition: all 0.2s;
       box-shadow: 0 4px 24px rgba(13, 148, 136, 0.3);
@@ -1202,18 +1202,24 @@
       border: none;
     }
 
-    /* ── FINAL CTA ── */
     .final-cta {
-      padding: 100px 0;
+      padding: 3.5rem 0;
       background: var(--teal);
       text-align: center;
       color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .final-cta h2 {
       font-family: var(--font-display);
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0.5rem auto 2rem;
+      max-width: 800px;
     }
 
     .final-cta .btn-primary {
@@ -1548,6 +1554,10 @@
           </div>
         </div>
       </div>
+
+      <div style="text-align: center; margin-top: 4rem; animation: fadeUp 0.8s ease both;">
+        <a href="#planos" class="btn-primary">Quero essa experiência no meu atendimento</a>
+      </div>
     </div>
   </section>
 
@@ -1653,6 +1663,10 @@
           <p style="color: var(--text-muted); font-size: 0.95rem;">A porta se abre. O foco é total na Lousa Estratégica. A insegurança do paciente já ficou lá atrás, nos últimos 15 minutos.<br><br><strong>Quando a consulta começa, você não está mais vendendo. O paciente já decidiu que você vale o preço.</strong></p>
         </div>
       </div>
+
+      <div style="text-align: center; margin-top: 3rem; animation: fadeUp 0.8s ease both;">
+        <a href="#planos" class="btn-primary">Transformar minha consulta em ritual</a>
+      </div>
     </div>
   </section>
 
@@ -1693,6 +1707,10 @@
         <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Em vez de apenas falar, desenhe. Salve templates visuais (como o mapa metabólico) e puxe para a tela na Hora H. O paciente <strong>constrói o raciocínio clínico com você</strong>, em tempo real.</p>
       </div>
 
+    </div>
+
+    <div style="text-align: center; margin-top: 4rem; animation: fadeUp 0.8s ease both;">
+      <a href="#planos" class="btn-primary">Profissionalizar minha marca agora</a>
     </div>
   </section>
 
@@ -1863,6 +1881,10 @@
         </div>
       </div>
     </div>
+
+    <div style="text-align: center; margin-top: 4rem; animation: fadeUp 0.8s ease both;">
+      <a href="#planos" class="btn-primary">Ver planos e garantir minha vaga</a>
+    </div>
   </section>
 
   <!-- PLANOS -->
@@ -2005,14 +2027,16 @@
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <div class="container" style="max-width: 800px; text-align: center;">
-      <p style="color: var(--teal); font-size: 1.15rem; font-weight: 500; margin-bottom: 2rem; line-height: 1.6;">
-        Existem dois tipos de profissionais no digital:<br>
-        os que aceitam a comoditização e os que<br>
-        constroem autoridade deliberadamente.
+    <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+      <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; font-weight: 500; margin: 0; text-transform: uppercase; letter-spacing: 0.05em;">
+        O Fim da Comoditização
       </p>
-      <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">O seu próximo paciente vai entrar pela porta do Google Meet ou pela porta do seu Consultor.io?</h2>
-      <a href="#planos" class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">Criar meu consultório agora</a>
+      
+      <h2>
+        O seu próximo paciente vai entrar pela porta do Google Meet ou pela porta do seu Consultor.io?
+      </h2>
+      
+      <a href="#planos" class="btn-primary" style="background: white; color: var(--teal); font-size: 1.1rem; padding: 1.2rem 3rem; border-radius: 50px;">Criar meu consultório agora</a>
     </div>
   </section>
 
