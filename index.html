@@ -353,13 +353,30 @@
       width: 400px;
       background: var(--surface2);
       border: 1px solid var(--border);
-      padding: 2.5rem;
+      padding: 3.5rem 2.5rem 2.5rem 2.5rem; /* Aumentado o topo para a tag */
       border-radius: 20px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+    }
+
+    .testimonial-tag {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      font-size: 0.65rem;
+      color: var(--teal-light);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      background: rgba(13, 148, 136, 0.1);
+      border: 1px solid rgba(13, 148, 136, 0.2);
+      border-radius: 20px;
+      pointer-events: none;
     }
 
     .testimonial-card-v2:hover {
@@ -1587,8 +1604,8 @@
 
     <div class="testimonials-track">
       <!-- Slide 1 -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Ticket Alto</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Ticket Alto</span>
         <p><strong>"Eu achava que o problema era meu preço. Não era."</strong><br>Eu atendia pelo Google Meet e sempre vinha aquela sensação de ter que me explicar demais. Troquei pro Consultor.io e comecei a fechar consultas mais caras sem mudar meu método. O paciente já chega diferente.</p>
         <div class="testimonial-author-v2">
           <h4>Dr. Felipe Nogueira</h4>
@@ -1597,8 +1614,8 @@
       </div>
 
       <!-- Slide 2 -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Faturamento</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Faturamento</span>
         <p><strong>"Subi meu ticket e ninguém questionou."</strong><br>Eu cobrava R$ 180. Subi pra R$ 350 depois de começar a usar o consultório virtual. A única coisa que mudou foi a experiência antes da consulta.</p>
         <div class="testimonial-author-v2">
           <h4>Mariana Lopes</h4>
@@ -1607,8 +1624,8 @@
       </div>
 
       <!-- Slide 3 -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Autoridade</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Autoridade</span>
         <p><strong>"Antes eu começava do zero toda vez."</strong><br>O paciente entrava, silêncio, câmera travada. Eu precisava vender meu trabalho toda vez. Agora quando a consulta começa, parece que ele já entendeu o valor.</p>
         <div class="testimonial-author-v2">
           <h4>Dr. Ricardo Pena</h4>
@@ -1617,8 +1634,8 @@
       </div>
 
       <!-- Slide 4 -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Posicionamento</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Posicionamento</span>
         <p><strong>"Parei de disputar com gente mais barata."</strong><br>Antes eu sentia que estava sempre sendo comparado. Hoje não faz nem sentido comparar, porque a experiência é outra. Isso mudou meu posicionamento.</p>
         <div class="testimonial-author-v2">
           <h4>André Cunha</h4>
@@ -1627,8 +1644,8 @@
       </div>
 
       <!-- CLONES PARA INFINITO (Triplicado para telas largas) -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Ticket Alto</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Ticket Alto</span>
         <p><strong>"Eu achava que o problema era meu preço. Não era."</strong><br>Eu atendia pelo Google Meet e sempre vinha aquela sensação de ter que me explicar demais. Troquei pro Consultor.io e comecei a fechar consultas mais caras.</p>
         <div class="testimonial-author-v2">
           <h4>Dr. Felipe Nogueira</h4>
@@ -1636,8 +1653,8 @@
         </div>
       </div>
 
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Faturamento</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Faturamento</span>
         <p><strong>"Subi meu ticket e ninguém questionou."</strong><br>Eu cobrava R$ 180. Subi pra R$ 350 depois de começar a usar o consultório virtual. A única coisa que mudou foi a experiência antes da consulta.</p>
         <div class="testimonial-author-v2">
           <h4>Mariana Lopes</h4>
@@ -1645,8 +1662,8 @@
         </div>
       </div>
 
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Autoridade</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Autoridade</span>
         <p><strong>"Antes eu começava do zero toda vez."</strong><br>O paciente entrava, silêncio, câmera travada. Eu precisava vender meu trabalho toda vez. Agora quando a consulta começa, parece que ele já entendeu o valor.</p>
         <div class="testimonial-author-v2">
           <h4>Dr. Ricardo Pena</h4>
@@ -1654,8 +1671,8 @@
         </div>
       </div>
 
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Posicionamento</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Posicionamento</span>
         <p><strong>"Parei de disputar com gente mais barata."</strong><br>Antes eu sentia que estava sempre sendo comparado. Hoje não faz nem sentido comparar, porque a experiência é outra. Isso mudou meu posicionamento.</p>
         <div class="testimonial-author-v2">
           <h4>André Cunha</h4>
@@ -1667,8 +1684,8 @@
     <!-- Second row moving opposite -->
     <div class="testimonials-track" style="animation-direction: reverse;">
       <!-- Slide 5 -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Engajamento</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Engajamento</span>
         <p><strong>"Os pacientes começaram a chegar antes do horário."</strong><br>Isso nunca acontecia. Agora eles entram antes, exploram o ambiente, leem os materiais. Quando eu entro, já estão engajados. A consulta flui muito mais.</p>
         <div class="testimonial-author-v2">
           <h4>Dra. Ana Costa</h4>
@@ -1677,8 +1694,8 @@
       </div>
 
       <!-- Slide 6 -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Simplicidade</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Simplicidade</span>
         <p><strong>"Eu não precisei aprender nada técnico."</strong><br>Eu tinha receio de ser complicado, mas foi o contrário. Pra mim foi simples, e pro paciente também. Só que a percepção mudou completamente.</p>
         <div class="testimonial-author-v2">
           <h4>Juliana Martins</h4>
@@ -1687,8 +1704,8 @@
       </div>
 
       <!-- Slide 7 -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Premium</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Premium</span>
         <p><strong>"A consulta virou um evento, não uma chamada."</strong><br>Antes parecia mais uma call qualquer. Agora tem começo, meio e fim bem definidos. O paciente leva o atendimento muito mais a sério.</p>
         <div class="testimonial-author-v2">
           <h4>Bruno Sales</h4>
@@ -1697,8 +1714,8 @@
       </div>
 
       <!-- Slide 8 -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">ROI</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">ROI</span>
         <p><strong>"Isso paga sozinho."</strong><br>Com um único paciente aceitando um valor maior, eu já paguei o plano. Depois disso virou óbvio continuar usando o consultório digital.</p>
         <div class="testimonial-author-v2">
           <h4>Carlos Henrique</h4>
@@ -1707,8 +1724,8 @@
       </div>
 
       <!-- CLONES PARA INFINITO -->
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Engajamento</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Engajamento</span>
         <p><strong>"Os pacientes começaram a chegar antes do horário."</strong><br>Isso nunca acontecia. Agora eles entram antes, exploram o ambiente, leem os materiais. Quando eu entro, já estão engajados.</p>
         <div class="testimonial-author-v2">
           <h4>Dra. Ana Costa</h4>
@@ -1716,8 +1733,8 @@
         </div>
       </div>
 
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Simplicidade</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Simplicidade</span>
         <p><strong>"Eu não precisei aprender nada técnico."</strong><br>Eu tinha receio de ser complicado, mas foi o contrário. Pra mim foi simples, e pro paciente também. Só que a percepção mudou completamente.</p>
         <div class="testimonial-author-v2">
           <h4>Juliana Martins</h4>
@@ -1725,8 +1742,8 @@
         </div>
       </div>
 
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">Premium</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">Premium</span>
         <p><strong>"A consulta virou um evento, não uma chamada."</strong><br>Antes parecia mais uma call qualquer. Agora tem começo, meio e fim bem definidos. O paciente leva o atendimento muito mais a sério.</p>
         <div class="testimonial-author-v2">
           <h4>Bruno Sales</h4>
@@ -1734,8 +1751,8 @@
         </div>
       </div>
 
-      <div class="testimonial-card-v2" style="position: relative;">
-        <span style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; color: var(--teal-light); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 20px;">ROI</span>
+      <div class="testimonial-card-v2">
+        <span class="testimonial-tag">ROI</span>
         <p><strong>"Isso paga sozinho."</strong><br>Com um único paciente aceitando um valor maior, eu já paguei o plano. Depois disso virou óbvio continuar usando o consultório digital.</p>
         <div class="testimonial-author-v2">
           <h4>Carlos Henrique</h4>
