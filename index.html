@@ -53,6 +53,7 @@
       --nav-bg: rgba(17, 23, 20, 0.75);
       --font-display: 'Fraunces', serif;
       --font-body: 'DM Sans', sans-serif;
+      --brand-accent: var(--teal);
     }
 
     body.light-mode {
@@ -64,6 +65,7 @@
       --border: rgba(13, 148, 136, 0.25);
       --teal-glow: rgba(13, 148, 136, 0.08);
       --nav-bg: rgba(245, 247, 246, 0.85);
+      --brand-accent: var(--teal);
     }
 
     .theme-toggle-btn {
@@ -1211,6 +1213,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      --brand-accent: #ffffff; /* Contraste máximo no fundo teal */
     }
 
     .final-cta h2 {
@@ -1234,10 +1237,12 @@
       letter-spacing: -0.02em;
       color: inherit;
       text-transform: lowercase;
+      display: inline-block;
     }
 
     .brand-style span {
-      color: var(--teal);
+      color: var(--brand-accent);
+      transition: color 0.3s ease;
     }
 
     /* ── FOOTER ── */
