@@ -818,8 +818,8 @@
       }
 
       .steps {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: 1fr !important;
+        gap: 3rem;
       }
 
       .steps::before {
@@ -827,15 +827,19 @@
       }
 
       .step {
-        flex-direction: row;
-        text-align: left;
+        flex-direction: column;
+        text-align: center;
         gap: 1rem;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .step-num {
         flex-shrink: 0;
-        margin-bottom: 0;
+        margin-bottom: 1rem;
+      }
+
+      .tour-grid {
+        grid-template-columns: 1fr !important;
       }
     }
 
@@ -1391,9 +1395,11 @@
           <div class="amount">R$ 0<span>/mês</span></div>
         </div>
         <ul class="price-features">
-          <li>5 consultas /mês</li>
+          <li>5 consultas/mês</li>
           <li>Ante-sala básica</li>
-          <li>3 templates de móveis</li>
+          <li>Avatar completo</li>
+          <li>Lousa Estratégica</li>
+          <li>3 templates de ambiente</li>
         </ul>
         <a href="#" class="btn-price">Começar Agora</a>
       </div>
@@ -1404,9 +1410,12 @@
           <div class="amount">R$ 67<span>/mês</span></div>
         </div>
         <ul class="price-features">
-          <li>25 consultas /mês</li>
+          <li>25 consultas/mês</li>
           <li>Ante-sala personalizada</li>
-          <li>Sem marca Consultor.io</li>
+          <li>Sem logo Consultor.io</li>
+          <li>Gravação (7 dias)</li>
+          <li>Salvar templates de Lousa</li>
+          <li>Transcrição básica</li>
         </ul>
         <a href="#" class="btn-price">Selecionar</a>
       </div>
@@ -1419,9 +1428,12 @@
         </div>
         <ul class="price-features">
           <li>Consultas ilimitadas</li>
-          <li>Museu de Autoridade</li>
-          <li>Transcrição IA completa</li>
+          <li><strong>Museu de Autoridade</strong></li>
+          <li>Transcrição IA estruturada</li>
+          <li>Vídeo linkado por tópicos</li>
           <li>Grupos até 8 pessoas</li>
+          <li>Lousa Colaborativa</li>
+          <li>Catálogo Premium de Móveis</li>
         </ul>
         <a href="#" class="btn-price">Selecionar Pro</a>
       </div>
@@ -1433,9 +1445,11 @@
         </div>
         <ul class="price-features">
           <li>Experiência White Label</li>
-          <li>Auditório Virtual</li>
-          <li>Equipes até 3 pessoas</li>
-          <li>Suporte VIP 24h</li>
+          <li><strong>Auditório Virtual</strong></li>
+          <li>Domínio Próprio (Custom)</li>
+          <li>Equipes (até 3 prof.)</li>
+          <li>Gravação ilimitada</li>
+          <li>Suporte VIP Onboarding</li>
         </ul>
         <a href="#" class="btn-price">Selecionar</a>
       </div>
