@@ -422,6 +422,38 @@
     .toast-success .toast-icon { background: var(--status-success-bg); color: var(--status-success-text); }
     .toast-msg { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); }
 
+    /* Ultra Advanced SaaS Components */
+    .timeline { position: relative; padding-left: var(--space-8); border-left: 2px solid var(--border-default); margin-left: var(--space-2); }
+    .timeline-item { position: relative; margin-bottom: var(--space-8); }
+    .timeline-item::before { content: ''; position: absolute; left: calc(-1 * var(--space-8) - 7px); top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--teal-500); z-index: 2; }
+    .timeline-date { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-tertiary); margin-bottom: 0.25rem; text-transform: uppercase; }
+    .timeline-content { background: var(--bg-surface); border: 1px solid var(--border-default); padding: var(--space-4); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+    .timeline-title { font-weight: 700; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.25rem; }
+    .timeline-desc { font-size: 0.85rem; color: var(--text-secondary); }
+
+    .segmented-control { display: flex; background: var(--bg-surface-raised); padding: 0.25rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); gap: 0.25rem; }
+    .segment-item { flex: 1; padding: 0.5rem 1rem; border-radius: var(--radius-md); font-size: 0.85rem; font-weight: 600; color: var(--text-tertiary); cursor: pointer; transition: all 0.2s; text-align: center; white-space: nowrap; }
+    .segment-item:hover { color: var(--text-secondary); }
+    .segment-item.active { background: var(--bg-surface); color: var(--teal-500); box-shadow: var(--shadow-sm); }
+
+    .readiness-bar { display: flex; gap: 4px; height: 8px; width: 100px; }
+    .readiness-segment { flex: 1; border-radius: 2px; background: var(--bg-surface-raised); }
+    .readiness-segment.active { background: var(--teal-500); }
+    .readiness-segment.danger { background: var(--status-error-text); }
+
+    .cmd-palette { width: 100%; max-width: 600px; background: var(--bg-surface-overlay); border: 1px solid var(--border-strong); border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl); overflow: hidden; }
+    .cmd-input-wrapper { display: flex; align-items: center; padding: var(--space-4) var(--space-6); border-bottom: 1px solid var(--border-subtle); gap: var(--space-4); }
+    .cmd-input { background: transparent; border: none; color: var(--text-primary); font-size: 1.1rem; flex: 1; outline: none; }
+    .cmd-results { padding: var(--space-2); }
+    .cmd-item { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+    .cmd-item:hover, .cmd-item.active { background: var(--teal-glow); color: var(--text-primary); }
+    .cmd-shortcut { margin-left: auto; font-family: var(--font-mono); font-size: 0.7rem; opacity: 0.5; padding: 2px 6px; background: var(--bg-surface-raised); border-radius: 4px; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag { padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; border: 1px solid var(--border-default); transition: all 0.2s; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; background: var(--bg-surface); color: var(--text-secondary); }
+    .tag:hover { border-color: var(--teal-500); color: var(--teal-500); }
+    .tag.active { background: var(--teal-600); color: white; border-color: var(--teal-600); }
+
     /* Email Template Mock */
     .email-mock { background: var(--bg-base); padding: var(--space-12); display: flex; justify-content: center; border-radius: var(--radius-xl); border: 1px solid var(--border-default); }
     .email-body { background: #FFFFFF; width: 100%; max-width: 500px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
@@ -1080,7 +1112,75 @@
       </div>
     </section>
 
-    <section id="email" class="ds-section">
+    <section id="advanced-saas" class="ds-section">
+      <div class="ds-section-header">
+        <h2>10. Fluxos de Trabalho Avançados</h2>
+        <p>Componentes para sistemas de alta densidade de informação.</p>
+      </div>
+
+      <div class="ds-component-block">
+        <h3 class="ds-component-title">Command Palette (Quick Actions)</h3>
+        <div class="cmd-palette" style="margin-bottom: 4rem;">
+          <div class="cmd-input-wrapper">
+            <i data-lucide="search" style="width: 20px; height: 20px; color: var(--teal-500);"></i>
+            <input type="text" class="cmd-input" placeholder="O que você deseja fazer? (Cmd + K)">
+          </div>
+          <div class="cmd-results">
+            <div class="cmd-item active"><i data-lucide="user-plus"></i> Novo Paciente <span class="cmd-shortcut">N</span></div>
+            <div class="cmd-item"><i data-lucide="calendar"></i> Agendar Consulta <span class="cmd-shortcut">A</span></div>
+            <div class="cmd-item"><i data-lucide="file-text"></i> Gerar Relatório Master <span class="cmd-shortcut">G</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3 class="ds-component-title">Segmented Control & Tags</h3>
+            <div class="segmented-control" style="margin-bottom: 2rem; max-width: 300px;">
+              <div class="segment-item active">Diário</div>
+              <div class="segment-item">Semanal</div>
+              <div class="segment-item">Mensal</div>
+            </div>
+            <div class="tag-cloud">
+              <span class="tag active"><i data-lucide="flame"></i> Hipertrofia</span>
+              <span class="tag">Performance</span>
+              <span class="tag">Vegano</span>
+              <span class="tag">Atleta Elite</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="ds-component-title">Readiness & Health Indicators</h3>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; max-width: 250px;">
+                <span style="font-size: 0.85rem; color: var(--text-secondary);">Prontidão Neural</span>
+                <div class="readiness-bar"><div class="readiness-segment active"></div><div class="readiness-segment active"></div><div class="readiness-segment active"></div><div class="readiness-segment active"></div><div class="readiness-segment"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; max-width: 250px;">
+                <span style="font-size: 0.85rem; color: var(--text-secondary);">Nível de Fadiga</span>
+                <div class="readiness-bar"><div class="readiness-segment danger"></div><div class="readiness-segment danger"></div><div class="readiness-segment"></div><div class="readiness-segment"></div><div class="readiness-segment"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="ds-component-title" style="margin-top: 4rem;">Activity Timeline (Paciente)</h3>
+        <div class="timeline" style="max-width: 600px;">
+          <div class="timeline-item">
+            <div class="timeline-date">Hoje, 14:30</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Consulta de Retorno Realizada</div>
+              <div class="timeline-desc">Bioimpedância atualizada. Gordura corporal: -1.2%.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Ontem, 09:00</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Protocolo "Ignição" Ativado</div>
+              <div class="timeline-desc">O paciente iniciou a nova fase de periodização nutricional.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
       <h3 class="ds-component-title">E-mail Transacional</h3>
       <div class="ds-component-block" style="background: var(--bg-surface-raised);">
         <p style="color: var(--text-secondary); margin-bottom: 2rem;">Todo e-mail enviado pelo sistema carrega a sobriedade da marca. Fundo claro no conteúdo para legibilidade em qualquer cliente de e-mail.</p>
