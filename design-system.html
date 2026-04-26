@@ -128,8 +128,8 @@
       --status-info-border: #60A5FA;
       
       --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
       --shadow-glow: 0 0 24px rgba(13, 148, 136, 0.08);
     }
 
@@ -154,17 +154,8 @@
       min-height: 100vh;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-      border: none;
-      cursor: pointer;
-      background: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; border: none; cursor: pointer; background: none; }
 
     /* ==========================================================================
        3. DOCUMENTATION LAYOUT (Specific to this page)
@@ -195,90 +186,40 @@
       border-bottom: 1px solid var(--border-subtle);
     }
 
-    .ds-nav-group {
-      margin-bottom: var(--space-6);
-    }
-
+    .ds-nav-group { margin-bottom: var(--space-6); }
     .ds-nav-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-tertiary);
-      margin-bottom: var(--space-3);
-      font-weight: 700;
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-tertiary); margin-bottom: var(--space-3); font-weight: 700;
     }
-
     .ds-nav-link {
-      display: block;
-      padding: var(--space-2) var(--space-3);
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      border-radius: var(--radius-md);
-      transition: all var(--transition-fast);
-      margin-bottom: 2px;
+      display: block; padding: var(--space-2) var(--space-3); color: var(--text-secondary);
+      font-size: 0.95rem; border-radius: var(--radius-md); transition: all var(--transition-fast); margin-bottom: 2px;
     }
+    .ds-nav-link:hover { background: var(--bg-surface-raised); color: var(--text-primary); }
 
-    .ds-nav-link:hover {
-      background: var(--bg-surface-raised);
-      color: var(--text-primary);
-    }
-
-    .ds-header {
-      margin-bottom: var(--space-16);
-    }
-
+    .ds-header { margin-bottom: var(--space-16); }
     .ds-header h1 {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      line-height: 1.1;
-      margin-bottom: var(--space-4);
-      letter-spacing: -0.03em;
+      font-family: var(--font-display); font-size: 3.5rem; line-height: 1.1;
+      margin-bottom: var(--space-4); letter-spacing: -0.03em;
     }
+    .ds-header p { font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; }
 
-    .ds-header p {
-      font-size: 1.25rem;
-      color: var(--text-secondary);
-      max-width: 700px;
-    }
-
-    .ds-section {
-      margin-bottom: var(--space-24);
-    }
-
+    .ds-section { margin-bottom: var(--space-24); }
     .ds-section-header {
-      border-bottom: 1px solid var(--border-default);
-      padding-bottom: var(--space-4);
-      margin-bottom: var(--space-8);
+      border-bottom: 1px solid var(--border-default); padding-bottom: var(--space-4); margin-bottom: var(--space-8);
     }
-
     .ds-section-header h2 {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      color: var(--text-primary);
-      margin-bottom: var(--space-2);
+      font-family: var(--font-display); font-size: 2rem; color: var(--text-primary); margin-bottom: var(--space-2);
     }
-
-    .ds-section-header p {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
+    .ds-section-header p { color: var(--text-secondary); font-size: 1.1rem; }
 
     .ds-component-block {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8);
-      margin-bottom: var(--space-8);
-      box-shadow: var(--shadow-sm);
+      background: var(--bg-surface); border: 1px solid var(--border-default);
+      border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-8); box-shadow: var(--shadow-sm);
     }
-
     .ds-component-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-tertiary);
-      margin-bottom: var(--space-6);
-      font-weight: 700;
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--text-tertiary); margin-bottom: var(--space-6); font-weight: 700;
     }
 
     /* Grid Helpers */
@@ -292,403 +233,113 @@
        4. BRANDING TOKENS
        ========================================================================== */
     .brand-style {
-      font-family: var(--font-display);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: inherit;
-      text-transform: lowercase;
-      display: inline-block;
+      font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em;
+      color: inherit; text-transform: lowercase; display: inline-block;
     }
-    .brand-style span {
-      color: var(--brand-accent);
-      transition: color var(--transition-normal);
-    }
+    .brand-style span { color: var(--brand-accent); transition: color var(--transition-normal); }
 
     /* ==========================================================================
        5. COMPONENT: BUTTONS
        ========================================================================== */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-      font-family: var(--font-body);
-      font-weight: 700;
-      border-radius: var(--radius-md);
-      transition: all var(--transition-fast);
-      text-decoration: none;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+      font-family: var(--font-body); font-weight: 700; border-radius: var(--radius-md);
+      transition: all var(--transition-fast); text-decoration: none; white-space: nowrap;
     }
-
-    /* Sizes */
     .btn-sm { padding: 0.5rem 1rem; font-size: 0.85rem; }
     .btn-md { padding: 0.75rem 1.5rem; font-size: 0.95rem; }
     .btn-lg { padding: 1rem 2rem; font-size: 1.1rem; border-radius: var(--radius-lg); }
     .btn-icon { padding: 0.5rem; border-radius: var(--radius-md); }
 
-    /* Variants */
-    .btn-primary {
-      background: var(--teal-600);
-      color: #FFFFFF;
-      box-shadow: var(--shadow-sm);
-    }
-    .btn-primary:hover:not(:disabled) {
-      background: var(--teal-500);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
+    .btn-primary { background: var(--teal-600); color: #FFFFFF; box-shadow: var(--shadow-sm); }
+    .btn-primary:hover:not(:disabled) { background: var(--teal-500); transform: translateY(-2px); box-shadow: var(--shadow-md); }
     
-    .btn-secondary {
-      background: var(--bg-surface-raised);
-      color: var(--text-primary);
-      border: 1px solid var(--border-default);
-    }
-    .btn-secondary:hover:not(:disabled) {
-      background: var(--bg-surface-overlay);
-      border-color: var(--teal-600);
-    }
+    .btn-secondary { background: var(--bg-surface-raised); color: var(--text-primary); border: 1px solid var(--border-default); }
+    .btn-secondary:hover:not(:disabled) { background: var(--bg-surface-overlay); border-color: var(--teal-600); }
 
-    .btn-ghost {
-      background: transparent;
-      color: var(--text-secondary);
-    }
-    .btn-ghost:hover:not(:disabled) {
-      background: var(--bg-surface-raised);
-      color: var(--text-primary);
-    }
+    .btn-ghost { background: transparent; color: var(--text-secondary); }
+    .btn-ghost:hover:not(:disabled) { background: var(--bg-surface-raised); color: var(--text-primary); }
 
-    .btn-danger {
-      background: rgba(239, 68, 68, 0.1);
-      color: var(--status-error-text);
-      border: 1px solid var(--status-error-border);
-    }
-    .btn-danger:hover:not(:disabled) {
-      background: var(--status-error-text);
-      color: #FFF;
-    }
+    .btn-danger { background: rgba(239, 68, 68, 0.1); color: var(--status-error-text); border: 1px solid var(--status-error-border); }
+    .btn-danger:hover:not(:disabled) { background: var(--status-error-text); color: #FFF; }
 
-    .btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      transform: none !important;
-      box-shadow: none !important;
-    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
 
-    /* Loading Spinner inside Button */
     .spinner {
-      width: 1em;
-      height: 1em;
-      border: 2px solid currentColor;
-      border-right-color: transparent;
-      border-radius: 50%;
-      animation: spin 0.75s linear infinite;
+      width: 1em; height: 1em; border: 2px solid currentColor;
+      border-right-color: transparent; border-radius: 50%; animation: spin 0.75s linear infinite;
     }
     @keyframes spin { 100% { transform: rotate(360deg); } }
 
     /* ==========================================================================
        6. COMPONENT: FORMS & INPUTS (SaaS Grade)
        ========================================================================== */
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      width: 100%;
-    }
-
-    .form-label {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-    }
-
+    .form-group { display: flex; flex-direction: column; gap: var(--space-2); width: 100%; }
+    .form-label { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); }
     .form-control {
-      width: 100%;
-      background: var(--bg-base);
-      border: 1px solid var(--border-default);
-      color: var(--text-primary);
-      padding: 0.75rem 1rem;
-      border-radius: var(--radius-md);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      transition: all var(--transition-fast);
-      outline: none;
+      width: 100%; background: var(--bg-base); border: 1px solid var(--border-default);
+      color: var(--text-primary); padding: 0.75rem 1rem; border-radius: var(--radius-md);
+      font-family: var(--font-body); font-size: 0.95rem; transition: all var(--transition-fast); outline: none;
     }
+    .form-control::placeholder { color: var(--text-tertiary); }
+    .form-control:hover:not(:disabled) { border-color: var(--border-strong); }
+    .form-control:focus { border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15); background: var(--bg-surface); }
+    .form-control:disabled { opacity: 0.6; cursor: not-allowed; background: var(--bg-surface-raised); }
+    .form-control.has-error { border-color: var(--status-error-text); }
+    .form-control.has-error:focus { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15); }
 
-    .form-control::placeholder {
-      color: var(--text-tertiary);
-    }
+    .form-hint { font-size: 0.8rem; color: var(--text-tertiary); }
+    .form-error-text { font-size: 0.8rem; color: var(--status-error-text); display: flex; align-items: center; gap: 0.25rem; }
 
-    .form-control:hover:not(:disabled) {
-      border-color: var(--border-strong);
-    }
+    /* Input Icon */
+    .input-icon-wrapper { position: relative; display: flex; align-items: center; }
+    .input-icon-wrapper i { position: absolute; left: 1rem; color: var(--text-tertiary); pointer-events: none; }
+    .input-icon-wrapper .form-control { padding-left: 2.75rem; }
 
-    .form-control:focus {
-      border-color: var(--border-focus);
-      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
-      background: var(--bg-surface);
-    }
-
-    .form-control:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      background: var(--bg-surface-raised);
-    }
-
-    .form-control.has-error {
-      border-color: var(--status-error-text);
-    }
-    .form-control.has-error:focus {
-      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
-    }
-
-    .form-hint {
-      font-size: 0.8rem;
-      color: var(--text-tertiary);
-    }
-    .form-error-text {
-      font-size: 0.8rem;
-      color: var(--status-error-text);
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    /* Input with Icon */
-    .input-icon-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-    .input-icon-wrapper i {
-      position: absolute;
-      left: 1rem;
-      color: var(--text-tertiary);
-      pointer-events: none;
-    }
-    .input-icon-wrapper .form-control {
-      padding-left: 2.75rem;
-    }
-
-    /* Checkbox & Radio Custom */
-    .custom-check {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      cursor: pointer;
-      user-select: none;
-    }
-    .custom-check input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-    }
+    /* Checkbox & Radio */
+    .custom-check { display: flex; align-items: center; gap: var(--space-3); cursor: pointer; user-select: none; }
+    .custom-check input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
     .checkmark {
-      height: 20px;
-      width: 20px;
-      background-color: var(--bg-base);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all var(--transition-fast);
+      height: 20px; width: 20px; background-color: var(--bg-base); border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast);
     }
-    .custom-check:hover input ~ .checkmark {
-      border-color: var(--teal-500);
-    }
-    .custom-check input:checked ~ .checkmark {
-      background-color: var(--teal-600);
-      border-color: var(--teal-600);
-    }
-    .checkmark:after {
-      content: "";
-      display: none;
-      width: 5px;
-      height: 10px;
-      border: solid white;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-      margin-bottom: 2px;
-    }
-    .custom-check input:checked ~ .checkmark:after {
-      display: block;
-    }
+    .custom-check:hover input ~ .checkmark { border-color: var(--teal-500); }
+    .custom-check input:checked ~ .checkmark { background-color: var(--teal-600); border-color: var(--teal-600); }
+    .checkmark:after { content: ""; display: none; width: 5px; height: 10px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); margin-bottom: 2px; }
+    .custom-check input:checked ~ .checkmark:after { display: block; }
 
     /* Toggle Switch */
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 44px;
-      height: 24px;
-    }
+    .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
     .switch input { opacity: 0; width: 0; height: 0; }
     .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: var(--bg-surface-raised);
-      border: 1px solid var(--border-strong);
-      transition: .3s;
-      border-radius: 34px;
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--bg-surface-raised); border: 1px solid var(--border-strong); transition: .3s; border-radius: 34px;
     }
     .slider:before {
-      position: absolute;
-      content: "";
-      height: 16px;
-      width: 16px;
-      left: 3px;
-      bottom: 3px;
-      background-color: var(--text-secondary);
-      transition: .3s;
-      border-radius: 50%;
+      position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px;
+      background-color: var(--text-secondary); transition: .3s; border-radius: 50%;
     }
-    .switch input:checked + .slider {
-      background-color: var(--teal-600);
-      border-color: var(--teal-600);
-    }
-    .switch input:checked + .slider:before {
-      transform: translateX(20px);
-      background-color: white;
-    }
+    .switch input:checked + .slider { background-color: var(--teal-600); border-color: var(--teal-600); }
+    .switch input:checked + .slider:before { transform: translateX(20px); background-color: white; }
 
     /* ==========================================================================
        7. COMPONENT: BADGES & TAGS
        ========================================================================== */
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;
     }
-
     .badge-primary { background: var(--teal-glow); color: var(--teal-400); border: 1px solid var(--border-default); }
     .badge-secondary { background: var(--bg-surface-raised); color: var(--text-secondary); border: 1px solid var(--border-default); }
     .badge-success { background: var(--status-success-bg); color: var(--status-success-text); border: 1px solid var(--status-success-border); }
     .badge-warning { background: var(--status-warning-bg); color: var(--status-warning-text); border: 1px solid var(--status-warning-border); }
     .badge-error { background: var(--status-error-bg); color: var(--status-error-text); border: 1px solid var(--status-error-border); }
-    
-    /* Light mode specific badge color adjustments due to glowing variables */
     body.light-mode .badge-primary { color: var(--teal-700); }
 
     /* ==========================================================================
-       8. COMPONENT: SAAS DATA DISPLAY (Tables, Avatars, Stats)
+       8. COMPONENT: ALERTS & FEEDBACK
        ========================================================================== */
-    /* Avatar */
-    .avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--bg-surface-raised);
-      border: 1px solid var(--border-default);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: var(--teal-500);
-      font-size: 0.9rem;
-      position: relative;
-    }
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-    .avatar-indicator {
-      position: absolute;
-      bottom: 0; right: 0;
-      width: 10px; height: 10px;
-      background: var(--status-success-text);
-      border: 2px solid var(--bg-surface);
-      border-radius: 50%;
-    }
-
-    /* Stats Card (KPI) */
-    .kpi-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    }
-    .kpi-title {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .kpi-value {
-      font-family: var(--font-mono);
-      font-size: 2rem;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-    .kpi-trend {
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-    .kpi-trend.positive { color: var(--status-success-text); }
-    .kpi-trend.negative { color: var(--status-error-text); }
-
-    /* Data Table */
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-xl);
-    }
-    .ds-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-    .ds-table th {
-      padding: var(--space-4) var(--space-6);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-tertiary);
-      border-bottom: 1px solid var(--border-strong);
-      background: var(--bg-surface-raised);
-    }
-    .ds-table td {
-      padding: var(--space-4) var(--space-6);
-      font-size: 0.95rem;
-      border-bottom: 1px solid var(--border-default);
-      color: var(--text-secondary);
-      vertical-align: middle;
-    }
-    .ds-table tr:last-child td { border-bottom: none; }
-    .ds-table tr:hover td { background: var(--bg-base); color: var(--text-primary); }
-    .ds-table .primary-cell { color: var(--text-primary); font-weight: 500; }
-    .ds-table .mono-cell { font-family: var(--font-mono); font-size: 0.85rem; }
-
-    /* ==========================================================================
-       9. COMPONENT: ALERTS & FEEDBACK
-       ========================================================================== */
-    .alert {
-      display: flex;
-      gap: var(--space-4);
-      padding: var(--space-4);
-      border-radius: var(--radius-md);
-      border: 1px solid transparent;
-      align-items: flex-start;
-    }
+    .alert { display: flex; gap: var(--space-4); padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid transparent; align-items: flex-start; }
     .alert-icon { flex-shrink: 0; margin-top: 2px; }
     .alert-content h4 { font-size: 0.95rem; margin-bottom: 0.25rem; color: inherit; }
     .alert-content p { font-size: 0.85rem; opacity: 0.9; }
@@ -699,61 +350,119 @@
     .alert-error { background: var(--status-error-bg); border-color: var(--status-error-border); color: var(--status-error-text); }
 
     /* ==========================================================================
-       10. UTILITIES & THEME TOGGLE
+       9. SAAS PATTERNS: NAVIGATION & TABS
        ========================================================================== */
-    .color-swatch {
-      height: 100px;
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      width: 100%;
-    }
-    .swatch-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .swatch-details {
-      padding: var(--space-4);
-    }
+    /* Tabs */
+    .ds-tabs { display: flex; border-bottom: 1px solid var(--border-default); gap: var(--space-6); margin-bottom: var(--space-6); }
+    .ds-tab { padding: var(--space-3) 0; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; font-weight: 500; transition: all 0.2s; position: relative; top: 1px; }
+    .ds-tab.active { color: var(--teal-500); border-bottom-color: var(--teal-500); }
+    .ds-tab:hover:not(.active) { color: var(--text-primary); border-bottom-color: var(--border-strong); }
+
+    /* Breadcrumbs */
+    .ds-breadcrumb { display: flex; align-items: center; gap: var(--space-2); color: var(--text-tertiary); font-size: 0.85rem; margin-bottom: var(--space-4); }
+    .ds-breadcrumb a { color: var(--text-secondary); transition: color 0.2s; }
+    .ds-breadcrumb a:hover { color: var(--text-primary); }
+
+    /* Pagination */
+    .ds-pagination { display: flex; align-items: center; gap: var(--space-2); }
+    .ds-page-item { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); border: 1px solid var(--border-default); color: var(--text-secondary); font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .ds-page-item:hover { background: var(--bg-surface-raised); color: var(--text-primary); }
+    .ds-page-item.active { background: var(--teal-600); border-color: var(--teal-600); color: white; }
+
+    /* ==========================================================================
+       10. SAAS PATTERNS: DATA DISPLAY & KPI
+       ========================================================================== */
+    .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-surface-raised); border: 1px solid var(--border-default); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--teal-500); font-size: 0.9rem; position: relative; }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .avatar-indicator { position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background: var(--status-success-text); border: 2px solid var(--bg-surface); border-radius: 50%; }
+
+    .kpi-card { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); box-shadow: var(--shadow-sm); transition: transform 0.2s; }
+    .kpi-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+    .kpi-title { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+    .kpi-value { font-family: var(--font-mono); font-size: 2rem; font-weight: 500; color: var(--text-primary); }
+    .kpi-trend { font-size: 0.85rem; display: flex; align-items: center; gap: 0.25rem; }
+    .kpi-trend.positive { color: var(--status-success-text); }
+    .kpi-trend.negative { color: var(--status-error-text); }
+
+    .table-container { width: 100%; overflow-x: auto; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); }
+    .ds-table { width: 100%; border-collapse: collapse; text-align: left; }
+    .ds-table th { padding: var(--space-4) var(--space-6); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); border-bottom: 1px solid var(--border-strong); background: var(--bg-surface-raised); }
+    .ds-table td { padding: var(--space-4) var(--space-6); font-size: 0.95rem; border-bottom: 1px solid var(--border-default); color: var(--text-secondary); vertical-align: middle; }
+    .ds-table tr:last-child td { border-bottom: none; }
+    .ds-table tr:hover td { background: var(--bg-base); color: var(--text-primary); }
+    .ds-table .primary-cell { color: var(--text-primary); font-weight: 500; }
+    .ds-table .mono-cell { font-family: var(--font-mono); font-size: 0.85rem; }
+
+    /* ==========================================================================
+       11. SAAS PATTERNS: INTERACTIVE & OVERLAYS
+       ========================================================================== */
+    /* Upload Zone */
+    .upload-zone { border: 2px dashed var(--border-strong); border-radius: var(--radius-lg); padding: var(--space-8); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-4); background: var(--bg-surface-raised); transition: all 0.2s; cursor: pointer; text-align: center; }
+    .upload-zone:hover { border-color: var(--teal-500); background: var(--status-info-bg); }
+    .upload-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-surface); display: flex; align-items: center; justify-content: center; color: var(--teal-500); box-shadow: var(--shadow-sm); }
+
+    /* Progress Stepper */
+    .stepper { display: flex; align-items: center; justify-content: space-between; position: relative; margin: var(--space-8) 0; }
+    .stepper::before { content: ''; position: absolute; top: 16px; left: 0; right: 0; height: 2px; background: var(--border-default); z-index: 1; }
+    .stepper-progress { content: ''; position: absolute; top: 16px; left: 0; width: 50%; height: 2px; background: var(--teal-500); z-index: 1; transition: width 0.3s; }
+    .step { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: var(--space-2); background: var(--bg-surface); padding: 0 var(--space-2); }
+    .step-circle { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-surface-raised); border: 2px solid var(--border-strong); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--text-secondary); transition: all 0.2s; }
+    .step.active .step-circle { border-color: var(--teal-500); color: var(--teal-500); background: var(--bg-surface); }
+    .step.completed .step-circle { background: var(--teal-500); border-color: var(--teal-500); color: white; }
+    .step-label { font-size: 0.75rem; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .step.active .step-label { color: var(--teal-500); }
+
+    /* Empty State */
+    .empty-state { display: flex; flex-direction: column; align-items: center; text-align: center; padding: var(--space-12) var(--space-6); background: var(--bg-surface-raised); border-radius: var(--radius-xl); border: 1px dashed var(--border-strong); }
+    .empty-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--bg-surface); display: flex; align-items: center; justify-content: center; color: var(--text-tertiary); margin-bottom: var(--space-4); box-shadow: var(--shadow-sm); }
+
+    /* Mock Modal Container (Static for display) */
+    .mock-overlay-container { position: relative; width: 100%; height: 500px; background: var(--bg-base); border-radius: var(--radius-xl); overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-default); background-image: radial-gradient(var(--border-strong) 1px, transparent 1px); background-size: 20px 20px; }
+    .mock-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+    .mock-modal { position: relative; width: 450px; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); z-index: 10; display: flex; flex-direction: column; overflow: hidden; }
+    .mock-modal-header { padding: var(--space-4) var(--space-6); border-bottom: 1px solid var(--border-default); display: flex; justify-content: space-between; align-items: center; }
+    .mock-modal-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-primary); }
+    .mock-modal-body { padding: var(--space-6); }
+    .mock-modal-footer { padding: var(--space-4) var(--space-6); border-top: 1px solid var(--border-default); background: var(--bg-surface-raised); display: flex; justify-content: flex-end; gap: var(--space-3); }
+
+    /* Mock Slideover */
+    .mock-slideover { position: absolute; top: 0; right: 0; bottom: 0; width: 380px; background: var(--bg-surface); border-left: 1px solid var(--border-strong); box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 10; display: flex; flex-direction: column; }
+
+    /* ==========================================================================
+       12. THE CONSULTOR.IO EXPERIENCE (Video UI Preview)
+       ========================================================================== */
+    .video-ui-frame { width: 100%; height: 600px; background: #000; border-radius: var(--radius-xl); overflow: hidden; position: relative; display: flex; border: 1px solid var(--border-strong); box-shadow: var(--shadow-lg); }
+    .video-main-area { flex: 1; position: relative; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, #1a2421 0%, #080C0A 100%); }
+    .video-pip { position: absolute; top: var(--space-4); right: var(--space-4); width: 220px; height: 130px; background: var(--bg-surface); border-radius: var(--radius-md); border: 2px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; color: var(--text-tertiary); }
+    .video-controls { position: absolute; bottom: var(--space-6); left: 50%; transform: translateX(-50%); display: flex; gap: var(--space-3); background: rgba(17,23,20,0.85); backdrop-filter: blur(16px); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); border: 1px solid var(--border-strong); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .control-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--bg-surface-raised); color: var(--text-primary); display: flex; align-items: center; justify-content: center; transition: all 0.2s; border: 1px solid var(--border-subtle); cursor: pointer; }
+    .control-btn:hover { background: var(--bg-surface-overlay); transform: scale(1.05); }
+    .control-btn.active { background: var(--teal-600); border-color: var(--teal-500); }
+    .control-btn.danger { background: var(--status-error-text); color: white; border: none; }
+    .control-btn.danger:hover { background: #b91c1c; }
+    
+    .video-sidebar { width: 340px; background: var(--bg-surface); border-left: 1px solid var(--border-default); display: flex; flex-direction: column; z-index: 5; }
+    .video-sidebar-header { padding: var(--space-4); border-bottom: 1px solid var(--border-default); display: flex; align-items: center; justify-content: space-between; }
+    .video-sidebar-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--teal-500); display: flex; align-items: center; gap: 0.5rem; }
+    .video-sidebar-body { flex: 1; padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); overflow-y: auto; }
+    .video-sidebar-footer { padding: var(--space-4); border-top: 1px solid var(--border-default); background: var(--bg-surface-raised); }
+
+    /* ==========================================================================
+       13. UTILITIES
+       ========================================================================== */
+    .color-swatch { height: 100px; border-radius: var(--radius-lg) var(--radius-lg) 0 0; width: 100%; }
+    .swatch-box { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .swatch-details { padding: var(--space-4); }
     .swatch-details h4 { font-size: 0.9rem; margin-bottom: 0.25rem; }
     .swatch-details p { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-tertiary); }
 
     .theme-toggle-ds {
-      position: fixed;
-      bottom: var(--space-6);
-      right: var(--space-6);
-      background: var(--bg-surface-overlay);
-      border: 1px solid var(--border-strong);
-      padding: var(--space-3) var(--space-4);
-      border-radius: var(--radius-full);
-      color: var(--teal-500);
-      font-weight: 700;
-      font-size: 0.85rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-      z-index: 1000;
-      box-shadow: var(--shadow-lg);
-      transition: all var(--transition-fast);
+      position: fixed; bottom: var(--space-6); right: var(--space-6); background: var(--bg-surface-overlay); border: 1px solid var(--border-strong); padding: var(--space-3) var(--space-4); border-radius: var(--radius-full); color: var(--teal-500); font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: var(--space-2); z-index: 1000; box-shadow: var(--shadow-lg); transition: all var(--transition-fast);
     }
-    .theme-toggle-ds:hover {
-      transform: translateY(-2px);
-      border-color: var(--teal-500);
-    }
+    .theme-toggle-ds:hover { transform: translateY(-2px); border-color: var(--teal-500); }
 
-    /* Skeleton Loader */
-    .skeleton {
-      background: linear-gradient(90deg, var(--bg-surface-raised) 25%, var(--bg-surface-overlay) 50%, var(--bg-surface-raised) 75%);
-      background-size: 200% 100%;
-      animation: skeletonLoading 1.5s infinite;
-      border-radius: var(--radius-sm);
-    }
-    @keyframes skeletonLoading {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
+    .skeleton { background: linear-gradient(90deg, var(--bg-surface-raised) 25%, var(--bg-surface-overlay) 50%, var(--bg-surface-raised) 75%); background-size: 200% 100%; animation: skeletonLoading 1.5s infinite; border-radius: var(--radius-sm); }
+    @keyframes skeletonLoading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
   </style>
 </head>
 <body>
@@ -786,8 +495,16 @@
 
     <div class="ds-nav-group">
       <div class="ds-nav-title">SaaS Patterns</div>
+      <a href="#navigation" class="ds-nav-link">Navigation (Tabs)</a>
       <a href="#data" class="ds-nav-link">Data Display (Tables)</a>
       <a href="#kpi" class="ds-nav-link">Dashboards & KPIs</a>
+      <a href="#overlays" class="ds-nav-link">Modals & Overlays</a>
+      <a href="#interactive" class="ds-nav-link">Advanced Interactive</a>
+    </div>
+
+    <div class="ds-nav-group">
+      <div class="ds-nav-title">Experience</div>
+      <a href="#video-ui" class="ds-nav-link">Video Room UI (Mesa)</a>
     </div>
   </aside>
 
@@ -1043,10 +760,49 @@
       </div>
     </section>
 
-    <!-- 7. SAAS PATTERNS (DATA) -->
+    <!-- 7. NAVIGATION -->
+    <section id="navigation" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Navigation & Tabs</h2>
+        <p>Sistemas de navegação interna do SaaS.</p>
+      </div>
+      <div class="ds-component-block">
+        
+        <h3 class="ds-component-title">Tabs (Navegação de Perfil)</h3>
+        <div class="ds-tabs">
+          <div class="ds-tab active">Visão Geral</div>
+          <div class="ds-tab">Prontuário Clínico</div>
+          <div class="ds-tab">Arquivos & Exames</div>
+          <div class="ds-tab">Configurações</div>
+        </div>
+
+        <h3 class="ds-component-title" style="margin-top: 3rem;">Breadcrumbs</h3>
+        <div class="ds-breadcrumb">
+          <a href="#">Pacientes</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="#">Mariana Costa</a>
+          <span class="breadcrumb-separator">/</span>
+          <span style="color: var(--text-primary);">Prontuário</span>
+        </div>
+
+        <h3 class="ds-component-title" style="margin-top: 3rem;">Pagination</h3>
+        <div class="ds-pagination">
+          <div class="ds-page-item"><i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i></div>
+          <div class="ds-page-item">1</div>
+          <div class="ds-page-item active">2</div>
+          <div class="ds-page-item">3</div>
+          <span style="color: var(--text-tertiary); margin: 0 0.5rem;">...</span>
+          <div class="ds-page-item">12</div>
+          <div class="ds-page-item"><i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. SAAS PATTERNS (DATA) -->
     <section id="data" class="ds-section">
       <div class="ds-section-header">
-        <h2>SaaS Patterns: Data Display</h2>
+        <h2>Data Display (Tables)</h2>
         <p>Tabelas clínicas e avatares de pacientes.</p>
       </div>
       <div class="ds-component-block">
@@ -1104,7 +860,7 @@
       </div>
     </section>
 
-    <!-- 8. DASHBOARD KPIs -->
+    <!-- 9. DASHBOARD KPIs -->
     <section id="kpi" class="ds-section">
       <div class="ds-section-header">
         <h2>Dashboards & KPIs</h2>
@@ -1147,7 +903,7 @@
             </div>
             <div class="kpi-value">2.4%</div>
             <div class="kpi-trend negative">
-              <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+              <i data-lucide="trending-down" style="width: 14px; height: 14px;"></i>
               <span>+0.5% vs mês passado</span>
             </div>
           </div>
@@ -1164,6 +920,179 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- 10. MODALS & OVERLAYS -->
+    <section id="overlays" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Modals & Overlays</h2>
+        <p>Interfaces sobrepostas para ações focadas e detalhes de paciente.</p>
+      </div>
+      
+      <h3 class="ds-component-title">Standard Modal (Dialog)</h3>
+      <div class="mock-overlay-container" style="margin-bottom: 3rem;">
+        <div class="mock-backdrop"></div>
+        <div class="mock-modal">
+          <div class="mock-modal-header">
+            <span class="mock-modal-title">Novo Agendamento</span>
+            <button class="btn-icon"><i data-lucide="x" style="width: 20px; height: 20px; color: var(--text-secondary);"></i></button>
+          </div>
+          <div class="mock-modal-body">
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label class="form-label">Paciente</label>
+              <input type="text" class="form-control" placeholder="Buscar paciente...">
+            </div>
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Data</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Horário</label>
+                <input type="time" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="mock-modal-footer">
+            <button class="btn btn-secondary">Cancelar</button>
+            <button class="btn btn-primary">Confirmar Horário</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="ds-component-title">Slide-over (Painel Lateral)</h3>
+      <div class="mock-overlay-container">
+        <div class="mock-backdrop"></div>
+        <div class="mock-slideover">
+          <div class="mock-modal-header">
+            <span class="mock-modal-title">Ficha Rápida</span>
+            <button class="btn-icon"><i data-lucide="x" style="width: 20px; height: 20px; color: var(--text-secondary);"></i></button>
+          </div>
+          <div class="mock-modal-body" style="flex: 1; overflow-y: auto;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+              <div class="avatar" style="width: 64px; height: 64px; font-size: 1.5rem;">RS</div>
+              <div>
+                <div style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">Roberto Silva</div>
+                <div style="color: var(--text-secondary); font-size: 0.9rem;">Plano Semestral</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Notas Fixadas</label>
+              <textarea class="form-control" rows="6" disabled>Meta: Reduzir BF para 12%.
+Alergia: Amendoim.
+Dificuldade principal: Jantar fora nos finais de semana.</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. ADVANCED INTERACTIVE -->
+    <section id="interactive" class="ds-section">
+      <div class="ds-section-header">
+        <h2>Advanced Interactive</h2>
+        <p>Componentes complexos de interação SaaS.</p>
+      </div>
+      <div class="ds-component-block">
+        
+        <h3 class="ds-component-title">Progress Stepper (Multi-step forms)</h3>
+        <div class="stepper">
+          <div class="stepper-progress"></div>
+          <div class="step completed">
+            <div class="step-circle"><i data-lucide="check" style="width: 16px; height: 16px;"></i></div>
+            <span class="step-label">Dados Iniciais</span>
+          </div>
+          <div class="step active">
+            <div class="step-circle">2</div>
+            <span class="step-label">Metabolismo</span>
+          </div>
+          <div class="step">
+            <div class="step-circle">3</div>
+            <span class="step-label">Plano Alimentar</span>
+          </div>
+          <div class="step">
+            <div class="step-circle">4</div>
+            <span class="step-label">Revisão</span>
+          </div>
+        </div>
+
+        <h3 class="ds-component-title" style="margin-top: 4rem;">File Upload Zone</h3>
+        <div class="upload-zone">
+          <div class="upload-icon">
+            <i data-lucide="upload-cloud"></i>
+          </div>
+          <div>
+            <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">Envie exames ou documentos</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">Arraste arquivos aqui ou <span style="color: var(--teal-500); font-weight: 500;">clique para procurar</span></p>
+          </div>
+          <p style="font-size: 0.75rem; color: var(--text-tertiary); font-family: var(--font-mono);">PDF, JPG ou PNG (Max. 10MB)</p>
+        </div>
+
+        <h3 class="ds-component-title" style="margin-top: 4rem;">Empty States</h3>
+        <div class="empty-state">
+          <div class="empty-icon"><i data-lucide="folder-open" style="width: 32px; height: 32px;"></i></div>
+          <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Nenhum Prontuário Encontrado</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 300px;">Este paciente ainda não possui registros clínicos ou anotações.</p>
+          <button class="btn btn-primary"><i data-lucide="plus" style="width: 18px; height: 18px;"></i> Criar Primeiro Registro</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 12. THE CONSULTOR.IO EXPERIENCE (Video UI) -->
+    <section id="video-ui" class="ds-section">
+      <div class="ds-section-header">
+        <h2>The Experience: Video Room UI (Mesa de Controle)</h2>
+        <p>A visão máxima da plataforma: a interface da sala de atendimento.</p>
+      </div>
+      
+      <div class="video-ui-frame">
+        <!-- Main Video Area -->
+        <div class="video-main-area">
+          <div style="display: flex; flex-direction: column; align-items: center; color: var(--text-secondary); gap: 1rem;">
+            <i data-lucide="video-off" style="width: 48px; height: 48px; opacity: 0.2;"></i>
+            <span style="font-family: var(--font-mono); letter-spacing: 0.1em; opacity: 0.5;">Aguardando Paciente...</span>
+          </div>
+          
+          <!-- Picture in Picture (Self) -->
+          <div class="video-pip">
+            <i data-lucide="user" style="width: 32px; height: 32px; opacity: 0.5;"></i>
+          </div>
+
+          <!-- Floating Controls -->
+          <div class="video-controls">
+            <button class="control-btn"><i data-lucide="mic"></i></button>
+            <button class="control-btn"><i data-lucide="video"></i></button>
+            <button class="control-btn"><i data-lucide="monitor-up"></i></button>
+            <div style="width: 1px; background: var(--border-strong); margin: 0 0.5rem;"></div>
+            <button class="control-btn danger"><i data-lucide="phone-off"></i></button>
+          </div>
+        </div>
+
+        <!-- Right Sidebar (Lousa) -->
+        <div class="video-sidebar">
+          <div class="video-sidebar-header">
+            <div class="video-sidebar-title">
+              <i data-lucide="pen-tool" style="width: 18px; height: 18px;"></i>
+              Lousa Estratégica
+            </div>
+            <button class="btn-icon"><i data-lucide="more-vertical" style="width: 18px; height: 18px; color: var(--text-secondary);"></i></button>
+          </div>
+          
+          <div class="ds-tabs" style="margin: 0; padding: 0 var(--space-4); border-bottom: 1px solid var(--border-default);">
+            <div class="ds-tab active" style="font-size: 0.85rem; padding: 0.75rem 0;">Notas Reais</div>
+            <div class="ds-tab" style="font-size: 0.85rem; padding: 0.75rem 0;">Histórico</div>
+          </div>
+
+          <div class="video-sidebar-body">
+            <textarea class="form-control" placeholder="Anotações não ficam visíveis para o paciente. Digite livremente..." style="flex: 1; resize: none; background: transparent; border: none; padding: 0; color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;"></textarea>
+          </div>
+          
+          <div class="video-sidebar-footer">
+            <button class="btn btn-primary" style="width: 100%;">Salvar Lousa</button>
+          </div>
+        </div>
       </div>
     </section>
 
