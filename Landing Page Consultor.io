@@ -1219,7 +1219,7 @@
       </h1>
 
       <p class="hero-sub">
-        O Consultor.io cria uma experiência imersiva para o seu paciente antes mesmo da câmera ligar. É o fim da tela preta e o começo de uma percepção de valor inabalável.
+        O Consultor.io cria uma experiência imersiva para o seu paciente antes mesmo da câmera ligar. É o fim da tela preta e o começo de um novo padrão de atendimento.
       </p>
 
       <div class="hero-actions">
@@ -1268,7 +1268,7 @@
               <img
                 src="assets/lobby.jpg"
                 alt="Preview App" style="width: 100%; height: 100%; object-fit: cover;">
-              <div style="position:absolute; bottom: 0; width: 100%; background: rgba(13, 148, 136, 0.9); color: white; padding: 5px; text-align: center; font-size: 10px; font-weight: bold;">SEU AMBIENTE DE ELITE</div>
+              <div style="position:absolute; bottom: 0; width: 100%; background: rgba(13, 148, 136, 0.9); color: white; padding: 5px; text-align: center; font-size: 10px; font-weight: bold;">SEU CONSULTÓRIO IMERSIVO</div>
             </div>
           </div>
         </div>
@@ -1516,7 +1516,7 @@
       <div class="price-card featured">
         <div class="featured-tag">Mais Popular</div>
         <div class="price-header">
-          <h3>Clínica Elite</h3>
+          <h3>Clínica Premium</h3>
           <div class="amount">R$ 197<span>/mês</span></div>
         </div>
         <ul class="price-features">
