@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System — Consultor.io</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      /* Core Colors */
+      --teal: #0D9488;
+      --teal-light: #14B8A8;
+      --teal-glow: rgba(13, 148, 136, 0.18);
+      
+      /* Dark Theme (Default) */
+      --charcoal: #111714;
+      --surface: #161C1A;
+      --surface2: #1C2422;
+      --text: #E8EDE9;
+      --text-muted: #7A9188;
+      --border: rgba(13, 148, 136, 0.15);
+      --nav-bg: rgba(17, 23, 20, 0.75);
+      
+      /* Brand Accent */
+      --brand-accent: var(--teal);
+      
+      /* Typography */
+      --font-display: 'Fraunces', serif;
+      --font-body: 'DM Sans', sans-serif;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+      --space-xl: 8rem;
+    }
+
+    body.light-mode {
+      --charcoal: #F5F7F6;
+      --surface: #FFFFFF;
+      --surface2: #EEF2F0;
+      --text: #161C1A;
+      --text-muted: #5C7067;
+      --border: rgba(13, 148, 136, 0.25);
+      --teal-glow: rgba(13, 148, 136, 0.08);
+      --nav-bg: rgba(245, 247, 246, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--charcoal);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease;
+      padding-bottom: 5rem;
+    }
+
+    .ds-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    /* Header */
+    .ds-header {
+      padding: 6rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+
+    .ds-header h1 {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.04em;
+    }
+
+    .ds-header p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    /* Sections */
+    .ds-section {
+      margin-bottom: 8rem;
+    }
+
+    .ds-section-title {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--teal);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .ds-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Grid Helpers */
+    .ds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Color Swatches */
+    .swatch-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .swatch-color {
+      height: 120px;
+      width: 100%;
+    }
+
+    .swatch-info {
+      padding: 1.5rem;
+    }
+
+    .swatch-info h4 {
+      font-family: var(--font-display);
+      margin-bottom: 0.25rem;
+    }
+
+    .swatch-info p {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Typography Display */
+    .type-display {
+      margin-bottom: 3rem;
+    }
+
+    .type-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .type-example-h1 { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+    .type-example-h2 { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; line-height: 1.1; }
+    .type-example-h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; }
+    .type-example-body { font-family: var(--font-body); font-size: 1.1rem; max-width: 800px; }
+    .type-example-small { font-family: var(--font-body); font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Buttons Section */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    /* Component: Buttons (Same as index.html) */
+    .btn-primary {
+      background: var(--teal);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 24px rgba(13, 148, 136, 0.3);
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(13, 148, 136, 0.4);
+    }
+
+    .btn-ghost {
+      color: var(--text-muted);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover {
+      background: var(--surface2);
+      color: var(--text);
+      border-color: var(--teal);
+    }
+
+    /* Brand Style Class */
+    .brand-style {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: inherit;
+      text-transform: lowercase;
+      display: inline-block;
+    }
+
+    .brand-style span {
+      color: var(--brand-accent);
+      transition: color 0.3s ease;
+    }
+
+    /* UI Cards */
+    .ds-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ds-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, var(--teal-glow) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle-ds {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      color: var(--teal);
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 1000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Navbar Sim */
+    .nav-sim {
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .ds-header h1 { font-size: 2.5rem; }
+      .ds-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle-ds" id="themeToggle">
+    <i data-lucide="sun" id="themeIcon"></i>
+    <span id="themeText">Alternar Tema</span>
+  </button>
+
+  <div class="ds-header">
+    <div class="ds-container">
+      <h1>Design System</h1>
+      <p>A identidade visual do <span class="brand-style">consultor<span>.io</span></span>. Um guia de estilo focado em autoridade, precisão clínica e percepção de alto valor.</p>
+    </div>
+  </div>
+
+  <div class="ds-container">
+    
+    <!-- BRANDING -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Branding & Logo</h2>
+      <div class="ds-card" style="display: flex; flex-direction: column; gap: 2rem; align-items: center;">
+        <div style="font-size: 3rem;">
+          <span class="brand-style">consultor<span>.io</span></span>
+        </div>
+        <div style="background: var(--teal); padding: 3rem; border-radius: 16px; width: 100%; text-align: center; --brand-accent: white;">
+          <p style="color: white; margin-bottom: 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">Variação em Fundo Colorido</p>
+          <div style="font-size: 3rem; color: white;">
+            <span class="brand-style">consultor<span>.io</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLORS -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Color Palette</h2>
+      <div class="ds-grid">
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #0D9488;"></div>
+          <div class="swatch-info">
+            <h4>Teal (Primary)</h4>
+            <p>#0D9488 / var(--teal)</p>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: var(--charcoal);"></div>
+          <div class="swatch-info">
+            <h4>Charcoal (Background)</h4>
+            <p>var(--charcoal)</p>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: var(--surface);"></div>
+          <div class="swatch-info">
+            <h4>Surface (Cards)</h4>
+            <p>var(--surface)</p>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: var(--text);"></div>
+          <div class="swatch-info">
+            <h4>Text Primary</h4>
+            <p>var(--text)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Typography</h2>
+      <div class="ds-card">
+        <div class="type-display">
+          <span class="type-label">H1 - Display Hero</span>
+          <h1 class="type-example-h1">A autoridade que você merece.</h1>
+        </div>
+        <div class="type-display">
+          <span class="type-label">H2 - Section Headline</span>
+          <h2 class="type-example-h2">O ritual da sua consulta.</h2>
+        </div>
+        <div class="type-display">
+          <span class="type-label">H3 - Card Title</span>
+          <h3 class="type-example-h3">Lousa Estratégica</h3>
+        </div>
+        <div class="type-display">
+          <span class="type-label">Body Text</span>
+          <p class="type-example-body">O Consultor.io não é apenas um software de vídeo. É uma extensão da sua marca pessoal, desenhada para profissionais que cobram caro porque entregam excelência.</p>
+        </div>
+        <div class="type-display">
+          <span class="type-label">Small / Caption</span>
+          <p class="type-example-small">Disponível para Mentores, Nutricionistas e Especialistas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component Library</h2>
+      
+      <div style="margin-bottom: 4rem;">
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-muted);">Botões & Ações</h4>
+        <div class="btn-group">
+          <a href="#" class="btn-primary">Botão Primário</a>
+          <a href="#" class="btn-ghost">Botão Ghost</a>
+          <div style="background: var(--teal); padding: 1rem; border-radius: 8px;">
+            <a href="#" class="btn-primary" style="background: white; color: var(--teal); --brand-accent: var(--charcoal);">Botão CTA Invertido</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 4rem;">
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-muted);">Simulação de Navegação</h4>
+        <div class="nav-sim">
+          <div class="brand-style" style="font-size: 1.2rem;">consultor<span>.io</span></div>
+          <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; font-weight: 500;">
+            <span>Início</span>
+            <span>Planos</span>
+            <span>Sobre</span>
+          </div>
+          <div style="background: var(--teal); width: 32px; height: 32px; border-radius: 50%;"></div>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="margin-bottom: 1.5rem; color: var(--text-muted);">Inputs & Formulários (Preview)</h4>
+        <div class="ds-card" style="max-width: 400px;">
+          <label style="display: block; font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--teal-light);">NOME DO CONSULTÓRIO</label>
+          <input type="text" placeholder="ex: drgustavo.consultor.io" style="width: 100%; background: var(--surface2); border: 1px solid var(--border); padding: 0.8rem; border-radius: 8px; color: white; outline: none; margin-bottom: 1.5rem;">
+          <button class="btn-primary" style="width: 100%;">Reservar meu Domínio</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    let isLight = false;
+
+    themeToggle.addEventListener('click', () => {
+      isLight = !isLight;
+      document.body.classList.toggle('light-mode');
+      
+      if (isLight) {
+        themeIcon.setAttribute('data-lucide', 'moon');
+        themeText.innerText = 'Modo Escuro';
+      } else {
+        themeIcon.setAttribute('data-lucide', 'sun');
+        themeText.innerText = 'Modo Claro';
+      }
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
