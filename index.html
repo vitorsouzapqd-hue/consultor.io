@@ -1219,7 +1219,7 @@
       </h1>
 
       <p class="hero-sub">
-        O Consultor.io cria uma experiência imersiva para o seu paciente antes mesmo da câmera ligar. É o fim da tela preta e o começo da autoridade real.
+        O Consultor.io cria uma experiência imersiva para o seu paciente antes mesmo da câmera ligar. É o fim da tela preta e o começo de uma percepção de valor inabalável.
       </p>
 
       <div class="hero-actions">
@@ -1268,7 +1268,7 @@
               <img
                 src="assets/lobby.jpg"
                 alt="Preview App" style="width: 100%; height: 100%; object-fit: cover;">
-              <div style="position:absolute; bottom: 0; width: 100%; background: rgba(13, 148, 136, 0.9); color: white; padding: 5px; text-align: center; font-size: 10px; font-weight: bold;">SEU ATELIER DE AUTORIDADE</div>
+              <div style="position:absolute; bottom: 0; width: 100%; background: rgba(13, 148, 136, 0.9); color: white; padding: 5px; text-align: center; font-size: 10px; font-weight: bold;">SEU AMBIENTE DE ELITE</div>
             </div>
           </div>
         </div>
@@ -1376,7 +1376,7 @@
           exatamente a mesma interface.
           O digital comoditizou a sua presença.
         </blockquote>
-        <p class="quote-author">A dor que nenhuma ferramenta de vídeo resolveu — até agora.</p>
+        <p class="quote-author">A dor que nenhuma ferramenta de vídeo resolveu até agora.</p>
       </div>
     </div>
   </section>
@@ -1392,15 +1392,15 @@
 
     <div class="steps-vertical" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem;">
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 80px; font-weight: 800; color: var(--teal); font-size: 1.2rem; padding-top: 5px;">T-15</div>
+        <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">15 MIN ANTES</div>
         <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
           <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal);"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">O Gatilho</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente recebe o aviso: "Seu consultório está aberto". Ele entra 15 minutos antes para se preparar para o encontro.</p>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente recebe o aviso: "Seu consultório está aberto". Ele entra antes para se preparar para o encontro.</p>
         </div>
       </div>
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 80px; font-weight: 800; color: var(--teal); font-size: 1.2rem; padding-top: 5px;">T-13</div>
+        <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">13 MIN ANTES</div>
         <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
           <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">Criação do Avatar</h3>
@@ -1408,7 +1408,7 @@
         </div>
       </div>
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 80px; font-weight: 800; color: var(--teal); font-size: 1.2rem; padding-top: 5px;">T-10</div>
+        <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">10 MIN ANTES</div>
         <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
           <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Ante-Sala</h3>
@@ -1416,7 +1416,7 @@
         </div>
       </div>
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 80px; font-weight: 800; color: var(--teal); font-size: 1.2rem; padding-top: 5px;">T-00</div>
+        <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">HORA H</div>
         <div style="flex-grow: 1; border-left: 2px solid transparent; padding-left: 2rem; position: relative;">
           <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Consulta</h3>
@@ -1484,7 +1484,7 @@
     <div class="pricing-grid">
       <div class="price-card">
         <div class="price-header">
-          <h3>Explorador</h3>
+          <h3>Individual</h3>
           <div class="amount">R$ 0<span>/mês</span></div>
         </div>
         <ul class="price-features">
@@ -1499,7 +1499,7 @@
 
       <div class="price-card">
         <div class="price-header">
-          <h3>Starter</h3>
+          <h3>Profissional</h3>
           <div class="amount">R$ 67<span>/mês</span></div>
         </div>
         <ul class="price-features">
@@ -1516,7 +1516,7 @@
       <div class="price-card featured">
         <div class="featured-tag">Mais Popular</div>
         <div class="price-header">
-          <h3>Pro</h3>
+          <h3>Clínica Elite</h3>
           <div class="amount">R$ 197<span>/mês</span></div>
         </div>
         <ul class="price-features">
@@ -1533,7 +1533,7 @@
 
       <div class="price-card">
         <div class="price-header">
-          <h3>Atelier</h3>
+          <h3>White Label</h3>
           <div class="amount">R$ 497<span>/mês</span></div>
         </div>
         <ul class="price-features">
@@ -1552,7 +1552,7 @@
   <!-- FINAL CTA -->
   <section class="final-cta">
     <h2>O seu próximo paciente vai entrar pela porta do Google Meet ou pela porta do seu Consultór.io?</h2>
-    <a href="#planos" class="btn-primary">Criar meu Consultório Agora — É Grátis</a>
+    <a href="#planos" class="btn-primary">Criar meu Consultório Agora. É Grátis</a>
   </section>
 
   <!-- FOOTER -->
