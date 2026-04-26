@@ -126,17 +126,22 @@
       box-shadow: 0 0 20px var(--teal-glow);
     }
 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+      width: 100%;
+    }
+
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      padding: 120px 5% 80px;
+      padding: 120px 0 80px;
       position: relative;
       overflow: hidden;
     }
 
     .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 4rem;
@@ -633,7 +638,7 @@
     }
 
     .problem {
-      padding: 100px 5%;
+      padding: 100px 0;
       background: var(--surface);
       position: relative;
       overflow: hidden;
@@ -745,7 +750,7 @@
 
     /* ── COMO FUNCIONA ── */
     .howto {
-      padding: 100px 5%;
+      padding: 100px 0;
       background: var(--charcoal);
     }
 
@@ -854,7 +859,7 @@
 
     /* ── DEPOIMENTOS ── */
     .testimonials {
-      padding: 100px 5%;
+      padding: 100px 0;
       background: var(--surface);
     }
 
@@ -919,7 +924,7 @@
 
     /* ── PLANOS ── */
     .pricing {
-      padding: 100px 5%;
+      padding: 100px 0;
       background: var(--charcoal);
     }
 
@@ -1024,7 +1029,7 @@
 
     /* ── FINAL CTA ── */
     .final-cta {
-      padding: 100px 5%;
+      padding: 100px 0;
       background: var(--teal);
       text-align: center;
       color: white;
@@ -1044,9 +1049,12 @@
 
     /* ── FOOTER ── */
     footer {
-      padding: 60px 5%;
+      padding: 60px 0;
       background: var(--charcoal);
       border-top: 1px solid var(--border);
+    }
+
+    .footer-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1092,7 +1100,7 @@
 
     /* ── TOUR / GALERIA ── */
     .tour {
-      padding: 100px 5%;
+      padding: 100px 0;
       background: var(--charcoal);
     }
 
@@ -1142,14 +1150,12 @@
 
     /* Concept Section */
     .concept {
-      padding: 80px 5%;
+      padding: 80px 0;
       background: var(--surface);
       border-bottom: 1px solid var(--border);
     }
 
     .concept-container {
-      max-width: 1200px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1.5fr;
       gap: 4rem;
@@ -1214,18 +1220,20 @@
 
   <!-- NAVBAR -->
   <nav>
-    <a href="#" class="nav-logo">consultor<span>.io</span></a>
-    <ul class="nav-links">
-      <li><a href="#como-funciona">Como Funciona</a></li>
-      <li><a href="#planos">Planos</a></li>
-      <li><a href="#depoimentos">Depoimentos</a></li>
-    </ul>
-    <a href="#planos" class="btn-nav">Começar Grátis</a>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0 5%;">
+      <a href="#" class="nav-logo">consultor<span>.io</span></a>
+      <ul class="nav-links">
+        <li><a href="#como-funciona">Como Funciona</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+      </ul>
+      <a href="#planos" class="btn-nav">Começar Grátis</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-container">
+    <div class="container hero-container">
       <div class="hero-content">
       <div class="hero-eyebrow">Para profissionais de saúde</div>
 
@@ -1309,7 +1317,7 @@
 
   <!-- O QUE É O CONSULTOR.IO -->
   <section class="concept">
-    <div class="concept-container">
+    <div class="container concept-container">
       <div class="concept-text">
         <h2>O que é o Consultor.io?</h2>
         <p style="color: var(--text-muted); line-height: 1.6;">Não é uma ferramenta de videoconferência. É a <strong>Arquitetura de Atendimento</strong> que envolve o seu paciente em um ritual de autoridade desde o convite até o pós-consulta.</p>
@@ -1329,39 +1337,41 @@
 
   <!-- TOUR PELO APP -->
   <section class="tour" id="tour">
-    <div class="howto-header">
-      <span class="section-label">Imersão Total</span>
-      <h2 class="section-headline">Um tour pelo seu novo<br>Escritório Particular</h2>
-      <p class="section-sub">Dê adeus às janelas cinzas e aos links frios. Bem-vindo à nova era da autoridade digital.
-      </p>
-    </div>
+    <div class="container">
+      <div class="howto-header">
+        <span class="section-label">Imersão Total</span>
+        <h2 class="section-headline">Um tour pelo seu novo<br>Escritório Particular</h2>
+        <p class="section-sub">Dê adeus às janelas cinzas e aos links frios. Bem-vindo à nova era da autoridade digital.
+        </p>
+      </div>
 
-    <div class="tour-grid">
-      <div class="tour-card">
-        <img
-          src="assets/lobby.jpg"
-          class="tour-img" alt="Lobby Consultor.io">
-        <div class="tour-info">
-          <h3>A Ante-Sala (Lobby)</h3>
-          <p>Onde o ritual começa. Seus pacientes chegam, observam o ambiente premium e aguardam com um café virtual.</p>
+      <div class="tour-grid">
+        <div class="tour-card">
+          <img
+            src="assets/lobby.jpg"
+            class="tour-img" alt="Lobby Consultor.io">
+          <div class="tour-info">
+            <h3>A Ante-Sala (Lobby)</h3>
+            <p>Onde o ritual começa. Seus pacientes chegam, observam o ambiente premium e aguardam com um café virtual.</p>
+          </div>
         </div>
-      </div>
-      <div class="tour-card">
-        <img
-          src="assets/depoimentos.jpg"
-          class="tour-img" alt="Galeria de Depoimentos">
-        <div class="tour-info">
-          <h3>Galeria de Depoimentos</h3>
-          <p>Ao clicar no mural, a tela principal sai de foco e abre-se a prova social. A sua autoridade é construída antes da primeira palavra.</p>
+        <div class="tour-card">
+          <img
+            src="assets/depoimentos.jpg"
+            class="tour-img" alt="Galeria de Depoimentos">
+          <div class="tour-info">
+            <h3>Galeria de Depoimentos</h3>
+            <p>Ao clicar no mural, a tela principal sai de foco e abre-se a prova social. A sua autoridade é construída antes da primeira palavra.</p>
+          </div>
         </div>
-      </div>
-      <div class="tour-card">
-        <img
-          src="assets/marketplace.jpg"
-          class="tour-img" alt="Marketplace de Mobiliário">
-        <div class="tour-info">
-          <h3>Personalize seu consultório virtual</h3>
-          <p>Personalize cada centímetro. Escolha sofás de couro, móveis de mogno e decorações para tornar seu consultório único.</p>
+        <div class="tour-card">
+          <img
+            src="assets/marketplace.jpg"
+            class="tour-img" alt="Marketplace de Mobiliário">
+          <div class="tour-info">
+            <h3>Personalize seu consultório virtual</h3>
+            <p>Personalize cada centímetro. Escolha sofás de couro, móveis de mogno e decorações para tornar seu consultório único.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1369,12 +1379,13 @@
 
   <!-- PROBLEMA -->
   <section class="problem" id="problema">
-    <div>
-      <span class="section-label">O Diagnóstico</span>
-      <h2 class="section-headline">Antigamente, o seu consultório<br>físico vendia antes de você abrir a boca.</h2>
-    </div>
+    <div class="container">
+      <div>
+        <span class="section-label">O Diagnóstico</span>
+        <h2 class="section-headline">Antigamente, o seu consultório<br>físico vendia antes de você abrir a boca.</h2>
+      </div>
 
-    <div class="problem-grid">
+      <div class="problem-grid">
       <div class="pain-cards">
         <div class="pain-card">
           <div class="pain-icon" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2);"><i data-lucide="clock"></i></div>
@@ -1413,14 +1424,15 @@
 
   <!-- COMO FUNCIONA -->
   <section class="howto" id="como-funciona">
-    <div class="howto-header">
-      <span class="section-label">O Ritual</span>
-      <h2 class="section-headline">5 passos que transformam<br>uma consulta num evento</h2>
-      <p class="section-sub">Cada detalhe foi projetado para que o seu paciente chegue na sala da consulta já convicto
-        de que está diante do melhor profissional que já encontrou.</p>
-    </div>
+    <div class="container">
+      <div class="howto-header">
+        <span class="section-label">O Ritual</span>
+        <h2 class="section-headline">5 passos que transformam<br>uma consulta num evento</h2>
+        <p class="section-sub">Cada detalhe foi projetado para que o seu paciente chegue na sala da consulta já convicto
+          de que está diante do melhor profissional que já encontrou.</p>
+      </div>
 
-    <div class="steps-vertical" id="ritual-timeline" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 0;">
+      <div class="steps-vertical" id="ritual-timeline" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 0;">
       
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
         <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">15 MIN ANTES</div>
@@ -1472,12 +1484,13 @@
 
   <!-- ACELERADORES DE CONSULTÓRIO (ROI) -->
   <section class="roi-features" id="roi" style="padding: 100px 0; background: var(--surface2);">
-    <div class="howto-header">
-      <span class="section-label">Aceleradores de Lucro</span>
-      <h2 class="section-headline">Recursos que pagam a<br>própria assinatura</h2>
-    </div>
+    <div class="container">
+      <div class="howto-header">
+        <span class="section-label">Aceleradores de Lucro</span>
+        <h2 class="section-headline">Recursos que pagam a<br>própria assinatura</h2>
+      </div>
 
-    <div class="roi-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+      <div class="roi-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
       
       <!-- Feature 1 -->
       <div class="roi-card" style="background: var(--charcoal); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); transition: transform 0.3s, border-color 0.3s;">
@@ -1511,12 +1524,13 @@
 
   <!-- DEPOIMENTOS -->
   <section class="testimonials" id="depoimentos">
-    <div class="howto-header">
-      <span class="section-label">O que dizem os pioneiros</span>
-      <h2 class="section-headline">O que muda quando a<br>experiência é premium</h2>
-    </div>
+    <div class="container">
+      <div class="howto-header">
+        <span class="section-label">O que dizem os pioneiros</span>
+        <h2 class="section-headline">O que muda quando a<br>experiência é premium</h2>
+      </div>
 
-    <div class="testimonials-grid">
+      <div class="testimonials-grid">
       <div class="testimonial-card">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
           <div class="testimonial-stars" style="color: var(--teal-light); display: flex; gap: 2px;">
@@ -1584,12 +1598,13 @@
 
   <!-- PLANOS -->
   <section class="pricing" id="planos">
-    <div class="howto-header">
-      <span class="section-label">Investimento</span>
-      <h2 class="section-headline">Escolha o nível de autoridade<br>do seu Consultório</h2>
-    </div>
+    <div class="container">
+      <div class="howto-header">
+        <span class="section-label">Investimento</span>
+        <h2 class="section-headline">Escolha o nível de autoridade<br>do seu Consultório</h2>
+      </div>
 
-    <div class="pricing-grid">
+      <div class="pricing-grid">
       <div class="price-card">
         <div class="price-header">
           <h3>Gratuito</h3>
@@ -1659,18 +1674,22 @@
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <h2>O seu próximo paciente vai entrar pela porta do Google Meet ou pela porta do seu Consultor.io?</h2>
-    <a href="#planos" class="btn-primary">Criar meu Consultório Agora. É Grátis</a>
+    <div class="container">
+      <h2>O seu próximo paciente vai entrar pela porta do Google Meet ou pela porta do seu Consultor.io?</h2>
+      <a href="#planos" class="btn-primary">Criar meu Consultório Agora. É Grátis</a>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <a href="#" class="nav-logo">consultor<span>.io</span></a>
-    <ul class="footer-links">
-      <li><a href="#">Privacidade</a></li>
-      <li><a href="#">Termos de Uso</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
+    <div class="container footer-container">
+      <a href="#" class="nav-logo">consultor<span>.io</span></a>
+      <ul class="footer-links">
+        <li><a href="#">Privacidade</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
   </footer>
 
   <script>
