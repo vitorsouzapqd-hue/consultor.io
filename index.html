@@ -325,6 +325,78 @@
       background: #202124;
     }
 
+    /* Testimonials Carousel */
+    .testimonials {
+      padding: 100px 0;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .testimonials-track {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem 0;
+      width: max-content;
+      animation: scroll 60s linear infinite;
+    }
+
+    .testimonials-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 1rem)); }
+    }
+
+    .testimonial-card-v2 {
+      width: 400px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .testimonial-card-v2:hover {
+      border-color: var(--teal);
+      transform: translateY(-5px);
+    }
+
+    .testimonial-card-v2 p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-card-v2 strong {
+      color: var(--teal-light);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-author-v2 {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .testimonial-author-v2 h4 {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .testimonial-author-v2 p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 4px 0 0;
+    }
+
     .spinner {
       width: 28px;
       height: 28px;
@@ -1504,75 +1576,122 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
+  <!-- DEPOIMENTOS CARROSSEL -->
   <section class="testimonials" id="depoimentos">
     <div class="container">
       <div class="howto-header">
-        <span class="section-label">O que dizem os pioneiros</span>
-        <h2 class="section-headline">O que muda quando a<br>experiência é premium</h2>
+        <span class="section-label">Prova Real</span>
+        <h2 class="section-headline">O que acontece depois que<br>começam a usar o Consultor.io</h2>
       </div>
+    </div>
 
-      <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-          <div class="testimonial-stars" style="color: var(--teal-light); display: flex; gap: 2px;">
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-          </div>
-          <span style="font-size: 0.7rem; color: var(--teal-light); font-weight: 600; padding: 2px 8px; background: var(--teal-glow); border-radius: 12px; border: 1px solid var(--border);">Aumento de Ticket</span>
-        </div>
-        <p class="testimonial-content">"Eu cobrava R$150. Subi pra R$400 depois de 2 semanas usando isso. Ninguém reclamou."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">AC</div>
-          <div class="author-info">
-            <h4>Dra. Ana Costa</h4>
-            <p>Mentora de Nutricionistas</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="testimonial-card">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-          <div class="testimonial-stars" style="color: var(--teal-light); display: flex; gap: 2px;">
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-          </div>
-          <span style="font-size: 0.7rem; color: var(--teal-light); font-weight: 600; padding: 2px 8px; background: var(--teal-glow); border-radius: 12px; border: 1px solid var(--border);">Fidelização</span>
-        </div>
-        <p class="testimonial-content">"Antes eu justificava preço. Agora eu só explico o processo."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">RP</div>
-          <div class="author-info">
-            <h4>Dr. Ricardo Pena</h4>
-            <p>Psicólogo Clínico</p>
-          </div>
+    <div class="testimonials-track">
+      <!-- Slide 1 -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Eu achava que o problema era meu preço. Não era."</strong><br>Eu atendia pelo Google Meet e sempre vinha aquela sensação de ter que me explicar demais. Troquei pro Consultor.io e, sem mudar meu método, comecei a fechar consultas mais caras. O paciente já chega diferente.</p>
+        <div class="testimonial-author-v2">
+          <h4>Dr. Felipe Nogueira</h4>
+          <p>Nutricionista</p>
         </div>
       </div>
 
-      <div class="testimonial-card">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-          <div class="testimonial-stars" style="color: var(--teal-light); display: flex; gap: 2px;">
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-            <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor;"></i>
-          </div>
-          <span style="font-size: 0.7rem; color: var(--teal-light); font-weight: 600; padding: 2px 8px; background: var(--teal-glow); border-radius: 12px; border: 1px solid var(--border);">Posicionamento Único</span>
+      <!-- Slide 2 -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Subi meu ticket e ninguém questionou."</strong><br>Eu cobrava R$ 180. Subi pra R$ 350 depois de começar a usar o consultório virtual. A única coisa que mudou foi a experiência antes da consulta.</p>
+        <div class="testimonial-author-v2">
+          <h4>Mariana Lopes</h4>
+          <p>Nutricionista Clínica</p>
         </div>
-        <p class="testimonial-content">"Sou a única profissional da minha cidade que atende assim. Não compito mais por preço, porque <strong>o meu serviço se tornou visualmente incomparável</strong>. O Consultor.io é minha barreira de entrada."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">MS</div>
-          <div class="author-info">
-            <h4>Mariana Silva</h4>
-            <p>Nutricionista Funcional</p>
-          </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Antes eu começava do zero toda vez."</strong><br>O paciente entrava, silêncio, câmera travada. Eu precisava quebrar o gelo e ainda vender meu trabalho. Agora quando a consulta começa, parece que ele já entendeu o valor.</p>
+        <div class="testimonial-author-v2">
+          <h4>Dr. Ricardo Pena</h4>
+          <p>Psicólogo</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Parei de disputar com gente mais barata."</strong><br>Antes eu sentia que estava sempre sendo comparado. Hoje não faz nem sentido comparar, porque a experiência é outra. Isso mudou completamente meu posicionamento.</p>
+        <div class="testimonial-author-v2">
+          <h4>André Cunha</h4>
+          <p>Mentor de Negócios</p>
+        </div>
+      </div>
+
+      <!-- Duplicate for infinite effect -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Eu achava que o problema era meu preço. Não era."</strong><br>Eu atendia pelo Google Meet e sempre vinha aquela sensação de ter que me explicar demais. Troquei pro Consultor.io e, sem mudar meu método, comecei a fechar consultas mais caras. O paciente já chega diferente.</p>
+        <div class="testimonial-author-v2">
+          <h4>Dr. Felipe Nogueira</h4>
+          <p>Nutricionista</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card-v2">
+        <p><strong>"Subi meu ticket e ninguém questionou."</strong><br>Eu cobrava R$ 180. Subi pra R$ 350 depois de começar a usar o consultório virtual. A única coisa que mudou foi a experiência antes da consulta.</p>
+        <div class="testimonial-author-v2">
+          <h4>Mariana Lopes</h4>
+          <p>Nutricionista Clínica</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second row moving opposite -->
+    <div class="testimonials-track" style="animation-direction: reverse;">
+      <!-- Slide 5 -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Os pacientes começaram a chegar antes do horário."</strong><br>Isso nunca acontecia. Agora eles entram antes, exploram o ambiente, leem os materiais. Quando eu entro, já estão engajados. A consulta flui muito mais.</p>
+        <div class="testimonial-author-v2">
+          <h4>Dra. Ana Costa</h4>
+          <p>Nutricionista Funcional</p>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Eu não precisei aprender nada técnico."</strong><br>Eu tinha receio de ser complicado, mas foi o contrário. Pra mim foi simples, e pro paciente também. Só que a percepção mudou completamente.</p>
+        <div class="testimonial-author-v2">
+          <h4>Juliana Martins</h4>
+          <p>Terapeuta</p>
+        </div>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="testimonial-card-v2">
+        <p><strong>"A consulta virou um evento, não uma chamada."</strong><br>Essa foi a principal mudança. Antes parecia mais uma call qualquer. Agora tem começo, meio e fim bem definidos. O paciente leva mais a sério.</p>
+        <div class="testimonial-author-v2">
+          <h4>Bruno Sales</h4>
+          <p>Consultor Estratégico</p>
+        </div>
+      </div>
+
+      <!-- Slide 8 -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Isso paga sozinho."</strong><br>Com um único paciente aceitando um valor maior, eu já paguei o plano. Depois disso virou óbvio continuar usando.</p>
+        <div class="testimonial-author-v2">
+          <h4>Carlos Henrique</h4>
+          <p>Mentor</p>
+        </div>
+      </div>
+
+      <!-- Duplicate for infinite effect -->
+      <div class="testimonial-card-v2">
+        <p><strong>"Os pacientes começaram a chegar antes do horário."</strong><br>Isso nunca acontecia. Agora eles entram antes, exploram o ambiente, leem os materiais. Quando eu entro, já estão engajados. A consulta flui muito mais.</p>
+        <div class="testimonial-author-v2">
+          <h4>Dra. Ana Costa</h4>
+          <p>Nutricionista Funcional</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card-v2">
+        <p><strong>"Eu não precisei aprender nada técnico."</strong><br>Eu tinha receio de ser complicado, mas foi o contrário. Pra mim foi simples, e pro paciente também. Só que a percepção mudou completamente.</p>
+        <div class="testimonial-author-v2">
+          <h4>Juliana Martins</h4>
+          <p>Terapeuta</p>
         </div>
       </div>
     </div>
