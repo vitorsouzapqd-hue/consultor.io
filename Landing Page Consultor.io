@@ -1214,12 +1214,12 @@
       <div class="hero-eyebrow">Para profissionais de saúde</div>
 
       <h1 class="hero-headline">
-        Transforme seu link genérico em um<br>
-        <em>Consultório Digital</em> de Alta Performance.
+        O link do Zoom não é o seu consultório.<br>
+        <em>Atenda</em> em um ambiente que respeita seu currículo.
       </h1>
 
       <p class="hero-sub">
-        O Consultor.io é a primeira plataforma de atendimento imersivo que estabelece sua autoridade antes mesmo de você abrir a câmera. Um ambiente particular, projetado para que o seu paciente sinta o peso do seu currículo em cada detalhe visual.
+        O Consultor.io cria uma experiência imersiva para o seu paciente antes mesmo da câmera ligar. É o fim da tela preta e o começo da autoridade real.
       </p>
 
       <div class="hero-actions">
@@ -1347,24 +1347,24 @@
     <div class="problem-grid">
       <div class="pain-cards">
         <div class="pain-card">
-          <div class="pain-icon">01</div>
+          <div class="pain-icon" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2);"><i data-lucide="clock"></i></div>
           <div>
-            <h3>A tela preta destrói a primeira impressão</h3>
-            <p>"Aguardando o anfitrião..." — Essa mensagem cria ansiedade e desconfiança antes de você dizer um único "Bom dia".</p>
+            <h3>ANSIEDADE DESNECESSÁRIA</h3>
+            <p>"Aguardando o anfitrião..." . Essa mensagem cria um silêncio desconfortável e gera desconfiança antes de você dar o primeiro "bom dia".</p>
           </div>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">02</div>
+          <div class="pain-icon" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2);"><i data-lucide="trending-down"></i></div>
           <div>
-            <h3>O digital comoditizou a sua presença</h3>
-            <p>Sem o ambiente físico para ancorar o preço, o paciente compara você com qualquer iniciante que usa o mesmo link genérico do Zoom.</p>
+            <h3>O digital comoditizou o seu valor</h3>
+            <p>Sem um ambiente físico para ancorar o preço, o paciente te compara com qualquer iniciante que usa o mesmo link gratuito.</p>
           </div>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">03</div>
+          <div class="pain-icon" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2);"><i data-lucide="user-minus"></i></div>
           <div>
-            <h3>O fim do pertencimento do paciente</h3>
-            <p>Sem contexto, sem ritual, sem memória. A consulta termina e o cliente não sente que viveu algo especial — foi apenas mais uma aba no navegador.</p>
+            <h3>O fim do pertencimento</h3>
+            <p>A consulta termina e o cliente sente que foi só mais uma aba no navegador. Sem ritual, não existe memória ou fidelização.</p>
           </div>
         </div>
       </div>
@@ -1390,33 +1390,37 @@
         de que está diante do melhor profissional que já encontrou.</p>
     </div>
 
-    <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
-      <div class="step">
-        <div class="step-num"><i data-lucide="bell"></i></div>
-        <div>
-          <h3>O Gatilho</h3>
-          <p>O paciente recebe a notificação: "Seu consultório está aberto. Entre 15 minutos antes para conhecer o espaço." A imersão inicia aqui.</p>
+    <div class="steps-vertical" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem;">
+      <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
+        <div class="step-v-num" style="flex-shrink: 0; width: 80px; font-weight: 800; color: var(--teal); font-size: 1.2rem; padding-top: 5px;">T-15</div>
+        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
+          <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal);"></div>
+          <h3 style="margin-bottom: 0.5rem; color: var(--text);">O Gatilho</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente recebe o aviso: "Seu consultório está aberto". Ele entra 15 minutos antes para se preparar para o encontro.</p>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num"><i data-lucide="user"></i></div>
-        <div>
-          <h3>Criação do Avatar</h3>
-          <p>Ele escolhe cabelo, roupas e acessórios. O paciente deixa de ser espectador e passa a ser "habitante" do seu consultório.</p>
+      <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
+        <div class="step-v-num" style="flex-shrink: 0; width: 80px; font-weight: 800; color: var(--teal); font-size: 1.2rem; padding-top: 5px;">T-13</div>
+        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
+          <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
+          <h3 style="margin-bottom: 0.5rem; color: var(--text);">Criação do Avatar</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Ele escolhe como quer ser visto. O paciente deixa de ser um espectador passivo e vira habitante do seu consultório.</p>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num"><i data-lucide="layers"></i></div>
-        <div>
-          <h3>A Ante-Sala</h3>
-          <p>Ele interage com seu Museu de Autoridade: lê depoimentos, vê seus diplomas e toma um café virtual. O tempo de espera vira tempo de doutrinação.</p>
+      <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
+        <div class="step-v-num" style="flex-shrink: 0; width: 80px; font-weight: 800; color: var(--teal); font-size: 1.2rem; padding-top: 5px;">T-10</div>
+        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
+          <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
+          <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Ante-Sala</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Interação total com seu Museu de Autoridade. Ele lê depoimentos e vê seus diplomas enquanto toma um café virtual.</p>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num"><i data-lucide="video"></i></div>
-        <div>
-          <h3>A Consulta</h3>
-          <p>A porta se abre. A sala de consulta é clean e focada, apenas com a Lousa Estratégica na parede. A autoridade já foi estabelecida.</p>
+      <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
+        <div class="step-v-num" style="flex-shrink: 0; width: 80px; font-weight: 800; color: var(--teal); font-size: 1.2rem; padding-top: 5px;">T-00</div>
+        <div style="flex-grow: 1; border-left: 2px solid transparent; padding-left: 2rem; position: relative;">
+          <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
+          <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Consulta</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">A porta se abre. O foco é total na Lousa Estratégica. A autoridade já foi estabelecida nos últimos 15 minutos.</p>
         </div>
       </div>
     </div>
