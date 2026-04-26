@@ -353,7 +353,7 @@
       width: 400px;
       background: var(--surface2);
       border: 1px solid var(--border);
-      padding: 3.5rem 2.5rem 2.5rem 2.5rem; /* Aumentado o topo para a tag */
+      padding: 3.5rem 2.5rem 2.5rem 2.5rem;
       border-radius: 20px;
       flex-shrink: 0;
       display: flex;
@@ -361,6 +361,16 @@
       justify-content: space-between;
       transition: border-color 0.3s, transform 0.3s;
       position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-card-v2 {
+        width: 300px;
+        padding: 3rem 1.5rem 1.5rem 1.5rem;
+      }
+      .testimonial-card-v2 p {
+        font-size: 0.95rem;
+      }
     }
 
     .testimonial-tag {
@@ -377,6 +387,19 @@
       border: 1px solid rgba(13, 148, 136, 0.2);
       border-radius: 20px;
       pointer-events: none;
+    }
+
+    /* FAQ Responsive Grid */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .testimonial-card-v2:hover {
@@ -1846,7 +1869,7 @@
         <h2 class="section-headline">Sem atrito para o paciente.<br>Sem dor de cabeça para você.</h2>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+      <div class="faq-grid">
         <div style="background: var(--surface); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
           <h3 style="color: var(--text); margin-bottom: 0.75rem; font-size: 1.1rem;">Meus pacientes precisam instalar algo?</h3>
           <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.95rem;">Não. Eles entram como entram em qualquer link. A diferença é que, em vez de uma tela fria, encontram um ambiente que prepara a consulta antes mesmo de você aparecer.</p>
