@@ -130,12 +130,17 @@
     .hero {
       min-height: 100vh;
       padding: 120px 5% 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
       position: relative;
       overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
     }
 
     /* Ambient glow behind hero */
@@ -569,8 +574,11 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .hero {
+      .hero-container {
         grid-template-columns: 1fr;
+      }
+      
+      .hero {
         padding-top: 100px;
         text-align: center;
       }
@@ -1217,7 +1225,8 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
+    <div class="hero-container">
+      <div class="hero-content">
       <div class="hero-eyebrow">Para profissionais de saúde</div>
 
       <h1 class="hero-headline">
@@ -1262,18 +1271,18 @@
                 <div style="width: 48px; height: 48px; border-radius: 50%; background: #6366F1; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 500;">M</div>
                 <div style="position: absolute; bottom: 5px; left: 10px; font-size: 0.65rem; color: white;">Você</div>
               </div>
-              <div style="height: 36px; background: #3C4043; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
-                  <i data-lucide="mic-off" style="width: 10px; height: 10px; color: white;"></i>
+              <div style="height: 40px; background: #3C4043; display: flex; align-items: center; justify-content: center; gap: 8px; padding-bottom: 2px;">
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="mic-off" style="width: 12px; height: 12px; color: white;"></i>
                 </div>
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
-                  <i data-lucide="video-off" style="width: 10px; height: 10px; color: white;"></i>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="video-off" style="width: 12px; height: 12px; color: white;"></i>
                 </div>
-                <div style="width: 30px; height: 20px; border-radius: 10px; background: #EA4335; display: flex; align-items: center; justify-content: center;">
-                  <i data-lucide="phone-missed" style="width: 10px; height: 10px; color: white;"></i>
+                <div style="width: 36px; height: 24px; border-radius: 12px; background: #EA4335; display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="phone-missed" style="width: 12px; height: 12px; color: white;"></i>
                 </div>
               </div>
-              <div style="position:absolute; top: 10px; width: 100%; text-align: center; font-size: 10px; color: #ef4444; font-weight: bold; letter-spacing: 1px;">INTERFACE GENÉRICA</div>
+              <div style="position:absolute; top: 12px; width: 100%; text-align: center; font-size: 0.65rem; color: #ef4444; font-weight: bold; letter-spacing: 1px;">INTERFACE GENÉRICA</div>
             </div>
           </div>
 
@@ -1294,6 +1303,7 @@
         </div>
         <div class="screen-vs">VS</div>
       </div>
+    </div>
     </div>
   </section>
 
