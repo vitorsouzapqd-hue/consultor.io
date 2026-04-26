@@ -351,7 +351,7 @@
         padding: 60px 0;
       }
       .testimonials-track {
-        padding: 0 1.5rem;
+        padding: 1.5rem; /* Restaura o respiro vertical no mobile */
       }
       .testimonial-card-v2 {
         width: 300px;
@@ -1643,7 +1643,7 @@
       </div>
     </div>
 
-    <div class="testimonials-track">
+    <div class="testimonials-track" ontouchstart="this.style.animationPlayState='paused'" ontouchend="this.style.animationPlayState='running'">
       <!-- Slide 1 -->
       <div class="testimonial-card-v2">
         <span class="testimonial-tag">Ticket Alto</span>
@@ -1723,7 +1723,7 @@
     </div>
 
     <!-- Second row moving opposite -->
-    <div class="testimonials-track" style="animation-direction: reverse;">
+    <div class="testimonials-track" style="animation-direction: reverse;" ontouchstart="this.style.animationPlayState='paused'" ontouchend="this.style.animationPlayState='running'">
       <!-- Slide 5 -->
       <div class="testimonial-card-v2">
         <span class="testimonial-tag">Engajamento</span>
