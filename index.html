@@ -1396,35 +1396,39 @@
         de que está diante do melhor profissional que já encontrou.</p>
     </div>
 
-    <div class="steps-vertical" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem;">
+    <div class="steps-vertical" id="ritual-timeline" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; position: relative;">
+      
+      <!-- Linha de Progresso Animada -->
+      <div id="timeline-progress" style="position: absolute; left: 119px; top: 12px; bottom: 12px; width: 2px; background: var(--teal); height: 0%; z-index: 1; transition: height 0.1s linear;"></div>
+
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">15 MIN ANTES</div>
-        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
-          <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal);"></div>
+        <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">15 MIN ANTES</div>
+        <div class="step-content" style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
+          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: all 0.4s ease;"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">O Gatilho</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente recebe o aviso: "Seu consultório está aberto". Ele entra antes para se preparar para o encontro.</p>
         </div>
       </div>
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">13 MIN ANTES</div>
-        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
-          <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
+        <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">13 MIN ANTES</div>
+        <div class="step-content" style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
+          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: all 0.4s ease;"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">Criação do Avatar</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem;">Ele escolhe como quer ser visto. O paciente deixa de ser um espectador passivo e vira habitante do seu consultório.</p>
         </div>
       </div>
-      <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">10 MIN ANTES</div>
-        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
-          <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
-          <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Ante-Sala</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Interação total com seu Museu de Autoridade. Ele lê depoimentos e vê seus diplomas enquanto toma um café virtual.</p>
+        <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
+          <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">10 MIN ANTES</div>
+          <div class="step-content" style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
+            <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: all 0.4s ease;"></div>
+            <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Experiência na Ante-Sala</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente não espera no vazio. Ele navega por seus diplomas, lê depoimentos de casos de sucesso, conhece os livros que formaram sua base técnica e acessa materiais exclusivos preparados para a consulta dele.</p>
+          </div>
         </div>
-      </div>
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">HORA H</div>
-        <div style="flex-grow: 1; border-left: 2px solid transparent; padding-left: 3rem; position: relative;">
-          <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
+        <div class="step-v-num" style="flex-shrink: 0; width: 85px; padding: 2px 6px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.65rem; font-weight: bold; text-align: center; margin-top: 8px;">HORA H</div>
+        <div class="step-content" style="flex-grow: 1; border-left: 2px solid transparent; padding-left: 3rem; position: relative;">
+          <div class="step-dot" style="position: absolute; left: -7px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: all 0.4s ease;"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Consulta</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem;">A porta se abre. O foco é total na Lousa Estratégica. A autoridade já foi estabelecida nos últimos 15 minutos.</p>
         </div>
@@ -1573,6 +1577,33 @@
 
   <script>
     lucide.createIcons();
+
+    // Animação da Timeline do Ritual
+    window.addEventListener('scroll', () => {
+      const timeline = document.getElementById('ritual-timeline');
+      const progressLine = document.getElementById('timeline-progress');
+      const dots = document.querySelectorAll('.step-dot');
+      
+      const rect = timeline.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+      
+      if (rect.top < viewHeight && rect.bottom > 0) {
+        const totalHeight = rect.height;
+        const progress = Math.min(Math.max((viewHeight * 0.7 - rect.top) / totalHeight * 100, 0), 100);
+        progressLine.style.height = `${progress}%`;
+        
+        dots.forEach((dot, index) => {
+          const dotRect = dot.getBoundingClientRect();
+          if (dotRect.top < viewHeight * 0.7) {
+            dot.style.background = 'var(--teal)';
+            dot.style.boxShadow = '0 0 10px var(--teal)';
+          } else {
+            dot.style.background = 'var(--border)';
+            dot.style.boxShadow = 'none';
+          }
+        });
+      }
+    });
   </script>
 </body>
 
