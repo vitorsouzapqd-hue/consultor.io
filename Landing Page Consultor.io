@@ -1214,7 +1214,7 @@
       <div class="hero-eyebrow">Para profissionais de saúde</div>
 
       <h1 class="hero-headline">
-        O link do Zoom não é o seu consultório.<br>
+        O link do Google Meet não é o seu consultório.<br>
         <em>Atenda</em> em um ambiente que respeita seu currículo.
       </h1>
 
