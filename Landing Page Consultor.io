@@ -1124,6 +1124,74 @@
       color: var(--text-muted);
       line-height: 1.6;
     }
+
+    /* Concept Section */
+    .concept {
+      padding: 80px 5%;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .concept-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .concept-text {
+      border-left: 3px solid var(--teal);
+      padding-left: 2rem;
+    }
+
+    .concept-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      margin-bottom: 1rem;
+    }
+
+    .concept-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .concept-card {
+      padding: 1.5rem;
+      background: var(--charcoal);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .concept-card h4 {
+      color: var(--teal-light);
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .concept-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .concept-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      
+      .concept-text {
+        padding-left: 1.5rem;
+      }
+
+      .concept-cards {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -1210,20 +1278,20 @@
   </section>
 
   <!-- O QUE É O CONSULTOR.IO -->
-  <section class="concept" style="padding: 60px 5%; background: var(--surface); border-bottom: 1px solid var(--border);">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center;">
-      <div style="border-left: 3px solid var(--teal); padding-left: 2rem;">
-        <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 1rem;">O que é o Consultor.io?</h2>
+  <section class="concept">
+    <div class="concept-container">
+      <div class="concept-text">
+        <h2>O que é o Consultor.io?</h2>
         <p style="color: var(--text-muted); line-height: 1.6;">Não é uma ferramenta de videoconferência. É a <strong>Arquitetura de Atendimento</strong> que envolve o seu paciente em um ritual de autoridade desde o convite até o pós-consulta.</p>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-        <div style="padding: 1rem; background: var(--charcoal); border-radius: 12px; border: 1px solid var(--border);">
-          <h4 style="color: var(--teal-light); margin-bottom: 0.5rem; font-size: 0.9rem;">ESPAÇO FÍSICO NO DIGITAL</h4>
-          <p style="font-size: 0.8rem; color: var(--text-muted);">Um endereço único onde o paciente "entra" no seu consultório, não apenas em uma aba.</p>
+      <div class="concept-cards">
+        <div class="concept-card">
+          <h4>ESPAÇO FÍSICO NO DIGITAL</h4>
+          <p>Um endereço único onde o paciente "entra" no seu consultório, não apenas em uma aba.</p>
         </div>
-        <div style="padding: 1rem; background: var(--charcoal); border-radius: 12px; border: 1px solid var(--border);">
-          <h4 style="color: var(--teal-light); margin-bottom: 0.5rem; font-size: 0.9rem;">MEMÓRIA COGNITIVA</h4>
-          <p style="font-size: 0.8rem; color: var(--text-muted);">O cérebro do paciente associa o ambiente premium ao valor da sua hora.</p>
+        <div class="concept-card">
+          <h4>MEMÓRIA COGNITIVA</h4>
+          <p>O cérebro do paciente associa o ambiente premium ao valor da sua hora.</p>
         </div>
       </div>
     </div>
