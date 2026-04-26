@@ -1056,6 +1056,12 @@
       font-size: 0.8rem;
     }
 
+    @media (max-width: 1100px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 900px) {
 
       .testimonials-grid,
@@ -1330,7 +1336,7 @@
           src="assets/marketplace.jpg"
           class="tour-img" alt="Marketplace de Mobiliário">
         <div class="tour-info">
-          <h3>Atelier de Criação</h3>
+          <h3>Personalize seu consultório virtual</h3>
           <p>Personalize cada centímetro. Escolha sofás de couro, móveis de mogno e decorações para tornar seu consultório único.</p>
         </div>
       </div>
@@ -1393,7 +1399,7 @@
     <div class="steps-vertical" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem;">
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
         <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">15 MIN ANTES</div>
-        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
+        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
           <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal);"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">O Gatilho</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem;">O paciente recebe o aviso: "Seu consultório está aberto". Ele entra antes para se preparar para o encontro.</p>
@@ -1401,7 +1407,7 @@
       </div>
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
         <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">13 MIN ANTES</div>
-        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
+        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
           <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">Criação do Avatar</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem;">Ele escolhe como quer ser visto. O paciente deixa de ser um espectador passivo e vira habitante do seu consultório.</p>
@@ -1409,7 +1415,7 @@
       </div>
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
         <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--border); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">10 MIN ANTES</div>
-        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 2rem; position: relative;">
+        <div style="flex-grow: 1; padding-bottom: 2rem; border-left: 2px solid var(--border); padding-left: 3rem; position: relative;">
           <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Ante-Sala</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem;">Interação total com seu Museu de Autoridade. Ele lê depoimentos e vê seus diplomas enquanto toma um café virtual.</p>
@@ -1417,7 +1423,7 @@
       </div>
       <div class="step-v" style="display: flex; gap: 2rem; align-items: flex-start;">
         <div class="step-v-num" style="flex-shrink: 0; width: 100px; padding: 4px 8px; background: rgba(13, 148, 136, 0.1); border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 0.75rem; font-weight: bold; text-align: center; margin-top: 5px;">HORA H</div>
-        <div style="flex-grow: 1; border-left: 2px solid transparent; padding-left: 2rem; position: relative;">
+        <div style="flex-grow: 1; border-left: 2px solid transparent; padding-left: 3rem; position: relative;">
           <div style="position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal);"></div>
           <h3 style="margin-bottom: 0.5rem; color: var(--text);">A Consulta</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem;">A porta se abre. O foco é total na Lousa Estratégica. A autoridade já foi estabelecida nos últimos 15 minutos.</p>
@@ -1528,7 +1534,7 @@
           <li>Lousa Colaborativa</li>
           <li>Catálogo Premium de Móveis</li>
         </ul>
-        <a href="#" class="btn-price">Selecionar Pro</a>
+        <a href="#" class="btn-price">Selecionar Profissional</a>
       </div>
 
       <div class="price-card">
@@ -1551,7 +1557,7 @@
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <h2>O seu próximo paciente vai entrar pela porta do Google Meet ou pela porta do seu Consultór.io?</h2>
+    <h2>O seu próximo paciente vai entrar pela porta do Google Meet ou pela porta do seu Consultor.io?</h2>
     <a href="#planos" class="btn-primary">Criar meu Consultório Agora. É Grátis</a>
   </section>
 
