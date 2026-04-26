@@ -338,10 +338,29 @@
       padding: 2rem 0;
       width: max-content;
       animation: scroll 60s linear infinite;
+      will-change: transform;
     }
 
-    .testimonials-track:hover {
+    .testimonials-track:hover,
+    .testimonials-track:active {
       animation-play-state: paused;
+    }
+
+    @media (max-width: 768px) {
+      .testimonials {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 60px 0;
+      }
+      .testimonials-track {
+        animation: none !important;
+        padding: 0 1.5rem;
+        width: max-content;
+      }
+      .testimonial-card-v2 {
+        scroll-snap-align: center;
+      }
     }
 
     @keyframes scroll {
