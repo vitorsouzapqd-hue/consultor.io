@@ -11,6 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     *,
     *::before,
@@ -1145,14 +1146,12 @@
       <div class="hero-eyebrow">Para profissionais de saúde</div>
 
       <h1 class="hero-headline">
-        Você passou anos estudando para isso.<br>
-        Por que ainda atende num link
-        <em>genérico</em>?
+        Transforme seu link genérico em um<br>
+        <em>Consultório Digital</em> de Alta Performance.
       </h1>
 
       <p class="hero-sub">
-        O Google Meet não foi feito para profissionais de saúde. Cada teleconsulta
-        nessa plataforma está destruindo a percepção de valor que você levou anos para construir.
+        O Consultor.io é a primeira plataforma de atendimento imersivo que estabelece sua autoridade antes mesmo de você abrir a câmera. Um ambiente particular, projetado para que o seu paciente sinta o peso do seu currículo em cada detalhe visual.
       </p>
 
       <div class="hero-actions">
@@ -1172,7 +1171,7 @@
     </div>
 
     <div class="hero-visual">
-      <p class="mockup-label">Antes vs. Depois</p>
+      <p class="mockup-label">O Fim da Comoditização</p>
       <div style="position:relative;">
         <div class="split-screens">
 
@@ -1187,6 +1186,7 @@
               <div class="spinner"></div>
               <p>Aguardando o<br>anfitrião iniciar<br>a reunião...</p>
             </div>
+            <div style="position:absolute; bottom: 10px; width: 100%; text-align: center; font-size: 10px; color: #ef4444; font-weight: bold;">INTERFACE GENÉRICA</div>
           </div>
 
           <!-- DEPOISTER: Consultor.io -->
@@ -1196,14 +1196,35 @@
               <div class="dot dot-y"></div>
               <div class="dot dot-g"></div>
             </div>
-            <div class="screen-good__body" style="padding: 0; min-height: 180px; overflow: hidden;">
+            <div class="screen-good__body" style="padding: 0; min-height: 180px; overflow: hidden; position: relative;">
               <img
-                src="https://lh3.googleusercontent.com/aida/ADBb0uilwozdZb-8KGPtZUOy8-cJt3I3z48po0nAol4mDSKxEb7cQ3NPtTSngH0XOo3VRcW4I9rkAgIz9gecpQ0ddqm4k_VwudbO0udiIyzFgO8Tvf5NyZB5HlBsSLlNyG4hAtMktptI4u-ZZZrXd5wfx8VLXZIBwyPiavwEn8-thx3zfprJLcJb70cLtxYrngKs0yBZvPxw1c41Pu0thJ63J7XwYeZk_iQv-bi0efWwjxJucKWrR4M05wu1nw"
+                src="assets/lobby.jpg"
                 alt="Preview App" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position:absolute; bottom: 0; width: 100%; background: rgba(13, 148, 136, 0.9); color: white; padding: 5px; text-align: center; font-size: 10px; font-weight: bold;">SEU ATELIER DE AUTORIDADE</div>
             </div>
           </div>
         </div>
         <div class="screen-vs">VS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE É O CONSULTOR.IO -->
+  <section class="concept" style="padding: 60px 5%; background: var(--surface); border-bottom: 1px solid var(--border);">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center;">
+      <div style="border-left: 3px solid var(--teal); padding-left: 2rem;">
+        <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 1rem;">O que é o Consultor.io?</h2>
+        <p style="color: var(--text-muted); line-height: 1.6;">Não é uma ferramenta de videoconferência. É a <strong>Arquitetura de Atendimento</strong> que envolve o seu paciente em um ritual de autoridade desde o convite até o pós-consulta.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div style="padding: 1rem; background: var(--charcoal); border-radius: 12px; border: 1px solid var(--border);">
+          <h4 style="color: var(--teal-light); margin-bottom: 0.5rem; font-size: 0.9rem;">ESPAÇO FÍSICO NO DIGITAL</h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Um endereço único onde o paciente "entra" no seu consultório, não apenas em uma aba.</p>
+        </div>
+        <div style="padding: 1rem; background: var(--charcoal); border-radius: 12px; border: 1px solid var(--border);">
+          <h4 style="color: var(--teal-light); margin-bottom: 0.5rem; font-size: 0.9rem;">MEMÓRIA COGNITIVA</h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">O cérebro do paciente associa o ambiente premium ao valor da sua hora.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1303,28 +1324,28 @@
 
     <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
       <div class="step">
-        <div class="step-num">T-15</div>
+        <div class="step-num"><i data-lucide="bell"></i></div>
         <div>
           <h3>O Gatilho</h3>
           <p>O paciente recebe a notificação: "Seu consultório está aberto. Entre 15 minutos antes para conhecer o espaço." A imersão inicia aqui.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">T-13</div>
+        <div class="step-num"><i data-lucide="user"></i></div>
         <div>
           <h3>Criação do Avatar</h3>
           <p>Ele escolhe cabelo, roupas e acessórios. O paciente deixa de ser espectador e passa a ser "habitante" do seu consultório.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">T-10</div>
+        <div class="step-num"><i data-lucide="layers"></i></div>
         <div>
           <h3>A Ante-Sala</h3>
           <p>Ele interage com seu Museu de Autoridade: lê depoimentos, vê seus diplomas e toma um café virtual. O tempo de espera vira tempo de doutrinação.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">T-00</div>
+        <div class="step-num"><i data-lucide="video"></i></div>
         <div>
           <h3>A Consulta</h3>
           <p>A porta se abre. A sala de consulta é clean e focada, apenas com a Lousa Estratégica na parede. A autoridade já foi estabelecida.</p>
@@ -1472,6 +1493,9 @@
     </ul>
   </footer>
 
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 
 </html>
