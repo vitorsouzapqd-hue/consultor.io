@@ -1355,8 +1355,8 @@
         <div class="pain-card">
           <div class="pain-icon" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2);"><i data-lucide="clock"></i></div>
           <div>
-            <h3>ANSIEDADE DESNECESSÁRIA</h3>
-            <p>"Aguardando o anfitrião..." . Essa mensagem cria um silêncio desconfortável e gera desconfiança antes de você dar o primeiro "bom dia".</p>
+            <h3>A frieza da tela preta</h3>
+            <p>"Aguardando o anfitrião...". Essa mensagem cria um silêncio desconfortável e quebra a sua autoridade antes mesmo de você dar o primeiro "bom dia".</p>
           </div>
         </div>
         <div class="pain-card">
