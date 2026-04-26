@@ -1484,7 +1484,7 @@
     <div class="pricing-grid">
       <div class="price-card">
         <div class="price-header">
-          <h3>Individual</h3>
+          <h3>Gratuito</h3>
           <div class="amount">R$ 0<span>/mês</span></div>
         </div>
         <ul class="price-features">
@@ -1499,7 +1499,7 @@
 
       <div class="price-card">
         <div class="price-header">
-          <h3>Profissional</h3>
+          <h3>Essencial</h3>
           <div class="amount">R$ 67<span>/mês</span></div>
         </div>
         <ul class="price-features">
@@ -1516,7 +1516,7 @@
       <div class="price-card featured">
         <div class="featured-tag">Mais Popular</div>
         <div class="price-header">
-          <h3>Clínica Premium</h3>
+          <h3>Profissional</h3>
           <div class="amount">R$ 197<span>/mês</span></div>
         </div>
         <ul class="price-features">
@@ -1533,7 +1533,7 @@
 
       <div class="price-card">
         <div class="price-header">
-          <h3>White Label</h3>
+          <h3>Clínica</h3>
           <div class="amount">R$ 497<span>/mês</span></div>
         </div>
         <ul class="price-features">
